@@ -38,17 +38,30 @@
   .filter-btn.active { background: #1a1a2e; color: white; border-color: #1a1a2e; }
   .order-count { font-size: 12px; color: #aaa; margin-left: auto; align-self: center; }
   @media (max-width: 900px) { .charts-row, .bottom-row { grid-template-columns: 1fr; } }
+  .tab-nav { display: flex; gap: 6px; align-items: center; }
+  .tab-btn { padding: 8px 20px; border-radius: 20px; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: white; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.15s; }
+  .tab-btn:hover { background: rgba(255,255,255,0.15); }
+  .tab-btn.active { background: white; color: #1a1a2e; border-color: white; }
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+  #pane-orders { height: calc(100vh - 80px); }
+  #pane-orders iframe { width: 100%; height: 100%; border: none; display: block; }
 </style>
 </head>
 <body>
 <header>
   <div>
-    <h1>WD Card Shop <span class="platform-tag">Shopify</span></h1>
+    <h1>WD Card Shop</h1>
     <div class="subtitle">Orders Dashboard</div>
   </div>
-  <div class="updated">Last updated: April 22, 2026 at 09:04 PM</div>
+  <nav class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('shopify', this)"><span class="platform-tag">Shopify</span> &nbsp;Sales</button>
+    <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
+  </nav>
+  <div class="updated">Last updated: April 22, 2026 at 09:46 PM</div>
 </header>
 
+<div id="pane-shopify" class="tab-pane active">
 <div class="container">
   <div class="stats-grid">
     <div class="stat-card">
@@ -801,8 +814,20 @@
     </div>
   </div>
 </div>
+</div>
+
+<div id="pane-orders" class="tab-pane">
+  <iframe src="https://dustaris.github.io/orders-dashboard/" title="Orders Tracker"></iframe>
+</div>
 
 <script>
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('pane-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
 new Chart(document.getElementById('revenueChart'), {
   type: 'bar',
   data: {
