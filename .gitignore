@@ -1,0 +1,6 @@
+shopify_config.py
+shopify_token.txt
+1_shopify_setup.py
+2_shopify_dashboard.py
+__pycache__/
+*.pyc
