@@ -128,11 +128,11 @@
     <div class="subtitle">Orders Dashboard</div>
   </div>
   <nav class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('shopify', this)"><span class="platform-tag">Shopify</span> &nbsp;Sales</button>
+    <button class="tab-btn active" onclick="switchTab('shopify', this)">Shipments / Sales</button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
   </nav>
-  <div class="updated">Last updated: April 22, 2026 at 08:08 PM</div>
+  <div class="updated">Last updated: April 23, 2026 at 04:10 AM</div>
 </header>
 
 <div id="pane-shopify" class="tab-pane active">
@@ -141,12 +141,12 @@
     <div class="stat-card">
       <div class="label">Total Orders</div>
       <div class="value">121</div>
-      <div class="sub">Jan 1 – Apr 22, 2026</div>
+      <div class="sub">Jan 1 – Apr 23, 2026</div>
     </div>
     <div class="stat-card">
       <div class="label">Total Revenue</div>
       <div class="value">$54,006.92</div>
-      <div class="sub">Jan 1 – Apr 22, 2026</div>
+      <div class="sub">Jan 1 – Apr 23, 2026</div>
     </div>
     <div class="stat-card">
       <div class="label">Paid Orders</div>
@@ -164,6 +164,8 @@
       <div class="sub">Per order</div>
     </div>
   </div>
+
+  
 
   <div class="charts-row">
     <div class="card">
@@ -205,12 +207,13 @@
       </div>
       <div class="table-scroll">
         <table id="ordersTable">
-          <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Total</th><th>Payment</th><th>Fulfillment</th></tr></thead>
+          <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Fulfillment</th></tr></thead>
           <tbody>
         <tr data-fulfillment="unfulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7304037204206" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1231</a></td>
             <td>Juan Delacruz</td>
             <td>2026-04-22</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Premium Poster Collection Case - Sealed</td>
             <td><strong>$827.45</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-red">Unfulfilled</span></td>
@@ -219,6 +222,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7300375380206" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1230</a></td>
             <td>Jesse Thibodeau</td>
             <td>2026-04-20</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Evolution Pokemon Booster Bundle <span style='color:#aaa;font-size:11px'>x6</span></td>
             <td><strong>$270.94</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -227,6 +231,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7299809935598" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1229</a></td>
             <td>Ian DeGaten</td>
             <td>2026-04-20</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Perfect Order Booster Bundle</td>
             <td><strong>$40.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -235,6 +240,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7298230517998" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1228</a></td>
             <td>Paul Lathrop</td>
             <td>2026-04-19</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$280.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -243,6 +249,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7293065920750" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1227</a></td>
             <td>Robert Williams</td>
             <td>2026-04-19</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box Case - Sealed (Limit 1 per Customer)</td>
             <td><strong>$1720.00</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -251,6 +258,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7290432225518" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1226</a></td>
             <td>Emily Lathrop</td>
             <td>2026-04-17</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Destined Rivals Booster Bundle <span style='color:#aaa;font-size:11px'>x6</span></td>
             <td><strong>$354.94</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -259,6 +267,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7289901056238" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1225</a></td>
             <td>Keith Coffindaffer</td>
             <td>2026-04-17</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Evolution Pokemon Booster Bundle <span style='color:#aaa;font-size:11px'>x3</span></td>
             <td><strong>$144.96</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -267,6 +276,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7288552849646" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1224</a></td>
             <td>Tsz Yeung Ho</td>
             <td>2026-04-17</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Premium Poster Collection Case - Sealed</td>
             <td><strong>$700.00</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -275,6 +285,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7287561126126" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1223</a></td>
             <td>Mikayla Waters</td>
             <td>2026-04-16</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Journey Together Elite Trainer Box</td>
             <td><strong>$117.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -283,6 +294,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7276629459182" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1222</a></td>
             <td>Alex Penaloza</td>
             <td>2026-04-14</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$295.30</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -291,6 +303,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7275635507438" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1221</a></td>
             <td>Ethan Holmes</td>
             <td>2026-04-14</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$265.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -299,6 +312,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7275281449198" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1220</a></td>
             <td>Bailey Tuturice</td>
             <td>2026-04-14</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Charizard X ex Ultra-Premium Collection<br>Destined Rivals Booster Bundle</td>
             <td><strong>$259.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -307,6 +321,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7274770071790" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1219</a></td>
             <td>Peter James Simeone II</td>
             <td>2026-04-13</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes First Partners Deluxe Pin Collection <span style='color:#aaa;font-size:11px'>x10</span></td>
             <td><strong>$499.90</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -315,6 +330,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7271678017774" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1218</a></td>
             <td>Vincent Diaz</td>
             <td>2026-04-13</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$265.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -323,6 +339,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7266770649326" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1217</a></td>
             <td>Edwin Arellano</td>
             <td>2026-04-11</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Destined Rivals Booster Bundle<br>Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$289.54</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -331,6 +348,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7263192776942" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1216</a></td>
             <td>Jesse Thibodeau</td>
             <td>2026-04-09</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Surprise Box <span style='color:#aaa;font-size:11px'>x4</span><br>Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$457.94</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -339,6 +357,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7261174300910" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1215</a></td>
             <td>travis watkins</td>
             <td>2026-04-08</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$228.67</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -347,6 +366,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7259399192814" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1214</a></td>
             <td>Jason Yillik</td>
             <td>2026-04-07</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Premium Poster Collection: Mega Lucario <span style='color:#aaa;font-size:11px'>x2</span><br>Premium Poster Collection: Mega Gardevoir <span style='color:#aaa;font-size:11px'>x3</span><br>Phantasmal Flames Elite Trainer Box <span style='color:#aaa;font-size:11px'>x10</span><br>Terastal Fest ex Booster Box <span style='color:#aaa;font-size:11px'>x5</span><br>Mega Brave Booster Box <span style='color:#aaa;font-size:11px'>x5</span></td>
             <td><strong>$2694.75</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -355,6 +375,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7259195736302" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1213</a></td>
             <td>Garrett McManus</td>
             <td>2026-04-07</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Evolutions Booster Box <span style='color:#aaa;font-size:11px'>x10</span></td>
             <td><strong>$3156.26</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -363,6 +384,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7259011186926" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1212</a></td>
             <td>Alex Penaloza</td>
             <td>2026-04-07</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box</td>
             <td><strong>$134.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -371,6 +393,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7258781450478" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1211</a></td>
             <td>Jeff Gossman</td>
             <td>2026-04-07</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Premium Poster Collection: Mega Lucario<br>Destined Rivals Booster Bundle <span style='color:#aaa;font-size:11px'>x10</span></td>
             <td><strong>$715.89</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -379,6 +402,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7253673115886" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1210</a></td>
             <td>Sukhpreet Singh</td>
             <td>2026-04-06</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Phantasmal Flames Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$231.64</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -387,6 +411,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7249627447534" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1209</a></td>
             <td>Danniel To</td>
             <td>2026-04-05</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Premium Poster Collection: Mega Lucario</td>
             <td><strong>$135.16</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -395,6 +420,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7248279437550" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1208</a></td>
             <td>Paydonne Xiong</td>
             <td>2026-04-05</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Destined Rivals Booster Bundle<br>Mega Evolution Pokemon Booster Bundle</td>
             <td><strong>$122.41</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -403,6 +429,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7233796047086" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1207</a></td>
             <td>Branson Farnsworth</td>
             <td>2026-04-02</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$225.62</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -411,6 +438,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7233711210734" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1206</a></td>
             <td>Jonathan Roberts</td>
             <td>2026-04-02</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Destined Rivals Booster Bundle <span style='color:#aaa;font-size:11px'>x3</span></td>
             <td><strong>$154.97</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -419,6 +447,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7230577377518" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1205</a></td>
             <td>Dilraj Sohal</td>
             <td>2026-04-01</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Phantasmal Flames Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$210.09</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -427,6 +456,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7230205198574" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1204</a></td>
             <td>Alex Penaloza</td>
             <td>2026-04-01</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Black Bolt Booster Box</td>
             <td><strong>$147.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -435,6 +465,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7226320322798" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1203</a></td>
             <td>Jonathan Beane</td>
             <td>2026-03-31</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x6</span></td>
             <td><strong>$775.90</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -443,6 +474,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7225145983214" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1202</a></td>
             <td>Jonathan Beane</td>
             <td>2026-03-31</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box Case - Sealed (Limit 1 per Customer)<br>Prismatic Evolutions Booster Bundle <span style='color:#aaa;font-size:11px'>x6</span></td>
             <td><strong>$2002.71</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -451,6 +483,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7224941904110" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1201</a></td>
             <td>Jonathan Roberts</td>
             <td>2026-03-31</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Booster Bundle <span style='color:#aaa;font-size:11px'>x6</span></td>
             <td><strong>$437.94</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -459,6 +492,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7224529584366" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1200</a></td>
             <td>Peter James Simeone II</td>
             <td>2026-03-30</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes First Partners Deluxe Pin Collection <span style='color:#aaa;font-size:11px'>x12</span></td>
             <td><strong>$551.88</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -467,6 +501,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7222932439278" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1199</a></td>
             <td>Aidan Keck</td>
             <td>2026-03-30</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box Case - Sealed (Limit 1 per Customer)<br>Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span><br>Paldea Evolved Booster Bundle<br>Ascended Heroes First Partners Deluxe Pin Collection <span style='color:#aaa;font-size:11px'>x4</span></td>
             <td><strong>$2092.89</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -475,6 +510,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7222227435758" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1198</a></td>
             <td>Paul McCracken</td>
             <td>2026-03-29</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Phantasmal Flames Booster Box Case</td>
             <td><strong>$2252.24</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -483,6 +519,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7221302952174" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1197</a></td>
             <td>Yasia Thoj</td>
             <td>2026-03-29</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Nihil Zero Booster Box <span style='color:#aaa;font-size:11px'>x3</span></td>
             <td><strong>$204.97</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -491,6 +528,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7220556103918" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1196</a></td>
             <td>Alex Lau</td>
             <td>2026-03-28</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Scarlet ex Booster Box</td>
             <td><strong>$86.09</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -499,6 +537,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7220472479982" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1195</a></td>
             <td>Randall Neth</td>
             <td>2026-03-28</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Phantasmal Flames Booster Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$674.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -507,6 +546,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7218000625902" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1194</a></td>
             <td>Natalie C</td>
             <td>2026-03-27</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes First Partners Deluxe Pin Collection</td>
             <td><strong>$57.46</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -515,6 +555,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7217041998062" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1193</a></td>
             <td>Kevin Lane</td>
             <td>2026-03-27</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Destined Rivals Booster Bundle <span style='color:#aaa;font-size:11px'>x3</span></td>
             <td><strong>$176.93</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -523,6 +564,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7214129512686" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1192</a></td>
             <td>Randall Neth</td>
             <td>2026-03-26</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Phantasmal Flames Booster Box Case</td>
             <td><strong>$1994.99</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -531,6 +573,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7207002538222" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1191</a></td>
             <td>Matthew Willis</td>
             <td>2026-03-23</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Charizard X ex Ultra-Premium Collection</td>
             <td><strong>$182.99</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -539,6 +582,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7206652149998" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1190</a></td>
             <td>Alex Lau</td>
             <td>2026-03-23</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Scarlet ex Booster Box</td>
             <td><strong>$87.18</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -547,6 +591,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7206520422638" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1189</a></td>
             <td>Marie Almodovar</td>
             <td>2026-03-23</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Nihil Zero Booster Box<br>Ascended Heroes Elite Trainer Box</td>
             <td><strong>$188.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -555,6 +600,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7203670491374" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1188</a></td>
             <td>Rikki Johnson</td>
             <td>2026-03-22</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$224.68</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -563,6 +609,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7201576878318" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1187</a></td>
             <td>Enzo Medina</td>
             <td>2026-03-21</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x3</span></td>
             <td><strong>$338.97</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -571,6 +618,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7197086679278" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1186</a></td>
             <td>Benjamin Powell</td>
             <td>2026-03-18</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$213.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -579,6 +627,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7197059350766" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1185</a></td>
             <td>Paul Lathrop</td>
             <td>2026-03-18</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Phantasmal Flames Booster Box<br>Destined Rivals Booster Bundle <span style='color:#aaa;font-size:11px'>x4</span><br>Prismatic Evolutions Booster Bundle <span style='color:#aaa;font-size:11px'>x4</span></td>
             <td><strong>$910.00</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -587,6 +636,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7194946011374" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1184</a></td>
             <td>Kristen Jackson</td>
             <td>2026-03-17</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldea Evolved Booster Bundle<br>Mega Dream ex Booster Box<br>Mega Brave Booster Box</td>
             <td><strong>$290.23</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -595,6 +645,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7193251676398" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1183</a></td>
             <td>Megan Rocco</td>
             <td>2026-03-16</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">White Flare Elite Trainer Box</td>
             <td><strong>$86.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -603,6 +654,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7193008996590" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1182</a></td>
             <td>Adam Filipkowski</td>
             <td>2026-03-16</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Charizard X ex Ultra-Premium Collection</td>
             <td><strong>$171.99</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -611,6 +663,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7190765797614" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1181</a></td>
             <td>Marshall Watson</td>
             <td>2026-03-15</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Destined Rivals Booster Bundle <span style='color:#aaa;font-size:11px'>x50</span><br>Mega Gardevoir Elite Trainer Box<br>Prismatic Evolutions Surprise Box<br>Twilight Masquerade Elite Trainer Box</td>
             <td><strong>$2837.26</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -619,6 +672,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7181390577902" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1180</a></td>
             <td>Kevin Lane</td>
             <td>2026-03-11</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Booster Bundle<br>Destined Rivals Booster Bundle<br>Ascended Heroes Elite Trainer Box</td>
             <td><strong>$235.92</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -627,6 +681,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7179860869358" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1179</a></td>
             <td>Oleksii Lysenko</td>
             <td>2026-03-11</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Gardevoir Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$153.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -635,6 +690,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7179480137966" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1178</a></td>
             <td>Alberto Dueñas</td>
             <td>2026-03-10</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Lugia ex & Latias ex Premium Collection <span style='color:#aaa;font-size:11px'>x3</span></td>
             <td><strong>$259.18</strong></td>
             <td><span class="badge badge-yellow">Refunded</span></td>
             <td><span class="badge badge-red">Unfulfilled</span></td>
@@ -643,6 +699,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7177156264174" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1177</a></td>
             <td>Joseph Spinell</td>
             <td>2026-03-09</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$219.48</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -651,6 +708,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7173939593454" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1176</a></td>
             <td>Paul Lathrop</td>
             <td>2026-03-08</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x4</span></td>
             <td><strong>$431.01</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -659,6 +717,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7171936026862" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1175</a></td>
             <td>Paul Lathrop</td>
             <td>2026-03-07</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$218.23</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -667,6 +726,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7166728962286" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1174</a></td>
             <td>Kristen Jackson</td>
             <td>2026-03-05</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box<br>Mega Dream ex Booster Box</td>
             <td><strong>$213.86</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -675,6 +735,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7164075704558" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1173</a></td>
             <td>Joseph Salcido</td>
             <td>2026-03-03</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$190.07</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -683,6 +744,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7163974090990" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1172</a></td>
             <td>Noora Toby</td>
             <td>2026-03-03</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Charizard X ex Ultra-Premium Collection</td>
             <td><strong>$176.39</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -691,6 +753,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7163210465518" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1171</a></td>
             <td>Louis Nacke</td>
             <td>2026-03-03</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Destined Rivals Booster Bundle<br>White Flare Elite Trainer Box<br>Ascended Heroes Elite Trainer Box</td>
             <td><strong>$254.37</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -699,6 +762,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7163201683694" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1170</a></td>
             <td>Brian O'Connor</td>
             <td>2026-03-03</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$231.06</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -707,6 +771,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7163015168238" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1169</a></td>
             <td>Anthony Marotto</td>
             <td>2026-03-03</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes 2 Pack Collection - Larry<br>Mega Charizard X ex Ultra-Premium Collection</td>
             <td><strong>$196.40</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -715,6 +780,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7162996359406" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1168</a></td>
             <td>Nicolas Senese</td>
             <td>2026-03-03</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$198.44</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -723,6 +789,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7162100285678" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1167</a></td>
             <td>Dawn Boudwin</td>
             <td>2026-03-02</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$189.19</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -731,6 +798,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7162082197742" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1166</a></td>
             <td>elven szabo</td>
             <td>2026-03-02</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$175.99</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -739,6 +807,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7161562824942" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1165</a></td>
             <td>Ivan Ibarra</td>
             <td>2026-03-02</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$180.97</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -747,6 +816,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7161385976046" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1164</a></td>
             <td>Joseph Macon</td>
             <td>2026-03-02</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$178.68</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -755,6 +825,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7161374474478" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1163</a></td>
             <td>Trey Turner</td>
             <td>2026-03-02</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$178.67</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -763,6 +834,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7160941084910" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1162</a></td>
             <td>Chavez Halemano</td>
             <td>2026-03-01</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes First Partners Deluxe Pin Collection<br>Ascended Heroes 2 Pack Collection - Larry<br>Ascended Heroes 2 Pack Collection - Erika<br>Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$293.07</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -771,6 +843,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7160300011758" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1161</a></td>
             <td>Jeff b. Chasser</td>
             <td>2026-03-01</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box</td>
             <td><strong>$115.91</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -779,6 +852,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7159067574510" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1160</a></td>
             <td>Paul Lathrop</td>
             <td>2026-02-28</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Super-Premium Collection<br>Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$670.00</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -787,6 +861,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7158904520942" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1159</a></td>
             <td>Erric Allen</td>
             <td>2026-02-28</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$180.77</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -795,6 +870,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7158303293678" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1158</a></td>
             <td>Jonathan Rodriguez</td>
             <td>2026-02-28</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Elite Trainer Box</td>
             <td><strong>$115.53</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -803,6 +879,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7157156708590" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1157</a></td>
             <td>Jeff b. Chasser</td>
             <td>2026-02-28</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldea Evolved Booster Bundle <span style='color:#aaa;font-size:11px'>x3</span><br>White Flare Elite Trainer Box</td>
             <td><strong>$383.88</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -811,6 +888,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7155590791406" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1156</a></td>
             <td>ODELL MIZRAHI</td>
             <td>2026-02-27</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Charizard X ex Ultra-Premium Collection <span style='color:#aaa;font-size:11px'>x4</span></td>
             <td><strong>$639.96</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -819,6 +897,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7154691113198" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1155</a></td>
             <td>Paul Lathrop</td>
             <td>2026-02-26</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Super-Premium Collection</td>
             <td><strong>$310.99</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -827,6 +906,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7152610050286" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1154</a></td>
             <td>Ray Bickford Jr</td>
             <td>2026-02-25</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Poster Collection <span style='color:#aaa;font-size:11px'>x4</span><br>Mega Charizard X ex Ultra-Premium Collection</td>
             <td><strong>$275.95</strong></td>
             <td><span class="badge badge-yellow">Partially_refunded</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -835,6 +915,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7151715123438" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1153</a></td>
             <td>Genaro Quintana</td>
             <td>2026-02-25</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$173.69</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -843,6 +924,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7150209597678" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1152</a></td>
             <td>ChunKAi YANG</td>
             <td>2026-02-24</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Charizard X ex Ultra-Premium Collection <span style='color:#aaa;font-size:11px'>x3</span></td>
             <td><strong>$449.97</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -851,6 +933,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7147286790382" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1151</a></td>
             <td>Alex Van Heest</td>
             <td>2026-02-22</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Charizard X ex Ultra-Premium Collection <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$299.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -859,6 +942,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7147150475502" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1150</a></td>
             <td>Austin Renna</td>
             <td>2026-02-22</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Charizard X ex Ultra-Premium Collection <span style='color:#aaa;font-size:11px'>x8</span></td>
             <td><strong>$1199.92</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -867,6 +951,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7144511832302" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1149</a></td>
             <td>Joseph Marullo</td>
             <td>2026-02-21</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$167.39</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -875,6 +960,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7143948779758" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1148</a></td>
             <td>Jeff b. Chasser</td>
             <td>2026-02-20</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Poster Collection <span style='color:#aaa;font-size:11px'>x2</span><br>Twilight Masquerade Elite Trainer Box<br>Black Bolt Booster Bundle <span style='color:#aaa;font-size:11px'>x3</span><br>Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection <span style='color:#aaa;font-size:11px'>x4</span></td>
             <td><strong>$966.61</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -883,6 +969,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7143856308462" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1147</a></td>
             <td>Andrew Negrete</td>
             <td>2026-02-20</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Destined Rivals Booster Bundle<br>Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$223.86</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -891,6 +978,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7143237943534" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1146</a></td>
             <td>Thomas Affatato</td>
             <td>2026-02-20</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Charizard X ex Ultra-Premium Collection</td>
             <td><strong>$149.99</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -899,6 +987,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7137746944238" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1145</a></td>
             <td>Erric Allen</td>
             <td>2026-02-17</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$167.78</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -907,6 +996,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7135587926254" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1144</a></td>
             <td>Camden Lemond</td>
             <td>2026-02-16</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection <span style='color:#aaa;font-size:11px'>x6</span></td>
             <td><strong>$917.94</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -915,6 +1005,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7135172296942" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1143</a></td>
             <td>Britney Smith</td>
             <td>2026-02-16</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$165.23</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -923,6 +1014,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7134610915566" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1142</a></td>
             <td>Joseph Gambino</td>
             <td>2026-02-16</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$163.13</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -931,6 +1023,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7131832025326" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1141</a></td>
             <td>Joseph Marullo</td>
             <td>2026-02-14</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">White Flare Booster Bundle<br>Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$220.30</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -939,6 +1032,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7131649278190" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1140</a></td>
             <td>Evan Schroepfer</td>
             <td>2026-02-14</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$326.63</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -947,6 +1041,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7126089728238" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1139</a></td>
             <td>Ian Hurley</td>
             <td>2026-02-11</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Mega Evolution Pokemon Booster Bundle<br>Crimson Haze Booster Box</td>
             <td><strong>$138.33</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -955,6 +1050,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7125845541102" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1138</a></td>
             <td>Ray Bickford Jr</td>
             <td>2026-02-11</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Poster Collection <span style='color:#aaa;font-size:11px'>x12</span></td>
             <td><strong>$347.88</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -963,6 +1059,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7121097752814" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1137</a></td>
             <td>Ray Bickford Jr</td>
             <td>2026-02-09</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Super-Premium Collection</td>
             <td><strong>$269.99</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -971,6 +1068,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7116798951662" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1136</a></td>
             <td>Thomas Affatato</td>
             <td>2026-02-07</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Super-Premium Collection</td>
             <td><strong>$245.99</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -979,6 +1077,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7116349767918" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1135</a></td>
             <td>Evan Schroepfer</td>
             <td>2026-02-07</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$330.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -987,6 +1086,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7108879057134" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1134</a></td>
             <td>Ashley Marlow</td>
             <td>2026-02-03</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$334.77</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -995,6 +1095,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7107671654638" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1133</a></td>
             <td>Evan Schroepfer</td>
             <td>2026-02-02</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$168.20</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1003,6 +1104,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7103576047854" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1132</a></td>
             <td>Ivonne Cortes</td>
             <td>2026-01-31</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$167.77</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1011,6 +1113,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7102529339630" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1131</a></td>
             <td>Carlo Sasam</td>
             <td>2026-01-30</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$335.55</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1019,6 +1122,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7099496169710" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1130</a></td>
             <td>Roman Voloshin</td>
             <td>2026-01-28</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection <span style='color:#aaa;font-size:11px'>x5</span></td>
             <td><strong>$757.85</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1027,6 +1131,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7094540501230" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1129</a></td>
             <td>Raquel Palma</td>
             <td>2026-01-25</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection <span style='color:#aaa;font-size:11px'>x5</span></td>
             <td><strong>$762.32</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1035,6 +1140,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7050611687662" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1128</a></td>
             <td>Min Kwak</td>
             <td>2026-01-20</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">White Flare Booster Bundle<br>Black Bolt Booster Bundle<br>Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$374.95</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1043,6 +1149,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7050432250094" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1127</a></td>
             <td>Lexxy VanScyoc</td>
             <td>2026-01-20</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$151.62</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1051,6 +1158,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7049236938990" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1126</a></td>
             <td>Ian Hurley</td>
             <td>2026-01-19</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Terastal Fest ex Booster Box</td>
             <td><strong>$119.03</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1059,6 +1167,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7046235619566" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1125</a></td>
             <td>travis watkins</td>
             <td>2026-01-18</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td><strong>$147.00</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1067,6 +1176,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7043272376558" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1124</a></td>
             <td>Andrew Warrichaiet</td>
             <td>2026-01-16</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Surprise Box<br>White Flare Booster Bundle<br>Phantasmal Flames Booster Bundle</td>
             <td><strong>$127.69</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1075,6 +1185,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7042427060462" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1123</a></td>
             <td>Chase Louk</td>
             <td>2026-01-15</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Phantasmal Flames Booster Bundle <span style='color:#aaa;font-size:11px'>x2</span><br>Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$372.32</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1083,6 +1194,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7042331214062" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1122</a></td>
             <td>Cody Thomas</td>
             <td>2026-01-15</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Black Bolt Booster Bundle <span style='color:#aaa;font-size:11px'>x25</span></td>
             <td><strong>$1149.75</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1091,6 +1203,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7042054815982" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1121</a></td>
             <td>Min Kwak</td>
             <td>2026-01-15</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Destined Rivals Booster Bundle<br>Paldea Evolved Booster Bundle</td>
             <td><strong>$125.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1099,6 +1212,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7041801289966" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1120</a></td>
             <td>Charles Foster</td>
             <td>2026-01-15</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$263.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1107,6 +1221,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7038112104686" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1119</a></td>
             <td>Nehemiah Logan</td>
             <td>2026-01-13</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Phantasmal Flames Booster Box</td>
             <td><strong>$239.99</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1115,6 +1230,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7037276225774" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1118</a></td>
             <td>Min Kwak</td>
             <td>2026-01-12</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Phantasmal Flames Booster Bundle<br>Destined Rivals Booster Bundle<br>Black Bolt Booster Bundle<br>White Flare Booster Bundle<br>Prismatic Evolutions Booster Bundle</td>
             <td><strong>$234.95</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1123,6 +1239,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7036507652334" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1117</a></td>
             <td>Ray Bickford Jr</td>
             <td>2026-01-12</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Future Flash Booster Box <span style='color:#aaa;font-size:11px'>x4</span></td>
             <td><strong>$259.96</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1131,6 +1248,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7034712260846" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1116</a></td>
             <td>Thanh Pham</td>
             <td>2026-01-11</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Black Bolt Booster Bundle <span style='color:#aaa;font-size:11px'>x5</span></td>
             <td><strong>$242.38</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1139,6 +1257,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7033680363758" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1115</a></td>
             <td>King Chan</td>
             <td>2026-01-10</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">White Flare Booster Bundle <span style='color:#aaa;font-size:11px'>x2</span><br>Black Bolt Booster Bundle <span style='color:#aaa;font-size:11px'>x2</span><br>Mega Gardevoir Elite Trainer Box<br>Prismatic Evolutions Booster Bundle</td>
             <td><strong>$305.94</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1147,6 +1266,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7030260465902" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1114</a></td>
             <td>Ray Bickford Jr</td>
             <td>2026-01-08</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Future Flash Booster Box <span style='color:#aaa;font-size:11px'>x4</span></td>
             <td><strong>$259.96</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1155,6 +1275,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7025034363118" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1113</a></td>
             <td>Min Kwak</td>
             <td>2026-01-05</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Booster Bundle<br>White Flare Booster Bundle<br>Black Bolt Booster Bundle</td>
             <td><strong>$145.97</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1163,6 +1284,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7020354371822" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1112</a></td>
             <td>Tae Kim</td>
             <td>2026-01-02</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Carrying On His Will Booster Box (OP13) <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$791.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
@@ -1171,6 +1293,7 @@
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7019241144558" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1111</a></td>
             <td>Peter Won</td>
             <td>2026-01-02</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Premium Booster Vol. 2 Booster Box (PRB-02) <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td><strong>$579.98</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
             <td><span class="badge badge-green">Fulfilled</span></td>
