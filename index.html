@@ -32,6 +32,8 @@
   .badge-red { background: #fce4ec; color: #c62828; }
   .bottom-row { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
   .table-scroll { max-height: 480px; overflow-y: auto; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .table-scroll thead th { position: sticky; top: 0; z-index: 2; background: #f8f9fa; }
+  #pane-prices .table-scroll { max-height: 72vh; }
   .filter-bar { display: flex; gap: 8px; margin-bottom: 16px; }
   .filter-btn { padding: 6px 16px; border-radius: 20px; border: 1px solid #e0e0e0; background: white; font-size: 12px; font-weight: 600; cursor: pointer; color: #555; transition: all 0.15s; }
   .filter-btn:hover { background: #f5f5f5; }
@@ -74,6 +76,48 @@
     .filter-btn { padding: 5px 11px; font-size: 11px; }
     .bottom-row { gap: 14px; }
     #pane-orders { height: calc(100vh - 116px); }
+    /* Price tracker — card layout on mobile */
+    #pane-prices .table-scroll { overflow-x: unset; max-height: unset; }
+    #pane-prices table, #pane-prices tbody, #pane-prices tr { display: block; width: 100%; min-width: unset; }
+    #pane-prices thead { display: none; }
+    #pane-prices tr {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    #pane-prices td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      border: none;
+      font-size: 13px;
+      min-width: unset;
+    }
+    #pane-prices td:first-child {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+      padding-bottom: 8px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    #pane-prices td:last-child { padding-bottom: 0; }
+    #pane-prices td::before {
+      content: attr(data-label);
+      font-weight: 600;
+      color: #999;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+    #pane-prices td:first-child::before { display: none; }
+    #pane-prices .card { padding: 14px 12px; }
   }
 </style>
 </head>
@@ -88,7 +132,7 @@
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
   </nav>
-  <div class="updated">Last updated: April 23, 2026 at 03:04 AM</div>
+  <div class="updated">Last updated: April 22, 2026 at 08:07 PM</div>
 </header>
 
 <div id="pane-shopify" class="tab-pane active">
@@ -97,12 +141,12 @@
     <div class="stat-card">
       <div class="label">Total Orders</div>
       <div class="value">121</div>
-      <div class="sub">Jan 1 – Apr 23, 2026</div>
+      <div class="sub">Jan 1 – Apr 22, 2026</div>
     </div>
     <div class="stat-card">
       <div class="label">Total Revenue</div>
       <div class="value">$54,006.92</div>
-      <div class="sub">Jan 1 – Apr 23, 2026</div>
+      <div class="sub">Jan 1 – Apr 22, 2026</div>
     </div>
     <div class="stat-card">
       <div class="label">Paid Orders</div>
@@ -1177,13 +1221,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/ascended-heroes-elite-trainer-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Elite Trainer Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$142.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$153.41</td>
-          <td>$118.77</td>
-          <td>$132.38</td>
-          <td><span style="color:#c62828;font-weight:600">$-10.42</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$142.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$153.41</td>
+          <td data-label="TCG Low">$118.77</td>
+          <td data-label="Verified Low">$132.38</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-10.42</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/668496" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1191,13 +1235,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/phantasmal-flames-booster-box-case-copy" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Elite Trainer Box Case - Sealed (Limit 1 per Customer)</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$1720.00</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$1765.72</td>
-          <td>$1757.99</td>
-          <td>$1799.99</td>
-          <td><span style="color:#c62828;font-weight:600">$-45.72</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$1720.00</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$1765.72</td>
+          <td data-label="TCG Low">$1757.99</td>
+          <td data-label="Verified Low">$1799.99</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-45.72</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/679558" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1205,13 +1249,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/ascended-heroes-first-partners-deluxe-pin-collection-case-sealed" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes First Partners Deluxe Pin Collection Case - Sealed</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$339.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$338.79</td>
-          <td>$344.90</td>
-          <td>$347.89</td>
-          <td><span style="color:#2e7d32;font-weight:600">+$1.20</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$339.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$338.79</td>
+          <td data-label="TCG Low">$344.90</td>
+          <td data-label="Verified Low">$347.89</td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$1.20</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672392" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1219,13 +1263,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/ascended-heroes-premium-poster-collection-case-sealed" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Premium Poster Collection Case - Sealed</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$760.00</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$745.00</td>
-          <td>$825.00</td>
-          <td>$839.99</td>
-          <td><span style="color:#2e7d32;font-weight:600">+$15.00</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$760.00</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$745.00</td>
+          <td data-label="TCG Low">$825.00</td>
+          <td data-label="Verified Low">$839.99</td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$15.00</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/685000" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1233,13 +1277,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/battle-partners" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Battle Partners Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$64.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$82.92</td>
-          <td>$80.00</td>
-          <td>$99.58</td>
-          <td><span style="color:#c62828;font-weight:600">$-17.93</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$64.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$82.92</td>
+          <td data-label="TCG Low">$80.00</td>
+          <td data-label="Verified Low">$99.58</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-17.93</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/614707" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1247,13 +1291,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/black-bolt-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Black Bolt Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$140.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$157.21</td>
-          <td>$157.00</td>
-          <td>$194.99</td>
-          <td><span style="color:#c62828;font-weight:600">$-16.22</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$140.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$157.21</td>
+          <td data-label="TCG Low">$157.00</td>
+          <td data-label="Verified Low">$194.99</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-16.22</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/637384" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1261,13 +1305,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/destined-rivals-booster-bundle" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Destined Rivals Booster Bundle</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$64.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$66.21</td>
-          <td>$60.00</td>
-          <td>$60.00</td>
-          <td><span style="color:#c62828;font-weight:600">$-1.22</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$64.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$66.21</td>
+          <td data-label="TCG Low">$60.00</td>
+          <td data-label="Verified Low">$60.00</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-1.22</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/625670" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1275,13 +1319,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/glory-of-team-rocket" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Glory of Team Rocket Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$97.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$169.66</td>
-          <td>$222.00</td>
-          <td>$225.00</td>
-          <td><span style="color:#c62828;font-weight:600">$-71.67</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$97.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$169.66</td>
+          <td data-label="TCG Low">$222.00</td>
+          <td data-label="Verified Low">$225.00</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-71.67</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/629197" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1289,13 +1333,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/heat-wave-arena" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Heat Wave Arena Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$72.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$119.07</td>
-          <td>$133.98</td>
-          <td><span style="color:#bbb">—</span></td>
-          <td><span style="color:#c62828;font-weight:600">$-46.08</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$72.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$119.07</td>
+          <td data-label="TCG Low">$133.98</td>
+          <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-46.08</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/623310" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1303,13 +1347,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/journey-together-elite-trainer-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Journey Together Elite Trainer Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$108.99</td>
-          <td style="font-weight:700;color:#0835DB">$111.99</td>
-          <td>$110.66</td>
-          <td>$100.00</td>
-          <td>$109.99</td>
-          <td><span style="color:#c62828;font-weight:600">$-1.67</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$108.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB">$111.99</td>
+          <td data-label="TCG Market">$110.66</td>
+          <td data-label="TCG Low">$100.00</td>
+          <td data-label="Verified Low">$109.99</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-1.67</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/610930" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1317,13 +1361,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/mega-brave-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Mega Brave Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$94.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$96.53</td>
-          <td>$94.98</td>
-          <td>$101.99</td>
-          <td><span style="color:#c62828;font-weight:600">$-1.54</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$94.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$96.53</td>
+          <td data-label="TCG Low">$94.98</td>
+          <td data-label="Verified Low">$101.99</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-1.54</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/647500" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1331,13 +1375,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/mega-charizard-x-ex-ultra-premium-collection" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Mega Charizard X ex Ultra-Premium Collection</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$199.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$204.37</td>
-          <td>$180.94</td>
-          <td>$222.22</td>
-          <td><span style="color:#c62828;font-weight:600">$-4.38</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$199.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$204.37</td>
+          <td data-label="TCG Low">$180.94</td>
+          <td data-label="Verified Low">$222.22</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-4.38</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/654213" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1345,13 +1389,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/mega-dream-ex-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Mega Dream ex Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$87.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$130.49</td>
-          <td>$90.20</td>
-          <td>$147.99</td>
-          <td><span style="color:#c62828;font-weight:600">$-42.50</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$87.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$130.49</td>
+          <td data-label="TCG Low">$90.20</td>
+          <td data-label="Verified Low">$147.99</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-42.50</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/666254" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1359,13 +1403,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/mega-evolutions-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Mega Evolutions Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$319.99</td>
-          <td style="font-weight:700;color:#0835DB">$334.98</td>
-          <td>$306.13</td>
-          <td>$288.00</td>
-          <td>$323.96</td>
-          <td><span style="color:#2e7d32;font-weight:600">+$13.86</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$319.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB">$334.98</td>
+          <td data-label="TCG Market">$306.13</td>
+          <td data-label="TCG Low">$288.00</td>
+          <td data-label="Verified Low">$323.96</td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$13.86</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/644298" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1373,13 +1417,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/mega-symphonia-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Mega Symphonia Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$89.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$92.96</td>
-          <td>$80.00</td>
-          <td>$94.99</td>
-          <td><span style="color:#c62828;font-weight:600">$-2.97</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$89.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$92.96</td>
+          <td data-label="TCG Low">$80.00</td>
+          <td data-label="Verified Low">$94.99</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-2.97</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/647501" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1387,13 +1431,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/nihil-zero-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Nihil Zero Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$69.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$72.94</td>
-          <td>$70.00</td>
-          <td><span style="color:#bbb">—</span></td>
-          <td><span style="color:#c62828;font-weight:600">$-2.95</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$69.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$72.94</td>
+          <td data-label="TCG Low">$70.00</td>
+          <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-2.95</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/674449" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1401,13 +1445,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/paldea-evolved-booster-bundle" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Paldea Evolved Booster Bundle</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$105.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$104.64</td>
-          <td>$103.00</td>
-          <td>$132.00</td>
-          <td><span style="color:#2e7d32;font-weight:600">+$1.35</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$105.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$104.64</td>
+          <td data-label="TCG Low">$103.00</td>
+          <td data-label="Verified Low">$132.00</td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$1.35</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/496914" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1415,13 +1459,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/paldean-fates-great-tusk-ex-iron-treads-ex-premium-collection" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$225.99</td>
-          <td style="font-weight:700;color:#0835DB">$224.98</td>
-          <td>$214.98</td>
-          <td>$209.95</td>
-          <td>$223.00</td>
-          <td><span style="color:#2e7d32;font-weight:600">+$11.01</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$225.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB">$224.98</td>
+          <td data-label="TCG Market">$214.98</td>
+          <td data-label="TCG Low">$209.95</td>
+          <td data-label="Verified Low">$223.00</td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$11.01</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/665113" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1429,13 +1473,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/perfect-order-3-pack-blister-chikorita" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Perfect Order 3 Pack Blister [Chikorita]</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$21.99</td>
-          <td style="font-weight:700;color:#0835DB">$21.48</td>
-          <td>$21.23</td>
-          <td>$20.00</td>
-          <td>$22.20</td>
-          <td><span style="color:#2e7d32;font-weight:600">+$0.76</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$21.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB">$21.48</td>
+          <td data-label="TCG Market">$21.23</td>
+          <td data-label="TCG Low">$20.00</td>
+          <td data-label="Verified Low">$22.20</td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$0.76</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672393" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1443,13 +1487,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/perfect-order-booster-bundle" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Perfect Order Booster Bundle</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$38.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$38.89</td>
-          <td>$34.99</td>
-          <td>$34.99</td>
-          <td><span style="color:#2e7d32;font-weight:600">+$0.10</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$38.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$38.89</td>
+          <td data-label="TCG Low">$34.99</td>
+          <td data-label="Verified Low">$34.99</td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$0.10</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672396" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1457,13 +1501,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/phantasmal-flames-3-pack-blister-case-sealed-limit-1-per-customer" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Phantasmal Flames 3-Pack Blister Case - Sealed (Limit 1 per Customer)</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$1399.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$31.59</td>
-          <td>$29.36</td>
-          <td>$39.99</td>
-          <td><span style="color:#2e7d32;font-weight:600">+$1368.40</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$1399.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$31.59</td>
+          <td data-label="TCG Low">$29.36</td>
+          <td data-label="Verified Low">$39.99</td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$1368.40</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/654154" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1471,13 +1515,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/mega-gardevoir-elite-trainer-box-copy" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Phantasmal Flames Elite Trainer Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$119.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$120.10</td>
-          <td>$89.99</td>
-          <td>$132.00</td>
-          <td><span style="color:#c62828;font-weight:600">$-0.11</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$119.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$120.10</td>
+          <td data-label="TCG Low">$89.99</td>
+          <td data-label="Verified Low">$132.00</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-0.11</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/654136" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1485,13 +1529,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/prismatic-evolutions-surprise-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Prismatic Evolutions Surprise Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$51.99</td>
-          <td style="font-weight:700;color:#0835DB">$65.98</td>
-          <td>$61.88</td>
-          <td>$50.20</td>
-          <td>$56.24</td>
-          <td><span style="color:#c62828;font-weight:600">$-9.89</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$51.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB">$65.98</td>
+          <td data-label="TCG Market">$61.88</td>
+          <td data-label="TCG Low">$50.20</td>
+          <td data-label="Verified Low">$56.24</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-9.89</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/593466" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1499,13 +1543,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/scarlet-ex-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Scarlet ex Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$78.99</td>
-          <td style="font-weight:700;color:#0835DB">$88.98</td>
-          <td>$86.42</td>
-          <td>$84.75</td>
-          <td>$92.99</td>
-          <td><span style="color:#c62828;font-weight:600">$-7.43</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$78.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB">$88.98</td>
+          <td data-label="TCG Market">$86.42</td>
+          <td data-label="TCG Low">$84.75</td>
+          <td data-label="Verified Low">$92.99</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-7.43</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/565247" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1513,13 +1557,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/stellar-crown-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Stellar Crown Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$299.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$307.58</td>
-          <td>$309.99</td>
-          <td>$150.00</td>
-          <td><span style="color:#c62828;font-weight:600">$-7.59</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$299.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$307.58</td>
+          <td data-label="TCG Low">$309.99</td>
+          <td data-label="Verified Low">$150.00</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-7.59</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/557354" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1527,13 +1571,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/terastal-fest-ex-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Terastal Fest ex Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$135.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$136.34</td>
-          <td>$89.99</td>
-          <td>$181.99</td>
-          <td><span style="color:#c62828;font-weight:600">$-0.35</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$135.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$136.34</td>
+          <td data-label="TCG Low">$89.99</td>
+          <td data-label="Verified Low">$181.99</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-0.35</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/603428" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
@@ -1541,13 +1585,13 @@
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/white-flare-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">White Flare Booster Box</a>
           </td>
-          <td style="font-weight:700;color:#1a1a2e">$140.99</td>
-          <td style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td>$145.57</td>
-          <td>$158.00</td>
-          <td>$173.99</td>
-          <td><span style="color:#c62828;font-weight:600">$-4.58</span></td>
-          <td>
+          <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$140.99</td>
+          <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market">$145.57</td>
+          <td data-label="TCG Low">$158.00</td>
+          <td data-label="Verified Low">$173.99</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-4.58</span></td>
+          <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/637386" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr></tbody>
