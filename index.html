@@ -132,7 +132,7 @@
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
   </nav>
-  <div class="updated">Last updated: April 23, 2026 at 10:50 AM</div>
+  <div class="updated">Last updated: April 23, 2026 at 11:00 AM</div>
 </header>
 
 <div id="pane-shopify" class="tab-pane active">
@@ -1334,12 +1334,24 @@
         </table>
       </div>
     </div>
-    <div class="card">
-      <h2>Top Products</h2>
-      <table>
-        <thead><tr><th>Product</th><th>Units Sold</th></tr></thead>
-        <tbody><tr><td>Destined Rivals Booster Bundle</td><td><strong>84</strong></td></tr><tr><td>Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td><td><strong>60</strong></td></tr><tr><td>Ascended Heroes Elite Trainer Box</td><td><strong>40</strong></td></tr><tr><td>Black Bolt Booster Bundle</td><td><strong>38</strong></td></tr><tr><td>Ascended Heroes First Partners Deluxe Pin Collection</td><td><strong>28</strong></td></tr><tr><td>Mega Charizard X ex Ultra-Premium Collection</td><td><strong>24</strong></td></tr><tr><td>Prismatic Evolutions Booster Bundle</td><td><strong>20</strong></td></tr><tr><td>Prismatic Evolutions Poster Collection</td><td><strong>18</strong></td></tr><tr><td>Phantasmal Flames Elite Trainer Box</td><td><strong>14</strong></td></tr><tr><td>Mega Evolution Pokemon Booster Bundle</td><td><strong>11</strong></td></tr></tbody>
-      </table>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+          <span style="background:#95bf47;color:white;font-size:11px;padding:2px 8px;border-radius:20px;font-weight:700">Shopify</span>
+          <h2 style="margin:0">Top Products</h2>
+        </div>
+        <table>
+          <thead><tr><th>Product</th><th>Units</th></tr></thead>
+          <tbody><tr><td>Destined Rivals Booster Bundle</td><td><strong>84</strong></td></tr><tr><td>Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td><td><strong>60</strong></td></tr><tr><td>Ascended Heroes Elite Trainer Box</td><td><strong>40</strong></td></tr><tr><td>Black Bolt Booster Bundle</td><td><strong>38</strong></td></tr><tr><td>Ascended Heroes First Partners Deluxe Pin Collection</td><td><strong>28</strong></td></tr><tr><td>Mega Charizard X ex Ultra-Premium Collection</td><td><strong>24</strong></td></tr><tr><td>Prismatic Evolutions Booster Bundle</td><td><strong>20</strong></td></tr><tr><td>Prismatic Evolutions Poster Collection</td><td><strong>18</strong></td></tr><tr><td>Phantasmal Flames Elite Trainer Box</td><td><strong>14</strong></td></tr><tr><td>Mega Evolution Pokemon Booster Bundle</td><td><strong>11</strong></td></tr></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+          <span style="background:#e53935;color:white;font-size:11px;padding:2px 8px;border-radius:20px;font-weight:700">TCGPlayer</span>
+          <h2 style="margin:0">Top Products</h2>
+        </div>
+        <table><thead><tr><th>Product</th><th>Units</th></tr></thead><tbody><tr><td><a href="https://www.tcgplayer.com/product/625670" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Destined Rivals Booster Bundle</a></td><td><strong>291</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/672396" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Perfect Order Booster Bundle</a></td><td><strong>103</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/666254" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Mega Dream ex Booster Box</a></td><td><strong>98</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/674449" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Nihil Zero Booster Box</a></td><td><strong>95</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/647500" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Mega Brave Booster Box</a></td><td><strong>44</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/644298" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Mega Evolution Booster Box</a></td><td><strong>36</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/644362" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Mega Evolution Booster Bundle</a></td><td><strong>34</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/565247" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Scarlet ex Booster Box</a></td><td><strong>31</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/610953" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Journey Together Booster Bundle</a></td><td><strong>30</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/593453" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Prismatic Evolutions Tech Sticker Collection [Leafeon]</a></td><td><strong>30</strong></td></tr></tbody></table>
+      </div>
     </div>
   </div>
 </div>
@@ -1779,7 +1791,7 @@ new Chart(document.getElementById('revenueChart'), {
       },
       {
         label: 'TCGPlayer',
-        data: [4251.5, 4708.03, 58762.76, 35204.23],
+        data: [4101.52, 4708.03, 58762.76, 35204.23],
         backgroundColor: 'rgba(229, 57, 53, 0.82)',
         borderRadius: 4,
         order: 1,
