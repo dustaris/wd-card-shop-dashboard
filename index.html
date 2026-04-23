@@ -132,7 +132,7 @@
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
   </nav>
-  <div class="updated">Last updated: April 23, 2026 at 10:46 AM</div>
+  <div class="updated">Last updated: April 23, 2026 at 10:50 AM</div>
 </header>
 
 <div id="pane-shopify" class="tab-pane active">
@@ -1769,17 +1769,37 @@ new Chart(document.getElementById('revenueChart'), {
   type: 'bar',
   data: {
     labels: ["2026-01", "2026-02", "2026-03", "2026-04"],
-    datasets: [{
-      label: 'Revenue ($)',
-      data: [7916.92, 10005.64, 21133.09, 14951.27],
-      backgroundColor: '#95bf47',
-      borderRadius: 6,
-    }]
+    datasets: [
+      {
+        label: 'Shopify',
+        data: [7916.92, 10005.64, 21133.09, 14951.27],
+        backgroundColor: '#95bf47',
+        borderRadius: 4,
+        order: 2,
+      },
+      {
+        label: 'TCGPlayer',
+        data: [4251.5, 4708.03, 58762.76, 35204.23],
+        backgroundColor: 'rgba(229, 57, 53, 0.82)',
+        borderRadius: 4,
+        order: 1,
+      }
+    ]
   },
   options: {
     responsive: true,
-    plugins: { legend: { display: false } },
-    scales: { y: { beginAtZero: true, ticks: { callback: v => '$' + v.toLocaleString() } } }
+    plugins: {
+      legend: {
+        display: true,
+        position: 'top',
+        align: 'end',
+        labels: { boxWidth: 12, font: { size: 11 } }
+      }
+    },
+    scales: {
+      x: { stacked: false },
+      y: { beginAtZero: true, ticks: { callback: v => '$' + v.toLocaleString() } }
+    }
   }
 });
 
