@@ -132,7 +132,7 @@
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
   </nav>
-  <div class="updated">Last updated: April 23, 2026 at 03:06 PM</div>
+  <div class="updated">Last updated: April 23, 2026 at 04:06 PM</div>
 </header>
 
 <div id="pane-shopify" class="tab-pane active">
@@ -179,9 +179,22 @@
     <div class="card" style="margin-bottom:28px">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <h2 style="margin:0">eBay — Awaiting Shipment</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
       </div>
-      <p style="color:#aaa;font-size:13px">No orders awaiting shipment. Run 5_ebay_orders.py to refresh.</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Order ID</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Total</th><th>Status</th></tr></thead>
+          <tbody>
+        <tr>
+          <td><a href="https://www.ebay.com/sh/ord/" target="_blank" style="color:#0064D2;font-weight:600">10-14543-75237</a></td>
+          <td>bracaro24</td>
+          <td>04/23/2026 03:33 PM</td>
+          <td style="max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Mewtwo Pokémon Monthly Pins: Legendary Moments Pin (1 of 12) Pokemon Center (x1)</td>
+          <td><strong>$31.49</strong></td>
+          <td><span class="badge badge-yellow">Awaiting Shipment</span></td>
+        </tr></tbody>
+        </table>
+      </div>
     </div>
 
   
@@ -1525,10 +1538,10 @@
           </td>
           <td data-label="Shopify" style="font-weight:700;color:#1a1a2e">$142.99</td>
           <td data-label="My TCG" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$151.98</td>
+          <td data-label="TCG Market">$152.32</td>
           <td data-label="TCG Low">$118.77</td>
           <td data-label="Verified Low">$132.38</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-8.99</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-9.33</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/668496" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
