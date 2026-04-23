@@ -132,7 +132,7 @@
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
   </nav>
-  <div class="updated">Last updated: April 23, 2026 at 04:10 AM</div>
+  <div class="updated">Last updated: April 23, 2026 at 05:07 AM</div>
 </header>
 
 <div id="pane-shopify" class="tab-pane active">
@@ -155,8 +155,8 @@
     </div>
     <div class="stat-card">
       <div class="label">Fulfilled</div>
-      <div class="value">119</div>
-      <div class="sub">2 unfulfilled</div>
+      <div class="value">120</div>
+      <div class="sub">1 unfulfilled</div>
     </div>
     <div class="stat-card">
       <div class="label">Avg Order Value</div>
@@ -209,14 +209,14 @@
         <table id="ordersTable">
           <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Fulfillment</th></tr></thead>
           <tbody>
-        <tr data-fulfillment="unfulfilled">
+        <tr data-fulfillment="fulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7304037204206" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1231</a></td>
             <td>Juan Delacruz</td>
             <td>2026-04-22</td>
             <td style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes Premium Poster Collection Case - Sealed</td>
             <td><strong>$827.45</strong></td>
             <td><span class="badge badge-green">Paid</span></td>
-            <td><span class="badge badge-red">Unfulfilled</span></td>
+            <td><span class="badge badge-green">Fulfilled</span></td>
         </tr>
         <tr data-fulfillment="fulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7300375380206" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1230</a></td>
@@ -1755,7 +1755,7 @@ new Chart(document.getElementById('statusChart'), {
   data: {
     labels: ['Fulfilled', 'Unfulfilled'],
     datasets: [{
-      data: [119, 2],
+      data: [120, 1],
       backgroundColor: ['#95bf47', '#ff6b6b'],
       borderWidth: 0,
     }]
