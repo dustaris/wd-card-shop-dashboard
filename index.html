@@ -132,7 +132,7 @@
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
   </nav>
-  <div class="updated">Last updated: April 24, 2026 at 01:13 AM</div>
+  <div class="updated">Last updated: April 24, 2026 at 02:05 AM</div>
 </header>
 
 <div id="pane-shopify" class="tab-pane active">
@@ -159,14 +159,14 @@
         <div class="sub">Per order</div>
       </div>
       <div class="stat-card">
-        <div class="label">Unfulfilled</div>
-        <div class="value">1</div>
-        <div class="sub">120 fulfilled</div>
+        <div class="label">Fulfilled</div>
+        <div class="value">120</div>
+        <div class="sub">of 121 total orders</div>
       </div>
     </div>
   </div>
 
-  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 4/24/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">728</div><div class="sub">Jan 1 – 4/24/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$119,713.43</div><div class="sub">Jan 1 – 4/24/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$164.44</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$101,592.10</div><div class="sub">Fees: $16,141.98</div></div></div></div>
+  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 4/24/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">729</div><div class="sub">Jan 1 – 4/24/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$119,723.02</div><div class="sub">Jan 1 – 4/24/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$164.23</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$101,591.41</div><div class="sub">Fees: $16,143.57</div></div></div></div>
 
   <div style="margin-bottom:28px">
     <div class="card">
@@ -209,32 +209,9 @@
     <div class="card" style="margin-bottom:28px">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">2</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
-          <tbody>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-96D646-8EAB5</a></td>
-          <td>Jesse Henderson</td>
-          <td>2026-04-24</td>
-          <td style="font-size:12px;max-width:220px;line-height:1.5">Card Sleeves ×2</td>
-          <td>Standard</td>
-          <td><strong>21.98</strong></td>
-          <td><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-E56D13-84D22</a></td>
-          <td>Ryan Manuel</td>
-          <td>2026-04-23</td>
-          <td style="font-size:12px;max-width:220px;line-height:1.5">Card Sleeves ×3</td>
-          <td>Standard</td>
-          <td><strong>18.57</strong></td>
-          <td><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr></tbody>
-        </table>
-      </div>
+      <p style="color:#aaa;font-size:13px">No outstanding orders found. Run 3_tcgplayer_scraper.py to refresh.</p>
     </div>
 
   <div class="bottom-row">
