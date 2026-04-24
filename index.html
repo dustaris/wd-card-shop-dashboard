@@ -132,7 +132,7 @@
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
   </nav>
-  <div class="updated">Last updated: April 24, 2026 at 12:05 PM</div>
+  <div class="updated">Last updated: April 24, 2026 at 01:07 PM</div>
 </header>
 
 <div id="pane-shopify" class="tab-pane active">
@@ -145,23 +145,23 @@
     <div class="stats-grid">
       <div class="stat-card">
         <div class="label">Total Orders</div>
-        <div class="value">121</div>
+        <div class="value">122</div>
         <div class="sub">Jan 1 – Apr 24, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Total Revenue</div>
-        <div class="value">$54,006.92</div>
+        <div class="value">$55,878.56</div>
         <div class="sub">Jan 1 – Apr 24, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Avg Order Value</div>
-        <div class="value">$446.34</div>
+        <div class="value">$458.02</div>
         <div class="sub">Per order</div>
       </div>
       <div class="stat-card">
         <div class="label">Net Sales (after fees)</div>
-        <div class="value">$52,116.68</div>
-        <div class="sub">Est. fees: $1,890.24 (~3.5%)</div>
+        <div class="value">$53,922.81</div>
+        <div class="sub">Est. fees: $1,955.75 (~3.5%)</div>
       </div>
     </div>
   </div>
@@ -221,12 +221,21 @@
         <button class="filter-btn active" onclick="filterOrders('all', this)">All</button>
         <button class="filter-btn" onclick="filterOrders('fulfilled', this)">Fulfilled</button>
         <button class="filter-btn" onclick="filterOrders('unfulfilled', this)">Unfulfilled</button>
-        <span class="order-count" id="orderCount">121 orders</span>
+        <span class="order-count" id="orderCount">122 orders</span>
       </div>
       <div class="table-scroll">
         <table id="ordersTable">
           <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Fulfillment</th></tr></thead>
           <tbody>
+        <tr data-fulfillment="unfulfilled">
+            <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7334694060270" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1232</a></td>
+            <td>Kimberly Felkar</td>
+            <td>2026-04-24</td>
+            <td style="font-size:12px;max-width:220px;line-height:1.5">Prismatic Evolutions Surprise Box <span style='color:#aaa;font-size:11px'>x36</span></td>
+            <td><strong>$1871.64</strong></td>
+            <td><span class="badge badge-green">Paid</span></td>
+            <td><span class="badge badge-red">Unfulfilled</span></td>
+        </tr>
         <tr data-fulfillment="fulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7304037204206" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1231</a></td>
             <td>Juan Delacruz</td>
@@ -1327,7 +1336,7 @@
         </div>
         <table>
           <thead><tr><th>Product</th><th>Units</th></tr></thead>
-          <tbody><tr><td><a href="https://www.tcgplayer.com/product/625670" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Destined Rivals Booster Bundle</a></td><td><strong>84</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/665113" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</a></td><td><strong>60</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/668496" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Ascended Heroes Elite Trainer Box</a></td><td><strong>40</strong></td></tr><tr><td>Black Bolt Booster Bundle</td><td><strong>38</strong></td></tr><tr><td>Ascended Heroes First Partners Deluxe Pin Collection</td><td><strong>28</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/654213" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Mega Charizard X ex Ultra-Premium Collection</a></td><td><strong>24</strong></td></tr><tr><td>Prismatic Evolutions Booster Bundle</td><td><strong>20</strong></td></tr><tr><td>Prismatic Evolutions Poster Collection</td><td><strong>18</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/654136" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Phantasmal Flames Elite Trainer Box</a></td><td><strong>14</strong></td></tr><tr><td>Mega Evolution Pokemon Booster Bundle</td><td><strong>11</strong></td></tr></tbody>
+          <tbody><tr><td><a href="https://www.tcgplayer.com/product/625670" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Destined Rivals Booster Bundle</a></td><td><strong>84</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/665113" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</a></td><td><strong>60</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/593466" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Prismatic Evolutions Surprise Box</a></td><td><strong>42</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/668496" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Ascended Heroes Elite Trainer Box</a></td><td><strong>40</strong></td></tr><tr><td>Black Bolt Booster Bundle</td><td><strong>38</strong></td></tr><tr><td>Ascended Heroes First Partners Deluxe Pin Collection</td><td><strong>28</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/654213" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Mega Charizard X ex Ultra-Premium Collection</a></td><td><strong>24</strong></td></tr><tr><td>Prismatic Evolutions Booster Bundle</td><td><strong>20</strong></td></tr><tr><td>Prismatic Evolutions Poster Collection</td><td><strong>18</strong></td></tr><tr><td><a href="https://www.tcgplayer.com/product/654136" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ddd">Phantasmal Flames Elite Trainer Box</a></td><td><strong>14</strong></td></tr></tbody>
         </table>
       </div>
       <div class="card">
@@ -1727,7 +1736,7 @@ new Chart(document.getElementById('revenueChart'), {
     datasets: [
       {
         label: 'Shopify',
-        data: [7916.92, 10005.64, 21133.09, 14951.27],
+        data: [7916.92, 10005.64, 21133.09, 16822.91],
         backgroundColor: '#95bf47',
         borderRadius: 4,
         order: 2,
