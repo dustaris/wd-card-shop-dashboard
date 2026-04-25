@@ -133,7 +133,7 @@
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
-  <div class="updated">Last updated: April 25, 2026 at 12:20 AM</div>
+  <div class="updated">Last updated: April 25, 2026 at 12:27 AM</div>
 </header>
 
 <div id="pane-shopify" class="tab-pane active">
@@ -1731,313 +1731,363 @@
 
 
 <div id="pane-drops" class="tab-pane">
-  <div class="container">
-    <div class="card" style="margin-bottom:0">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap">
-        <h2 style="margin:0">Release Calendar</h2>
-        <span style="background:#5b21b6;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">24 drops</span>
-        <span style="color:#aaa;font-size:11px;margin-left:auto">Sourced from Discord #important-restocks · last 14 days</span>
-      </div>
-      <div class="filter-bar" style="margin-bottom:14px">
-        <button class="filter-btn active" onclick="filterDrops('all', this)">All</button>
-<button class="filter-btn" onclick="filterDrops('Best Buy', this)" style="--rc:#003b8e">Best Buy</button>
-<button class="filter-btn" onclick="filterDrops('Target', this)" style="--rc:#cc0000">Target</button>
-<button class="filter-btn" onclick="filterDrops('Walmart', this)" style="--rc:#0071ce">Walmart</button>
+<style>
+  #cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: #e0e0e0;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .cal-day-hdr {
+    background: #f2f3f7;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .cal-cell {
+    background: white;
+    min-height: 108px;
+    padding: 6px 5px 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cal-cell.cal-today { background: #faf8ff; }
+  .cal-cell.cal-other { background: #f9f9f9; }
+  .cal-date-num {
+    font-size: 12px;
+    font-weight: 500;
+    color: #444;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-bottom: 3px;
+  }
+  .cal-date-num.today-dot {
+    background: #5b21b6;
+    color: white;
+    font-weight: 700;
+  }
+  .cal-chip {
+    display: block;
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-size: 10px;
+    line-height: 1.45;
+    margin-bottom: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: white;
+    font-weight: 600;
+    transition: filter 0.1s;
+  }
+  .cal-chip:hover { filter: brightness(1.12); }
+  .cal-more-link {
+    font-size: 10px;
+    color: #7c6fcd;
+    cursor: pointer;
+    padding: 1px 3px;
+    font-weight: 600;
+  }
+  .cal-more-link:hover { text-decoration: underline; }
+  /* Nav buttons */
+  .cal-nav-btn {
+    border: 1px solid #e0e0e0;
+    background: white;
+    border-radius: 8px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    line-height: 1;
+    transition: background 0.1s;
+  }
+  .cal-nav-btn:hover { background: #f5f5f5; }
+  .cal-today-btn {
+    border: 1px solid #d4c8f5;
+    background: white;
+    border-radius: 8px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    color: #5b21b6;
+    transition: background 0.1s;
+  }
+  .cal-today-btn:hover { background: #f5f0ff; }
+  /* Popover */
+  #drop-pop {
+    position: fixed;
+    z-index: 9999;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+    padding: 14px 16px;
+    width: 272px;
+    display: none;
+    border: 1px solid #ececec;
+  }
+  .pop-hdr { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; gap:8px; }
+  .pop-title { font-size:13px; font-weight:700; color:#1a1a2e; line-height:1.4; flex:1; }
+  .pop-close { background:#f2f3f7; border:none; border-radius:50%; width:22px; height:22px;
+                font-size:12px; cursor:pointer; flex-shrink:0; color:#666;
+                display:flex; align-items:center; justify-content:center; padding:0; }
+  .pop-close:hover { background:#e0e0e0; }
+  .pop-row { display:flex; justify-content:space-between; font-size:12px;
+              padding:4px 0; border-bottom:1px solid #f4f4f4; }
+  .pop-row:last-child { border-bottom:none; }
+  .pop-lbl { color:#aaa; font-weight:500; }
+  .pop-val { color:#1a1a2e; font-weight:600; text-align:right; max-width:165px; word-break:break-word; }
+  .pop-multi-item { padding:6px 0; border-bottom:1px solid #f4f4f4; cursor:pointer; }
+  .pop-multi-item:last-child { border-bottom:none; }
+  .pop-multi-item:hover { background:#fafafa; margin:0 -4px; padding:6px 4px; border-radius:4px; }
+  @media (max-width: 640px) {
+    .cal-cell { min-height:70px; padding:3px 2px; }
+    .cal-chip { font-size:9px; padding:1px 3px; }
+    #drop-pop { width:240px; }
+  }
+</style>
 
+<div class="container">
+  <div class="card" style="margin-bottom:0">
+
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap">
+      <h2 style="margin:0">Release Calendar</h2>
+      <span id="drops-badge" style="background:#5b21b6;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">24 drops</span>
+      <div style="display:flex;align-items:center;gap:6px;margin-left:auto">
+        <button class="cal-nav-btn" onclick="calNav(-1)">&#8249;</button>
+        <span id="cal-label" style="font-size:14px;font-weight:700;color:#1a1a2e;min-width:148px;text-align:center"></span>
+        <button class="cal-nav-btn" onclick="calNav(1)">&#8250;</button>
+        <button class="cal-today-btn" onclick="calGoToday()">Today</button>
       </div>
-      <div class="table-scroll">
-        <table id="dropsTable">
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Retailer</th>
-              <th>SKU</th>
-              <th>Drop Time</th>
-              <th>Retail</th>
-              <th>Resell Est.</th>
-              <th>Stock</th>
-            </tr>
-          </thead>
-          <tbody>
-        <tr data-retailer="Best Buy">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...</a>
-          </td>
-          <td><span style="background:#003b8e;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Best Buy</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">6606082</td>
-          <td style="font-size:13px;color:#444">2026-04-24</td>
-          <td style="font-weight:600;color:#1a1a2e">—</td>
-          <td style="font-weight:600;color:#2e7d32">—</td>
-          <td style="color:#888;font-size:12px">—</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/18728422476" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Bundle</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">18728422476</td>
-          <td style="font-size:13px;color:#444">2026-04-23</td>
-          <td style="font-weight:600;color:#1a1a2e">$31</td>
-          <td style="font-weight:600;color:#2e7d32">$60</td>
-          <td style="color:#888;font-size:12px">45K</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/19620004893" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes ex Boxes Assorted</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">19620004893</td>
-          <td style="font-size:13px;color:#444">2026-04-22 9:00PM EST</td>
-          <td style="font-weight:600;color:#1a1a2e">$22</td>
-          <td style="font-weight:600;color:#2e7d32">$40</td>
-          <td style="color:#888;font-size:12px">70K</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/18728422476" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">—</td>
-          <td style="font-size:13px;color:#444">2026-04-22</td>
-          <td style="font-weight:600;color:#1a1a2e">—</td>
-          <td style="font-weight:600;color:#2e7d32">—</td>
-          <td style="color:#888;font-size:12px">—</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/20088667802" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">—</td>
-          <td style="font-size:13px;color:#444">2026-04-22</td>
-          <td style="font-weight:600;color:#1a1a2e">—</td>
-          <td style="font-weight:600;color:#2e7d32">—</td>
-          <td style="color:#888;font-size:12px">—</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/18728422476" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Bundle</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">18728422476</td>
-          <td style="font-size:13px;color:#444">2026-04-21 9:00PM EST</td>
-          <td style="font-weight:600;color:#1a1a2e">$31</td>
-          <td style="font-weight:600;color:#2e7d32">$60</td>
-          <td style="color:#888;font-size:12px">—</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/20088667802" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Prismatic Tin Display 8ct</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">20088667802</td>
-          <td style="font-size:13px;color:#444">2026-04-21 9:00PM EST</td>
-          <td style="font-weight:600;color:#1a1a2e">$100</td>
-          <td style="font-weight:600;color:#2e7d32">$200</td>
-          <td style="color:#888;font-size:12px">—</td>
-        </tr>
-        <tr data-retailer="Best Buy">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...</a>
-          </td>
-          <td><span style="background:#003b8e;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Best Buy</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">6606082</td>
-          <td style="font-size:13px;color:#444">2026-04-20</td>
-          <td style="font-weight:600;color:#1a1a2e">—</td>
-          <td style="font-weight:600;color:#2e7d32">—</td>
-          <td style="color:#888;font-size:12px">—</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/20011509005" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Phantasmal ETB</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">20011509005</td>
-          <td style="font-size:13px;color:#444">2026-04-16 9:00PM EST</td>
-          <td style="font-weight:600;color:#1a1a2e">$60</td>
-          <td style="font-weight:600;color:#2e7d32">$110</td>
-          <td style="color:#888;font-size:12px">14K</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/20039171278" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Charizard Tin</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">20039171278</td>
-          <td style="font-size:13px;color:#444">2026-04-16 9:00PM EST</td>
-          <td style="font-weight:600;color:#1a1a2e">$19</td>
-          <td style="font-weight:600;color:#2e7d32">$20</td>
-          <td style="color:#888;font-size:12px">30K</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/18952152504" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Tin Display</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">18952152504</td>
-          <td style="font-size:13px;color:#444">2026-04-16 9:00PM EST</td>
-          <td style="font-weight:600;color:#1a1a2e">$130</td>
-          <td style="font-weight:600;color:#2e7d32">$220</td>
-          <td style="color:#888;font-size:12px">9,000</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/19581356308" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">12ct Ascended Blister Displays</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">19581356308</td>
-          <td style="font-size:13px;color:#444">2026-04-16 9:00PM EST</td>
-          <td style="font-weight:600;color:#1a1a2e">$145</td>
-          <td style="font-weight:600;color:#2e7d32">$200</td>
-          <td style="color:#888;font-size:12px">4,000</td>
-        </tr>
-        <tr data-retailer="Target">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.target.com/p/moo/A-95120834" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Booster Bundle</a>
-          </td>
-          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">95120834</td>
-          <td style="font-size:13px;color:#444">2026-04-15</td>
-          <td style="font-weight:600;color:#1a1a2e">—</td>
-          <td style="font-weight:600;color:#2e7d32">—</td>
-          <td style="color:#888;font-size:12px">50k+</td>
-        </tr>
-        <tr data-retailer="Target">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.target.com/p/moo/A-95093989" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes First Partners Deluxe Pin Collection</a>
-          </td>
-          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">95093989</td>
-          <td style="font-size:13px;color:#444">2026-04-15</td>
-          <td style="font-weight:600;color:#1a1a2e">—</td>
-          <td style="font-weight:600;color:#2e7d32">—</td>
-          <td style="color:#888;font-size:12px">—</td>
-        </tr>
-        <tr data-retailer="Target">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.target.com/p/moo/A-1008581387" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Mega Emboar ex Box</a>
-          </td>
-          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">1008581387</td>
-          <td style="font-size:13px;color:#444">2026-04-15</td>
-          <td style="font-weight:600;color:#1a1a2e">—</td>
-          <td style="font-weight:600;color:#2e7d32">—</td>
-          <td style="color:#888;font-size:12px">3k+</td>
-        </tr>
-        <tr data-retailer="Target">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.target.com/p/moo/A-95230446" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Perfect Order 3-Booster Blister</a>
-          </td>
-          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">95230446</td>
-          <td style="font-size:13px;color:#444">2026-04-15</td>
-          <td style="font-weight:600;color:#1a1a2e">—</td>
-          <td style="font-weight:600;color:#2e7d32">—</td>
-          <td style="color:#888;font-size:12px">20k+</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/20011509005" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Phantasmal ETB</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">20011509005</td>
-          <td style="font-size:13px;color:#444">2026-04-15 9:00PM EST</td>
-          <td style="font-weight:600;color:#1a1a2e">$60</td>
-          <td style="font-weight:600;color:#2e7d32">$110</td>
-          <td style="color:#888;font-size:12px">14K</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/20039171278" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Charizard Tin</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">20039171278</td>
-          <td style="font-size:13px;color:#444">2026-04-15 9:00PM EST</td>
-          <td style="font-weight:600;color:#1a1a2e">$19</td>
-          <td style="font-weight:600;color:#2e7d32">$20</td>
-          <td style="color:#888;font-size:12px">30K</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/18952152504" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Tin Display</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">18952152504</td>
-          <td style="font-size:13px;color:#444">2026-04-15 9:00PM EST</td>
-          <td style="font-weight:600;color:#1a1a2e">$130</td>
-          <td style="font-weight:600;color:#2e7d32">$220</td>
-          <td style="color:#888;font-size:12px">9,000</td>
-        </tr>
-        <tr data-retailer="Walmart">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.walmart.com/ip/moonitor/19581356308" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">12ct Ascended Blister Displays</a>
-          </td>
-          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">19581356308</td>
-          <td style="font-size:13px;color:#444">2026-04-15 9:00PM EST</td>
-          <td style="font-weight:600;color:#1a1a2e">$145</td>
-          <td style="font-weight:600;color:#2e7d32">$200</td>
-          <td style="color:#888;font-size:12px">4,000</td>
-        </tr>
-        <tr data-retailer="Target">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.target.com/p/moo/A-95267143" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Chaos Rising Elite Trainer Box</a>
-          </td>
-          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">95267143</td>
-          <td style="font-size:13px;color:#444">2026-04-14</td>
-          <td style="font-weight:600;color:#1a1a2e">—</td>
-          <td style="font-weight:600;color:#2e7d32">—</td>
-          <td style="color:#888;font-size:12px">—</td>
-        </tr>
-        <tr data-retailer="Target">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.target.com/p/moo/A-1010544860" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Chaos Rising Sleeve Blister</a>
-          </td>
-          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">1010544860</td>
-          <td style="font-size:13px;color:#444">2026-04-14</td>
-          <td style="font-weight:600;color:#1a1a2e">—</td>
-          <td style="font-weight:600;color:#2e7d32">—</td>
-          <td style="color:#888;font-size:12px">—</td>
-        </tr>
-        <tr data-retailer="Target">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.target.com/p/moo/A-95298172" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Chaos Rising Booster Bundle</a>
-          </td>
-          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">95298172</td>
-          <td style="font-size:13px;color:#444">2026-04-14</td>
-          <td style="font-weight:600;color:#1a1a2e">—</td>
-          <td style="font-weight:600;color:#2e7d32">—</td>
-          <td style="color:#888;font-size:12px">—</td>
-        </tr>
-        <tr data-retailer="Target">
-          <td style="font-weight:600;max-width:280px">
-            <a href="https://www.target.com/p/moo/A-1010679865" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Chaos Rising Booster Box</a>
-          </td>
-          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
-          <td style="font-family:monospace;font-size:12px;color:#333">1010679865</td>
-          <td style="font-size:13px;color:#444">2026-04-14</td>
-          <td style="font-weight:600;color:#1a1a2e">—</td>
-          <td style="font-weight:600;color:#2e7d32">—</td>
-          <td style="color:#888;font-size:12px">—</td>
-        </tr></tbody>
-        </table>
-      </div>
+      <span style="color:#bbb;font-size:11px;width:100%;margin-top:-6px">Sourced from Discord #important-restocks</span>
     </div>
+
+    <div class="filter-bar" id="drops-filters" style="margin-bottom:16px"></div>
+
+    <div id="cal-grid"></div>
+
   </div>
 </div>
 
+<div id="drop-pop">
+  <div class="pop-hdr">
+    <div class="pop-title" id="pop-title"></div>
+    <button class="pop-close" onclick="closePop()">&#10005;</button>
+  </div>
+  <div id="pop-body"></div>
+</div>
+
 <script>
-function filterDrops(retailer, btn) {
-  document.querySelectorAll('#dropsTable tbody tr').forEach(row => {
-    row.style.display = (retailer === 'all' || row.dataset.retailer === retailer) ? '' : 'none';
+(function() {
+  var DROPS = [{"product": "Pok\u00e9mon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...", "url": "https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page", "sku": "6606082", "retailer": "Best Buy", "drop_time": "2026-04-24", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-24T14:39:38.097000+00:00"}, {"product": "Ascended Heroes Bundle", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "18728422476", "retailer": "Walmart", "drop_time": "2026-04-23", "retail": "$31", "resell": "$60", "stock": "45K", "posted_by": "shermio", "timestamp": "2026-04-23T00:09:45.730000+00:00"}, {"product": "Ascended Heroes ex Boxes Assorted", "url": "https://www.walmart.com/ip/moonitor/19620004893", "sku": "19620004893", "retailer": "Walmart", "drop_time": "2026-04-22 9:00PM EST", "retail": "$22", "resell": "$40", "stock": "70K", "posted_by": "shermio", "timestamp": "2026-04-22T18:10:21.922000+00:00"}, {"product": "Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-22", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-22T00:55:10.384000+00:00"}, {"product": "Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...", "url": "https://www.walmart.com/ip/moonitor/20088667802", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-22", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-22T00:55:10.384000+00:00"}, {"product": "Ascended Heroes Bundle", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "18728422476", "retailer": "Walmart", "drop_time": "2026-04-21 9:00PM EST", "retail": "$31", "resell": "$60", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-21T16:59:16.653000+00:00"}, {"product": "Prismatic Tin Display 8ct", "url": "https://www.walmart.com/ip/moonitor/20088667802", "sku": "20088667802", "retailer": "Walmart", "drop_time": "2026-04-21 9:00PM EST", "retail": "$100", "resell": "$200", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-21T16:59:16.653000+00:00"}, {"product": "Pok\u00e9mon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...", "url": "https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page", "sku": "6606082", "retailer": "Best Buy", "drop_time": "2026-04-20", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-20T15:11:49.213000+00:00"}, {"product": "Phantasmal ETB", "url": "https://www.walmart.com/ip/moonitor/20011509005", "sku": "20011509005", "retailer": "Walmart", "drop_time": "2026-04-16 9:00PM EST", "retail": "$60", "resell": "$110", "stock": "14K", "posted_by": "shermio", "timestamp": "2026-04-16T22:19:49.923000+00:00"}, {"product": "Charizard Tin", "url": "https://www.walmart.com/ip/moonitor/20039171278", "sku": "20039171278", "retailer": "Walmart", "drop_time": "2026-04-16 9:00PM EST", "retail": "$19", "resell": "$20", "stock": "30K", "posted_by": "shermio", "timestamp": "2026-04-16T22:19:49.923000+00:00"}, {"product": "Ascended Heroes Tin Display", "url": "https://www.walmart.com/ip/moonitor/18952152504", "sku": "18952152504", "retailer": "Walmart", "drop_time": "2026-04-16 9:00PM EST", "retail": "$130", "resell": "$220", "stock": "9,000", "posted_by": "shermio", "timestamp": "2026-04-16T22:19:49.923000+00:00"}, {"product": "12ct Ascended Blister Displays", "url": "https://www.walmart.com/ip/moonitor/19581356308", "sku": "19581356308", "retailer": "Walmart", "drop_time": "2026-04-16 9:00PM EST", "retail": "$145", "resell": "$200", "stock": "4,000", "posted_by": "shermio", "timestamp": "2026-04-16T22:19:49.923000+00:00"}, {"product": "Ascended Heroes Booster Bundle", "url": "https://www.target.com/p/moo/A-95120834", "sku": "95120834", "retailer": "Target", "drop_time": "2026-04-15", "retail": "", "resell": "", "stock": "50k+", "posted_by": "blubs.", "timestamp": "2026-04-15T18:59:06.862000+00:00"}, {"product": "Ascended Heroes First Partners Deluxe Pin Collection", "url": "https://www.target.com/p/moo/A-95093989", "sku": "95093989", "retailer": "Target", "drop_time": "2026-04-15", "retail": "", "resell": "", "stock": "", "posted_by": "blubs.", "timestamp": "2026-04-15T18:59:06.862000+00:00"}, {"product": "Ascended Heroes Mega Emboar ex Box", "url": "https://www.target.com/p/moo/A-1008581387", "sku": "1008581387", "retailer": "Target", "drop_time": "2026-04-15", "retail": "", "resell": "", "stock": "3k+", "posted_by": "blubs.", "timestamp": "2026-04-15T18:59:06.862000+00:00"}, {"product": "Perfect Order 3-Booster Blister", "url": "https://www.target.com/p/moo/A-95230446", "sku": "95230446", "retailer": "Target", "drop_time": "2026-04-15", "retail": "", "resell": "", "stock": "20k+", "posted_by": "blubs.", "timestamp": "2026-04-15T18:59:06.862000+00:00"}, {"product": "Phantasmal ETB", "url": "https://www.walmart.com/ip/moonitor/20011509005", "sku": "20011509005", "retailer": "Walmart", "drop_time": "2026-04-15 9:00PM EST", "retail": "$60", "resell": "$110", "stock": "14K", "posted_by": "shermio", "timestamp": "2026-04-15T16:59:00.011000+00:00"}, {"product": "Charizard Tin", "url": "https://www.walmart.com/ip/moonitor/20039171278", "sku": "20039171278", "retailer": "Walmart", "drop_time": "2026-04-15 9:00PM EST", "retail": "$19", "resell": "$20", "stock": "30K", "posted_by": "shermio", "timestamp": "2026-04-15T16:59:00.011000+00:00"}, {"product": "Ascended Heroes Tin Display", "url": "https://www.walmart.com/ip/moonitor/18952152504", "sku": "18952152504", "retailer": "Walmart", "drop_time": "2026-04-15 9:00PM EST", "retail": "$130", "resell": "$220", "stock": "9,000", "posted_by": "shermio", "timestamp": "2026-04-15T16:59:00.011000+00:00"}, {"product": "12ct Ascended Blister Displays", "url": "https://www.walmart.com/ip/moonitor/19581356308", "sku": "19581356308", "retailer": "Walmart", "drop_time": "2026-04-15 9:00PM EST", "retail": "$145", "resell": "$200", "stock": "4,000", "posted_by": "shermio", "timestamp": "2026-04-15T16:59:00.011000+00:00"}, {"product": "Chaos Rising Elite Trainer Box", "url": "https://www.target.com/p/moo/A-95267143", "sku": "95267143", "retailer": "Target", "drop_time": "2026-04-14", "retail": "", "resell": "", "stock": "", "posted_by": "blubs.", "timestamp": "2026-04-14T01:45:34.239000+00:00"}, {"product": "Chaos Rising Sleeve Blister", "url": "https://www.target.com/p/moo/A-1010544860", "sku": "1010544860", "retailer": "Target", "drop_time": "2026-04-14", "retail": "", "resell": "", "stock": "", "posted_by": "blubs.", "timestamp": "2026-04-14T01:45:34.239000+00:00"}, {"product": "Chaos Rising Booster Bundle", "url": "https://www.target.com/p/moo/A-95298172", "sku": "95298172", "retailer": "Target", "drop_time": "2026-04-14", "retail": "", "resell": "", "stock": "", "posted_by": "blubs.", "timestamp": "2026-04-14T01:45:34.239000+00:00"}, {"product": "Chaos Rising Booster Box", "url": "https://www.target.com/p/moo/A-1010679865", "sku": "1010679865", "retailer": "Target", "drop_time": "2026-04-14", "retail": "", "resell": "", "stock": "", "posted_by": "blubs.", "timestamp": "2026-04-14T01:45:34.239000+00:00"}];
+  var RC    = {"Walmart": "#0071ce", "Target": "#cc0000", "Best Buy": "#003b8e", "Amazon": "#ff9900", "Pok\u00e9mon Center": "#e3350d", "GameStop": "#5c0e0e", "Sam's Club": "#007dc6", "Costco": "#005dab", "Barnes & Noble": "#1c4f2a", "Other": "#555"};
+  var MONTHS = ['January','February','March','April','May','June',
+                'July','August','September','October','November','December'];
+  var WDAYS  = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var calY, calM, activeFilter = 'all';
+  var today = new Date();
+
+  function buildFilters() {
+    var retailers = [];
+    DROPS.forEach(function(d) {
+      if (retailers.indexOf(d.retailer) === -1) retailers.push(d.retailer);
+    });
+    retailers.sort();
+    var bar = document.getElementById('drops-filters');
+    bar.innerHTML = '';
+    function makeBtn(label, val) {
+      var b = document.createElement('button');
+      b.className = 'filter-btn' + (val === 'all' ? ' active' : '');
+      b.textContent = label;
+      b.onclick = function() { setFilter(val, b); };
+      bar.appendChild(b);
+    }
+    makeBtn('All', 'all');
+    retailers.forEach(function(r) { makeBtn(r, r); });
+  }
+
+  function setFilter(f, btn) {
+    activeFilter = f;
+    document.querySelectorAll('#drops-filters .filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    renderCal();
+  }
+
+  window.calNav = function(d) {
+    calM += d;
+    if (calM > 11) { calM = 0; calY++; }
+    if (calM < 0)  { calM = 11; calY--; }
+    renderCal();
+  };
+
+  window.calGoToday = function() {
+    calY = today.getFullYear();
+    calM = today.getMonth();
+    renderCal();
+  };
+
+  function getDropMap() {
+    var map = {};
+    var filtered = activeFilter === 'all' ? DROPS : DROPS.filter(function(d) { return d.retailer === activeFilter; });
+    filtered.forEach(function(d) {
+      var key = (d.drop_time || '').substring(0, 10);
+      if (!key || !/^\d{4}-\d{2}-\d{2}$/.test(key)) return;
+      if (!map[key]) map[key] = [];
+      map[key].push(d);
+    });
+    return map;
+  }
+
+  function renderCal() {
+    document.getElementById('cal-label').textContent = MONTHS[calM] + ' ' + calY;
+    var map        = getDropMap();
+    var firstDay   = new Date(calY, calM, 1).getDay();
+    var daysInMo   = new Date(calY, calM + 1, 0).getDate();
+
+    // Count drops this month for badge
+    var monthCount = 0;
+    Object.keys(map).forEach(function(k) {
+      var d = new Date(k + 'T12:00:00');
+      if (d.getFullYear() === calY && d.getMonth() === calM) monthCount += map[k].length;
+    });
+    document.getElementById('drops-badge').textContent = monthCount + ' drops';
+
+    var html = '';
+    WDAYS.forEach(function(d) { html += '<div class="cal-day-hdr">' + d + '</div>'; });
+
+    for (var i = 0; i < firstDay; i++) html += '<div class="cal-cell cal-other"></div>';
+
+    for (var day = 1; day <= daysInMo; day++) {
+      var mo  = ('0' + (calM + 1)).slice(-2);
+      var dy  = ('0' + day).slice(-2);
+      var key = calY + '-' + mo + '-' + dy;
+      var isToday = (today.getFullYear() === calY && today.getMonth() === calM && today.getDate() === day);
+      var cellDrops = map[key] || [];
+      var MAX = 3;
+
+      var dotClass = isToday ? ' today-dot' : '';
+      var cellClass = isToday ? ' cal-today' : '';
+      var out = '<div class="cal-cell' + cellClass + '">';
+      out += '<span class="cal-date-num' + dotClass + '">' + day + '</span>';
+
+      cellDrops.slice(0, MAX).forEach(function(d) {
+        var color = RC[d.retailer] || '#555';
+        var label = d.product.length > 24 ? d.product.substring(0, 24) + '…' : d.product;
+        var idx   = DROPS.indexOf(d);
+        out += '<span class="cal-chip" style="background:' + color + '" onclick="showPop(event,' + idx + ')">' + label + '</span>';
+      });
+
+      if (cellDrops.length > MAX) {
+        var extras = [];
+        cellDrops.slice(MAX).forEach(function(d) { extras.push(DROPS.indexOf(d)); });
+        out += '<span class="cal-more-link" onclick="showMorePop(event,' + JSON.stringify(extras) + ')">+' + (cellDrops.length - MAX) + ' more</span>';
+      }
+
+      out += '</div>';
+      html += out;
+    }
+
+    var total = firstDay + daysInMo;
+    var tail  = (7 - (total % 7)) % 7;
+    for (var j = 0; j < tail; j++) html += '<div class="cal-cell cal-other"></div>';
+
+    document.getElementById('cal-grid').innerHTML = html;
+    closePop();
+  }
+
+  // ── Popover ────────────────────────────────────────────────────
+  window.showPop = function(e, idx) {
+    e.stopPropagation();
+    var d = DROPS[idx];
+    if (!d) return;
+    renderPop([d], e.clientX, e.clientY);
+  };
+
+  window.showMorePop = function(e, indices) {
+    e.stopPropagation();
+    var ds = indices.map(function(i) { return DROPS[i]; }).filter(Boolean);
+    renderPop(ds, e.clientX, e.clientY);
+  };
+
+  function renderPop(ds, cx, cy) {
+    var pop   = document.getElementById('drop-pop');
+    var title = document.getElementById('pop-title');
+    var body  = document.getElementById('pop-body');
+
+    if (ds.length === 1) {
+      var d     = ds[0];
+      var color = RC[d.retailer] || '#555';
+      title.innerHTML = '<a href="' + d.url + '" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">' + d.product + '</a>';
+      body.innerHTML =
+        '<div style="margin-bottom:10px">' +
+          '<span style="background:' + color + ';color:white;font-size:10px;padding:2px 9px;border-radius:12px;font-weight:700">' + d.retailer + '</span>' +
+        '</div>' +
+        popRow('Drop Time', d.drop_time || '—') +
+        popRow('SKU', '<span style="font-family:monospace">' + (d.sku || '—') + '</span>') +
+        popRow('Retail', d.retail || '—') +
+        popRow('Resell Est.', '<span style="color:#2e7d32">' + (d.resell || '—') + '</span>') +
+        popRow('Stock', d.stock || '—');
+    } else {
+      title.textContent = ds.length + ' drops this day';
+      body.innerHTML = ds.map(function(d) {
+        var color = RC[d.retailer] || '#555';
+        var name  = d.product.length > 30 ? d.product.substring(0, 30) + '…' : d.product;
+        var idx   = DROPS.indexOf(d);
+        return '<div class="pop-multi-item" onclick="showPop({stopPropagation:function(){}}, ' + idx + ')">' +
+          '<div style="font-size:11px;font-weight:600;color:#1a1a2e;margin-bottom:3px">' + name + '</div>' +
+          '<span style="background:' + color + ';color:white;font-size:9px;padding:1px 7px;border-radius:10px;font-weight:700">' + d.retailer + '</span>' +
+          '<span style="font-size:11px;color:#aaa;margin-left:7px">' + (d.drop_time || '') + '</span>' +
+        '</div>';
+      }).join('');
+    }
+
+    pop.style.display = 'block';
+    var pw = 272, ph = pop.offsetHeight || 200;
+    var left = cx + 14, top = cy + 14;
+    if (left + pw > window.innerWidth  - 12) left = cx - pw - 14;
+    if (top  + ph > window.innerHeight - 12) top  = cy - ph - 14;
+    pop.style.left = Math.max(8, left) + 'px';
+    pop.style.top  = Math.max(8, top)  + 'px';
+  }
+
+  function popRow(label, val) {
+    return '<div class="pop-row"><span class="pop-lbl">' + label + '</span><span class="pop-val">' + val + '</span></div>';
+  }
+
+  window.closePop = function() {
+    document.getElementById('drop-pop').style.display = 'none';
+  };
+
+  document.addEventListener('click', function(e) {
+    var pop = document.getElementById('drop-pop');
+    if (pop && !pop.contains(e.target) &&
+        !e.target.classList.contains('cal-chip') &&
+        !e.target.classList.contains('cal-more-link') &&
+        !e.target.classList.contains('pop-multi-item')) {
+      closePop();
+    }
   });
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-}
+
+  // Init
+  calY = today.getFullYear();
+  calM = today.getMonth();
+  buildFilters();
+  renderCal();
+})();
 </script>
+</div>
 
 <script>
 function switchTab(name, btn) {
