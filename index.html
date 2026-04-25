@@ -131,8 +131,9 @@
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Shipments / Sales</button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
+    <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
-  <div class="updated">Last updated: April 25, 2026 at 12:05 AM</div>
+  <div class="updated">Last updated: April 25, 2026 at 12:08 AM</div>
 </header>
 
 <div id="pane-shopify" class="tab-pane active">
@@ -1727,6 +1728,316 @@
     </div>
   </div>
 </div>
+
+
+<div id="pane-drops" class="tab-pane">
+  <div class="container">
+    <div class="card" style="margin-bottom:0">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap">
+        <h2 style="margin:0">Release Calendar</h2>
+        <span style="background:#5b21b6;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">24 drops</span>
+        <span style="color:#aaa;font-size:11px;margin-left:auto">Sourced from Discord #important-restocks · last 14 days</span>
+      </div>
+      <div class="filter-bar" style="margin-bottom:14px">
+        <button class="filter-btn active" onclick="filterDrops('all', this)">All</button>
+<button class="filter-btn" onclick="filterDrops('Best Buy', this)" style="--rc:#003b8e">Best Buy</button>
+<button class="filter-btn" onclick="filterDrops('Target', this)" style="--rc:#cc0000">Target</button>
+<button class="filter-btn" onclick="filterDrops('Walmart', this)" style="--rc:#0071ce">Walmart</button>
+
+      </div>
+      <div class="table-scroll">
+        <table id="dropsTable">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Retailer</th>
+              <th>SKU</th>
+              <th>Drop Time</th>
+              <th>Retail</th>
+              <th>Resell Est.</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+        <tr data-retailer="Best Buy">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...</a>
+          </td>
+          <td><span style="background:#003b8e;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Best Buy</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">6606082</td>
+          <td style="font-size:13px;color:#444">2026-04-24</td>
+          <td style="font-weight:600;color:#1a1a2e">—</td>
+          <td style="font-weight:600;color:#2e7d32">—</td>
+          <td style="color:#888;font-size:12px">—</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/18728422476" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Bundle</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">18728422476</td>
+          <td style="font-size:13px;color:#444">2026-04-23</td>
+          <td style="font-weight:600;color:#1a1a2e">$31</td>
+          <td style="font-weight:600;color:#2e7d32">$60</td>
+          <td style="color:#888;font-size:12px">45K</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/19620004893" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes ex Boxes Assorted</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">19620004893</td>
+          <td style="font-size:13px;color:#444">2026-04-22 9:00PM EST</td>
+          <td style="font-weight:600;color:#1a1a2e">$22</td>
+          <td style="font-weight:600;color:#2e7d32">$40</td>
+          <td style="color:#888;font-size:12px">70K</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/18728422476" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">—</td>
+          <td style="font-size:13px;color:#444">2026-04-22</td>
+          <td style="font-weight:600;color:#1a1a2e">—</td>
+          <td style="font-weight:600;color:#2e7d32">—</td>
+          <td style="color:#888;font-size:12px">—</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/20088667802" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">—</td>
+          <td style="font-size:13px;color:#444">2026-04-22</td>
+          <td style="font-weight:600;color:#1a1a2e">—</td>
+          <td style="font-weight:600;color:#2e7d32">—</td>
+          <td style="color:#888;font-size:12px">—</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/18728422476" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Bundle</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">18728422476</td>
+          <td style="font-size:13px;color:#444">2026-04-21 9:00PM EST</td>
+          <td style="font-weight:600;color:#1a1a2e">$31</td>
+          <td style="font-weight:600;color:#2e7d32">$60</td>
+          <td style="color:#888;font-size:12px">—</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/20088667802" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Prismatic Tin Display 8ct</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">20088667802</td>
+          <td style="font-size:13px;color:#444">2026-04-21 9:00PM EST</td>
+          <td style="font-weight:600;color:#1a1a2e">$100</td>
+          <td style="font-weight:600;color:#2e7d32">$200</td>
+          <td style="color:#888;font-size:12px">—</td>
+        </tr>
+        <tr data-retailer="Best Buy">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...</a>
+          </td>
+          <td><span style="background:#003b8e;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Best Buy</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">6606082</td>
+          <td style="font-size:13px;color:#444">2026-04-20</td>
+          <td style="font-weight:600;color:#1a1a2e">—</td>
+          <td style="font-weight:600;color:#2e7d32">—</td>
+          <td style="color:#888;font-size:12px">—</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/20011509005" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Phantasmal ETB</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">20011509005</td>
+          <td style="font-size:13px;color:#444">2026-04-16 9:00PM EST</td>
+          <td style="font-weight:600;color:#1a1a2e">$60</td>
+          <td style="font-weight:600;color:#2e7d32">$110</td>
+          <td style="color:#888;font-size:12px">14K</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/20039171278" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Charizard Tin</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">20039171278</td>
+          <td style="font-size:13px;color:#444">2026-04-16 9:00PM EST</td>
+          <td style="font-weight:600;color:#1a1a2e">$19</td>
+          <td style="font-weight:600;color:#2e7d32">$20</td>
+          <td style="color:#888;font-size:12px">30K</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/18952152504" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Tin Display</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">18952152504</td>
+          <td style="font-size:13px;color:#444">2026-04-16 9:00PM EST</td>
+          <td style="font-weight:600;color:#1a1a2e">$130</td>
+          <td style="font-weight:600;color:#2e7d32">$220</td>
+          <td style="color:#888;font-size:12px">9,000</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/19581356308" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">12ct Ascended Blister Displays</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">19581356308</td>
+          <td style="font-size:13px;color:#444">2026-04-16 9:00PM EST</td>
+          <td style="font-weight:600;color:#1a1a2e">$145</td>
+          <td style="font-weight:600;color:#2e7d32">$200</td>
+          <td style="color:#888;font-size:12px">4,000</td>
+        </tr>
+        <tr data-retailer="Target">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.target.com/p/moo/A-95120834" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Booster Bundle</a>
+          </td>
+          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">95120834</td>
+          <td style="font-size:13px;color:#444">2026-04-15</td>
+          <td style="font-weight:600;color:#1a1a2e">—</td>
+          <td style="font-weight:600;color:#2e7d32">—</td>
+          <td style="color:#888;font-size:12px">50k+</td>
+        </tr>
+        <tr data-retailer="Target">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.target.com/p/moo/A-95093989" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes First Partners Deluxe Pin Collection</a>
+          </td>
+          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">95093989</td>
+          <td style="font-size:13px;color:#444">2026-04-15</td>
+          <td style="font-weight:600;color:#1a1a2e">—</td>
+          <td style="font-weight:600;color:#2e7d32">—</td>
+          <td style="color:#888;font-size:12px">—</td>
+        </tr>
+        <tr data-retailer="Target">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.target.com/p/moo/A-1008581387" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Mega Emboar ex Box</a>
+          </td>
+          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">1008581387</td>
+          <td style="font-size:13px;color:#444">2026-04-15</td>
+          <td style="font-weight:600;color:#1a1a2e">—</td>
+          <td style="font-weight:600;color:#2e7d32">—</td>
+          <td style="color:#888;font-size:12px">3k+</td>
+        </tr>
+        <tr data-retailer="Target">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.target.com/p/moo/A-95230446" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Perfect Order 3-Booster Blister</a>
+          </td>
+          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">95230446</td>
+          <td style="font-size:13px;color:#444">2026-04-15</td>
+          <td style="font-weight:600;color:#1a1a2e">—</td>
+          <td style="font-weight:600;color:#2e7d32">—</td>
+          <td style="color:#888;font-size:12px">20k+</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/20011509005" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Phantasmal ETB</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">20011509005</td>
+          <td style="font-size:13px;color:#444">2026-04-15 9:00PM EST</td>
+          <td style="font-weight:600;color:#1a1a2e">$60</td>
+          <td style="font-weight:600;color:#2e7d32">$110</td>
+          <td style="color:#888;font-size:12px">14K</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/20039171278" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Charizard Tin</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">20039171278</td>
+          <td style="font-size:13px;color:#444">2026-04-15 9:00PM EST</td>
+          <td style="font-weight:600;color:#1a1a2e">$19</td>
+          <td style="font-weight:600;color:#2e7d32">$20</td>
+          <td style="color:#888;font-size:12px">30K</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/18952152504" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Tin Display</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">18952152504</td>
+          <td style="font-size:13px;color:#444">2026-04-15 9:00PM EST</td>
+          <td style="font-weight:600;color:#1a1a2e">$130</td>
+          <td style="font-weight:600;color:#2e7d32">$220</td>
+          <td style="color:#888;font-size:12px">9,000</td>
+        </tr>
+        <tr data-retailer="Walmart">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.walmart.com/ip/moonitor/19581356308" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">12ct Ascended Blister Displays</a>
+          </td>
+          <td><span style="background:#0071ce;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Walmart</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">19581356308</td>
+          <td style="font-size:13px;color:#444">2026-04-15 9:00PM EST</td>
+          <td style="font-weight:600;color:#1a1a2e">$145</td>
+          <td style="font-weight:600;color:#2e7d32">$200</td>
+          <td style="color:#888;font-size:12px">4,000</td>
+        </tr>
+        <tr data-retailer="Target">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.target.com/p/moo/A-95267143" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Chaos Rising Elite Trainer Box</a>
+          </td>
+          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">95267143</td>
+          <td style="font-size:13px;color:#444">2026-04-14</td>
+          <td style="font-weight:600;color:#1a1a2e">—</td>
+          <td style="font-weight:600;color:#2e7d32">—</td>
+          <td style="color:#888;font-size:12px">—</td>
+        </tr>
+        <tr data-retailer="Target">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.target.com/p/moo/A-1010544860" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Chaos Rising Sleeve Blister</a>
+          </td>
+          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">1010544860</td>
+          <td style="font-size:13px;color:#444">2026-04-14</td>
+          <td style="font-weight:600;color:#1a1a2e">—</td>
+          <td style="font-weight:600;color:#2e7d32">—</td>
+          <td style="color:#888;font-size:12px">—</td>
+        </tr>
+        <tr data-retailer="Target">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.target.com/p/moo/A-95298172" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Chaos Rising Booster Bundle</a>
+          </td>
+          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">95298172</td>
+          <td style="font-size:13px;color:#444">2026-04-14</td>
+          <td style="font-weight:600;color:#1a1a2e">—</td>
+          <td style="font-weight:600;color:#2e7d32">—</td>
+          <td style="color:#888;font-size:12px">—</td>
+        </tr>
+        <tr data-retailer="Target">
+          <td style="font-weight:600;max-width:280px">
+            <a href="https://www.target.com/p/moo/A-1010679865" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Chaos Rising Booster Box</a>
+          </td>
+          <td><span style="background:#cc0000;color:white;font-size:10px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap">Target</span></td>
+          <td style="font-family:monospace;font-size:12px;color:#333">1010679865</td>
+          <td style="font-size:13px;color:#444">2026-04-14</td>
+          <td style="font-weight:600;color:#1a1a2e">—</td>
+          <td style="font-weight:600;color:#2e7d32">—</td>
+          <td style="color:#888;font-size:12px">—</td>
+        </tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function filterDrops(retailer, btn) {
+  document.querySelectorAll('#dropsTable tbody tr').forEach(row => {
+    row.style.display = (retailer === 'all' || row.dataset.retailer === retailer) ? '' : 'none';
+  });
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
 
 <script>
 function switchTab(name, btn) {
