@@ -39,8 +39,8 @@
   .filter-btn:hover { background: #f5f5f5; }
   .filter-btn.active { background: #1a1a2e; color: white; border-color: #1a1a2e; }
   .order-count { font-size: 12px; color: #aaa; margin-left: auto; align-self: center; }
-  .tab-nav { display: flex; gap: 6px; align-items: center; }
-  .tab-btn { padding: 8px 20px; border-radius: 20px; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: white; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.15s; }
+  .tab-nav { display: flex; gap: 4px; align-items: center; }
+  .tab-btn { padding: 6px 15px; border-radius: 20px; border: 1.5px solid rgba(255,255,255,0.3); background: transparent; color: white; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
   .tab-btn:hover { background: rgba(255,255,255,0.15); }
   .tab-btn.active { background: white; color: #1a1a2e; border-color: white; }
   .tab-pane { display: none; }
@@ -60,7 +60,7 @@
     /* Tab nav — scrollable strip, no squishing */
     .tab-nav { order: 2; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; padding-bottom: 3px; scrollbar-width: none; }
     .tab-nav::-webkit-scrollbar { display: none; }
-    .tab-btn { flex: none; white-space: nowrap; padding: 8px 14px; font-size: 12px; }
+    .tab-btn { flex: none; white-space: nowrap; padding: 5px 11px; font-size: 11px; }
     .tab-btn .platform-tag { display: none; }
     .container { padding: 14px 12px; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }
@@ -177,7 +177,7 @@
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
-  <div class="updated">Last updated: April 26, 2026 at 11:15 AM PST</div>
+  <div class="updated">Last updated: April 26, 2026 at 11:24 AM PST</div>
 </header>
 
 <div id="pane-shopify" class="tab-pane active">
@@ -1968,20 +1968,42 @@
   .pop-multi-item { padding:6px 0; border-bottom:1px solid #f4f4f4; cursor:pointer; }
   .pop-multi-item:last-child { border-bottom:none; }
   .pop-multi-item:hover { background:#fafafa; margin:0 -4px; padding:6px 4px; border-radius:4px; }
-  #cal-scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  #cal-scroll-wrap { overflow-x: hidden; }
+  .day-short { display: none; }
+  .day-long  { display: inline; }
   @media (max-width: 640px) {
-    #cal-scroll-wrap { margin: 0 -2px; padding-bottom: 4px; }
-    #cal-grid { min-width: 420px; }
-    .cal-cell { min-height: 80px; padding: 4px 3px; }
-    .cal-chip { font-size: 9px; padding: 2px 4px; }
-    .cal-date-num { font-size: 11px; }
-    #drop-pop { width: min(88vw, 300px); left: 50% !important; transform: translateX(-50%); }
-    .cal-day-hdr { font-size: 10px; padding: 6px 0; }
+    /* Calendar fits screen — no horizontal scroll */
+    #cal-scroll-wrap { margin: 0; padding: 0; overflow-x: hidden; }
+    #cal-grid { min-width: unset; width: 100%; }
+    .cal-cell { min-height: 58px; padding: 3px 2px; overflow: hidden; }
+    .cal-chip { font-size: 8px; padding: 1px 3px; margin-bottom: 1px; }
+    .cal-date-num { font-size: 10px; width: 18px; height: 18px; margin-bottom: 1px; }
+    .cal-more-link { font-size: 9px; }
+    .cal-day-hdr { font-size: 10px; padding: 5px 0; }
+    .day-short { display: inline; }
+    .day-long  { display: none; }
+    /* Pop-over centered on mobile */
+    #drop-pop { width: min(88vw, 300px); left: 50% !important; transform: translateX(-50%); top: 60px !important; }
+    /* Reorder sections: calendar first, restock second, feeds last */
+    #drops-main { display: flex; flex-direction: column; }
+    #drops-cal-card     { order: 1; margin-bottom: 14px !important; }
+    #drops-restock-card { order: 2; margin-top: 0 !important; }
+    #drops-feeds        { order: 3; margin-top: 14px; margin-bottom: 0 !important; }
+    /* Feeds stack vertically on mobile */
+    #drops-feeds { flex-direction: column !important; gap: 12px !important; }
+    #drops-feeds .card  { max-height: 220px; overflow-y: auto; }
+    /* Restock: hide empty days, show 3-col active grid */
+    .restock-grid       { grid-template-columns: repeat(3,1fr) !important; }
+    .restock-empty      { display: none !important; }
+    /* Filter bar wraps */
+    .filter-bar         { flex-wrap: wrap; gap: 6px; }
+    .filter-btn         { padding: 4px 11px; font-size: 11px; }
   }
 </style>
 
 <div class="container">
-  <div style="display:flex;gap:16px;margin-bottom:20px;align-items:flex-start">
+<div id="drops-main">
+  <div id="drops-feeds" style="display:flex;gap:16px;margin-bottom:20px;align-items:flex-start">
       <div class="card" style="flex:1;min-width:0">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
         <h2 style="margin:0;font-size:15px">
@@ -2239,7 +2261,7 @@
   <div style="font-size:12px;color:#bbb;padding:8px 0">No Lake Forest / Mission Viejo tweets found yet.</div>
 </div>
     </div>
-  <div class="card" style="margin-bottom:0">
+  <div id="drops-cal-card" class="card" style="margin-bottom:0">
 
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap">
       <h2 style="margin:0">Release Calendar</h2>
@@ -2261,24 +2283,24 @@
 
   </div>
 
-  <div class="card" style="margin-top:20px">
+  <div id="drops-restock-card" class="card" style="margin-top:20px">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap">
       <h2 style="margin:0">Weekly Restock Schedule</h2>
       <span style="background:#16a34a;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">Recurring</span>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px">
+    <div class="restock-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px">
 
-      <div style="border:1px solid #f0f0f0;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px">
+      <div class="restock-empty" style="border:1px solid #f0f0f0;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px">
         <div style="font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Sun</div>
         <span style="font-size:11px;color:#ccc">No events</span>
       </div>
 
-      <div style="border:1px solid #f0f0f0;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px">
+      <div class="restock-empty" style="border:1px solid #f0f0f0;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px">
         <div style="font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Mon</div>
         <span style="font-size:11px;color:#ccc">No events</span>
       </div>
 
-      <div style="border:1px solid #f0f0f0;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px">
+      <div class="restock-empty" style="border:1px solid #f0f0f0;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px">
         <div style="font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Tue</div>
         <span style="font-size:11px;color:#ccc">No events</span>
       </div>
@@ -2323,7 +2345,7 @@
         </div>
       </div>
 
-      <div style="border:1px solid #f0f0f0;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px">
+      <div class="restock-empty" style="border:1px solid #f0f0f0;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px">
         <div style="font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Sat</div>
         <span style="font-size:11px;color:#ccc">No events</span>
       </div>
@@ -2339,7 +2361,8 @@
     </div>
   </div>
 
-</div>
+</div><!-- /#drops-main -->
+</div><!-- /.container -->
 
 <div id="drop-pop">
   <div class="pop-hdr">
@@ -2355,7 +2378,8 @@
   var RC    = {"Walmart": "#0071ce", "Target": "#cc0000", "Best Buy": "#003b8e", "Amazon": "#ff9900", "Pok\u00e9mon Center": "#e3350d", "GameStop": "#5c0e0e", "Sam's Club": "#007dc6", "Costco": "#005dab", "Barnes & Noble": "#1c4f2a", "Other": "#555"};
   var MONTHS = ['January','February','March','April','May','June',
                 'July','August','September','October','November','December'];
-  var WDAYS  = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var WDAYS      = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var WDAYS_SHORT = ['S','M','T','W','T','F','S'];
   var calY, calM, activeFilter = 'all';
   var today = new Date();
 
@@ -2429,7 +2453,7 @@
     document.getElementById('drops-badge').textContent = monthCount + ' drops';
 
     var html = '';
-    WDAYS.forEach(function(d) { html += '<div class="cal-day-hdr">' + d + '</div>'; });
+    WDAYS.forEach(function(d, i) { html += '<div class="cal-day-hdr"><span class="day-long">' + d + '</span><span class="day-short">' + WDAYS_SHORT[i] + '</span></div>'; });
 
     for (var i = 0; i < firstDay; i++) html += '<div class="cal-cell cal-other"></div>';
 
