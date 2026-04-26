@@ -1,0 +1,138 @@
+{
+  "year": 2026,
+  "updated": "April 26, 2026 at 05:47 PM",
+  "months": [
+    {
+      "month_num": 1,
+      "month_name": "January",
+      "shopify_gross": 7916.92,
+      "shopify_fees": 277.09,
+      "tcg_gross": 2043.81,
+      "tcg_fees": 275.6,
+      "tcg_refunds": 55.64,
+      "ebay_gross": 0,
+      "ebay_fees": 0
+    },
+    {
+      "month_num": 2,
+      "month_name": "February",
+      "shopify_gross": 10005.64,
+      "shopify_fees": 350.2,
+      "tcg_gross": 3050.29,
+      "tcg_fees": 411.32,
+      "tcg_refunds": 83.04,
+      "ebay_gross": 0,
+      "ebay_fees": 0
+    },
+    {
+      "month_num": 3,
+      "month_name": "March",
+      "shopify_gross": 21133.09,
+      "shopify_fees": 739.66,
+      "tcg_gross": 38129.1,
+      "tcg_fees": 5141.63,
+      "tcg_refunds": 1037.97,
+      "ebay_gross": 0,
+      "ebay_fees": 0
+    },
+    {
+      "month_num": 4,
+      "month_name": "April",
+      "shopify_gross": 16822.91,
+      "shopify_fees": 588.8,
+      "tcg_gross": 23554.86,
+      "tcg_fees": 3176.32,
+      "tcg_refunds": 641.23,
+      "ebay_gross": 0,
+      "ebay_fees": 0
+    },
+    {
+      "month_num": 5,
+      "month_name": "May",
+      "shopify_gross": 0,
+      "shopify_fees": 0,
+      "tcg_gross": 0,
+      "tcg_fees": 0,
+      "tcg_refunds": 0,
+      "ebay_gross": 0,
+      "ebay_fees": 0
+    },
+    {
+      "month_num": 6,
+      "month_name": "June",
+      "shopify_gross": 0,
+      "shopify_fees": 0,
+      "tcg_gross": 0,
+      "tcg_fees": 0,
+      "tcg_refunds": 0,
+      "ebay_gross": 0,
+      "ebay_fees": 0
+    },
+    {
+      "month_num": 7,
+      "month_name": "July",
+      "shopify_gross": 0,
+      "shopify_fees": 0,
+      "tcg_gross": 0,
+      "tcg_fees": 0,
+      "tcg_refunds": 0,
+      "ebay_gross": 0,
+      "ebay_fees": 0
+    },
+    {
+      "month_num": 8,
+      "month_name": "August",
+      "shopify_gross": 0,
+      "shopify_fees": 0,
+      "tcg_gross": 0,
+      "tcg_fees": 0,
+      "tcg_refunds": 0,
+      "ebay_gross": 0,
+      "ebay_fees": 0
+    },
+    {
+      "month_num": 9,
+      "month_name": "September",
+      "shopify_gross": 0,
+      "shopify_fees": 0,
+      "tcg_gross": 0,
+      "tcg_fees": 0,
+      "tcg_refunds": 0,
+      "ebay_gross": 0,
+      "ebay_fees": 0
+    },
+    {
+      "month_num": 10,
+      "month_name": "October",
+      "shopify_gross": 0,
+      "shopify_fees": 0,
+      "tcg_gross": 0,
+      "tcg_fees": 0,
+      "tcg_refunds": 0,
+      "ebay_gross": 0,
+      "ebay_fees": 0
+    },
+    {
+      "month_num": 11,
+      "month_name": "November",
+      "shopify_gross": 0,
+      "shopify_fees": 0,
+      "tcg_gross": 0,
+      "tcg_fees": 0,
+      "tcg_refunds": 0,
+      "ebay_gross": 0,
+      "ebay_fees": 0
+    },
+    {
+      "month_num": 12,
+      "month_name": "December",
+      "shopify_gross": 0,
+      "shopify_fees": 0,
+      "tcg_gross": 0,
+      "tcg_fees": 0,
+      "tcg_refunds": 0,
+      "ebay_gross": 0,
+      "ebay_fees": 0
+    }
+  ]
+}
