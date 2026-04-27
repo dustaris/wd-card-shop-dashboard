@@ -12,6 +12,9 @@
   header h1 { font-size: 22px; font-weight: 700; }
   header .subtitle { font-size: 13px; opacity: 0.6; margin-top: 2px; }
   header .updated { font-size: 12px; opacity: 0.5; }
+  .header-brand { display: flex; align-items: center; gap: 12px; }
+  .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .title-short { display: none; }
   .platform-tag { background: #95bf47; color: white; font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 600; margin-left: 10px; }
   .container { max-width: 1400px; margin: 0 auto; padding: 28px 24px; }
   .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
@@ -53,12 +56,17 @@
   }
   /* Mobile */
   @media (max-width: 640px) {
-    header { padding: 12px 16px; flex-wrap: wrap; gap: 8px; }
-    header h1 { font-size: 17px; }
+    header { padding: 10px 14px; flex-wrap: wrap; gap: 6px; align-items: center; }
+    header h1 { font-size: 16px; }
     header .subtitle { font-size: 11px; }
-    header .updated { font-size: 11px; width: 100%; order: 3; }
-    /* Tab nav — scrollable strip, no squishing */
-    .tab-nav { order: 2; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; padding-bottom: 3px; scrollbar-width: none; }
+    header .updated { font-size: 11px; width: 100%; order: 4; opacity: 0.4; }
+    .title-full { display: none; }
+    .title-short { display: inline; }
+    /* Row 1: brand left, refresh right */
+    .header-brand { order: 1; flex: 1; }
+    .header-right { order: 2; flex-direction: row; align-items: center; gap: 8px; }
+    /* Tab nav — scrollable strip on row 2 */
+    .tab-nav { order: 3; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; padding-bottom: 3px; scrollbar-width: none; }
     .tab-nav::-webkit-scrollbar { display: none; }
     .tab-btn { flex: none; white-space: nowrap; padding: 5px 11px; font-size: 11px; }
     .tab-btn .platform-tag { display: none; }
@@ -167,9 +175,9 @@
 </head>
 <body>
 <header>
-  <div style="display:flex;align-items:center;gap:12px">
-    <img src="data:image/png;base64,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" alt="WD Card Shop" style="height:44px;width:auto">
-    <h1>WD Card Shop Dashboard</h1>
+  <div class="header-brand">
+    <img src="data:image/png;base64,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" alt="WD Card Shop" style="height:40px;width:auto">
+    <h1><span class="title-full">WD Card Shop Dashboard</span><span class="title-short">WD Dashboard</span></h1>
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Shipments / Sales</button>
@@ -177,8 +185,8 @@
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
-  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
-    <div class="updated">Last updated: April 26, 2026 at 10:43 PM PST</div>
+  <div class="header-right">
+    <div class="updated">Last updated: April 26, 2026 at 10:48 PM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -2729,6 +2737,12 @@ function filterOrders(status, btn) {
     if (match) count++;
   });
   document.getElementById('orderCount').textContent = count + ' orders';
+}
+
+// On mobile, default to unfulfilled orders
+if (window.innerWidth <= 640) {
+  var unfulfBtn = document.querySelector('.filter-btn[onclick*="unfulfilled"]');
+  if (unfulfBtn) filterOrders('unfulfilled', unfulfBtn);
 }
 </script>
 </body>
