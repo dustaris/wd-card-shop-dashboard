@@ -43,11 +43,13 @@
   .filter-btn.active { background: #1a1a2e; color: white; border-color: #1a1a2e; }
   .order-count { font-size: 12px; color: #aaa; margin-left: auto; align-self: center; }
   .tab-nav { display: flex; gap: 4px; align-items: center; }
-  .tab-btn { padding: 6px 15px; border-radius: 20px; border: 1.5px solid rgba(255,255,255,0.3); background: transparent; color: white; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .tab-btn { padding: 6px 15px; border-radius: 20px; border: 1.5px solid rgba(255,255,255,0.3); background: transparent; color: white; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.15s; white-space: nowrap; position: relative; }
   .tab-btn:hover { background: rgba(255,255,255,0.15); }
   .tab-btn.active { background: white; color: #1a1a2e; border-color: white; }
   .tab-pane { display: none; }
   .tab-pane.active { display: block; }
+  .notif-badge { position: absolute; top: -7px; right: -7px; background: #e53935; color: white; font-size: 10px; font-weight: 800; min-width: 18px; height: 18px; border-radius: 9px; display: flex; align-items: center; justify-content: center; padding: 0 4px; border: 2px solid #1a1a2e; line-height: 1; }
+  .notif-badge.hidden { display: none; }
   #pane-orders { height: calc(100vh - 80px); }
   #pane-orders iframe { width: 100%; height: 100%; border: none; display: block; }
   /* Tablet */
@@ -180,13 +182,14 @@
     <h1><span class="title-full">WD Card Shop Dashboard</span><span class="title-short">WD Dashboard</span></h1>
   </div>
   <nav class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('shopify', this)">Shipments / Sales</button>
+    <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge hidden" id="awaiting-badge">0</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: April 27, 2026 at 08:04 AM PST</div>
+    <div class="updated">Last updated: April 27, 2026 at 08:44 AM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -280,24 +283,6 @@ function resetBtn() {
       <canvas id="revenueChart" height="60"></canvas>
     </div>
   </div>
-
-  
-    <div class="card" style="margin-bottom:28px">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
-        <h2 style="margin:0">eBay — Awaiting Shipment</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
-      </div>
-      <p style="color:#aaa;font-size:13px">No orders awaiting shipment. Run 5_ebay_orders.py to refresh.</p>
-    </div>
-
-  
-    <div class="card" style="margin-bottom:28px">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
-        <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
-      </div>
-      <p style="color:#aaa;font-size:13px">No outstanding orders found. Run 3_tcgplayer_scraper.py to refresh.</p>
-    </div>
 
   <div class="bottom-row">
     <div class="card">
@@ -1452,6 +1437,31 @@ function resetBtn() {
 </div>
 </div>
 
+<div id="pane-awaiting" class="tab-pane">
+<div class="container">
+  <div style="margin-bottom:24px;padding-top:4px">
+    <h2 style="font-size:20px;font-weight:700;color:#1a1a2e">Awaiting Orders</h2>
+    <p style="font-size:13px;color:#888;margin-top:4px">Orders that need to be packed and shipped across all platforms.</p>
+  </div>
+  
+    <div class="card" style="margin-bottom:28px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+        <h2 style="margin:0">eBay — Awaiting Shipment</h2>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
+      </div>
+      <p style="color:#aaa;font-size:13px">No orders awaiting shipment. Run 5_ebay_orders.py to refresh.</p>
+    </div>
+  
+    <div class="card" style="margin-bottom:28px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+        <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
+      </div>
+      <p style="color:#aaa;font-size:13px">No outstanding orders found. Run 3_tcgplayer_scraper.py to refresh.</p>
+    </div>
+</div>
+</div>
+
 <div id="pane-orders" class="tab-pane">
   <iframe src="https://dustaris.github.io/orders-dashboard/" title="Orders Tracker"></iframe>
 </div>
@@ -2112,7 +2122,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">23h ago</span>
+              <span style="font-size:11px;color:#bbb">1d ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Lock in next week for a decent amount of drops 👀 <br><br></div>
             
@@ -2164,7 +2174,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
+              <span style="font-size:11px;color:#bbb">2d ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">stock live<br><br>checkouts coming in on logs<br><br></div>
             
@@ -2177,7 +2187,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
+              <span style="font-size:11px;color:#bbb">2d ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Prdoduct is loaded out of stock, be paitent</div>
             
@@ -2190,7 +2200,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
+              <span style="font-size:11px;color:#bbb">2d ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">1 minute reminder!!<br><br>Lock in!!<br><br></div>
             
@@ -2203,7 +2213,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">typicalenergyy</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
+              <span style="font-size:11px;color:#bbb">2d ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Looks like qty 1 for tasks</div>
             
@@ -2216,7 +2226,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
+              <span style="font-size:11px;color:#bbb">2d ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"><a href="https://www.costco.com/.product.1992235.html" target="_blank" style="color:#5b6af5;word-break:break-all">https://www.costco.com/.product.1992235.html</a></div>
             
@@ -2229,7 +2239,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
+              <span style="font-size:11px;color:#bbb">2d ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">LOCK IN</div>
             
@@ -2242,7 +2252,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
+              <span style="font-size:11px;color:#bbb">2d ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">get ready for costco queue for ascended in 13 minutes</div>
             
