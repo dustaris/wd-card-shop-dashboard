@@ -177,7 +177,7 @@
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
-  <div class="updated">Last updated: April 26, 2026 at 09:23 PM PST</div>
+  <div class="updated">Last updated: April 26, 2026 at 09:53 PM PST</div>
 </header>
 
 <div id="pane-shopify" class="tab-pane active">
@@ -2055,7 +2055,7 @@
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">12h ago</span>
+              <span style="font-size:11px;color:#bbb">13h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Lock in next week for a decent amount of drops 👀 <br><br></div>
             
@@ -2617,7 +2617,18 @@ function switchTab(name, btn) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('pane-' + name).classList.add('active');
   btn.classList.add('active');
+  history.replaceState(null, '', '#' + name);
 }
+
+// Restore tab from URL hash on load
+(function() {
+  var hash = location.hash.replace('#', '');
+  var pane = hash && document.getElementById('pane-' + hash);
+  if (pane) {
+    var btn = document.querySelector('.tab-btn[onclick*="' + hash + '"]');
+    if (btn) switchTab(hash, btn);
+  }
+})();
 
 new Chart(document.getElementById('revenueChart'), {
   type: 'bar',
