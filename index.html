@@ -183,13 +183,13 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">2</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge hidden" id="awaiting-badge">0</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: April 27, 2026 at 11:05 PM PST</div>
+    <div class="updated">Last updated: April 28, 2026 at 12:04 AM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -1457,45 +1457,18 @@ function resetBtn() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span>
         <h2 style="margin:0">eBay — Awaiting Shipment</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Order ID</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Total</th><th>Status</th></tr></thead>
-          <tbody>
-        <tr>
-          <td><a href="https://www.ebay.com/sh/ord/" target="_blank" style="color:#0064D2;font-weight:600">07-14567-95304</a></td>
-          <td>she-132240</td>
-          <td>04/28/2026 02:33 AM</td>
-          <td style="max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Vindictive Warden (Foil) - 0249 - Avatar: The Last Airbender TLA - MTG - NM/M (x1)</td>
-          <td><strong>$1.55</strong></td>
-          <td><span class="badge badge-yellow">Awaiting Shipment</span></td>
-        </tr></tbody>
-        </table>
-      </div>
+      <p style="color:#aaa;font-size:13px">No orders awaiting shipment. Run 5_ebay_orders.py to refresh.</p>
     </div>
   
     <div class="card" style="margin-bottom:28px">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
-          <tbody>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-237A1A-8693E</a></td>
-          <td>Yuhyeon Chung</td>
-          <td>2026-04-28</td>
-          <td style="font-size:12px;max-width:220px;line-height:1.5">—</td>
-          <td>Standard</td>
-          <td><strong>$47.99</strong></td>
-          <td><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr></tbody>
-        </table>
-      </div>
+      <p style="color:#aaa;font-size:13px">No outstanding orders found. Run 3_tcgplayer_scraper.py to refresh.</p>
     </div>
 </div>
 </div>
@@ -1510,7 +1483,7 @@ function resetBtn() {
     <div class="card" style="margin-bottom:0">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap">
         <h2 style="margin:0">Price Tracker</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">28 products</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">31 products</span>
         <span style="color:#aaa;font-size:12px;margin-left:auto">vs. Market = your Shopify price minus TCGPlayer market price</span>
       </div>
       <div class="table-scroll">
@@ -1530,6 +1503,38 @@ function resetBtn() {
             </tr>
           </thead>
           <tbody>
+        <tr>
+          <td style="font-weight:600;max-width:260px">
+            <a href="https://1marss-2m.myshopify.com/products/ultra-pro-premium-clear-100ct-card-sleeves" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ultra Pro - Premium Clear 100ct. Card Sleeves</a>
+          </td>
+          <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$2.19</td>
+          <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">130</span></td>
+          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
+          <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
+          <td data-label="vs. Market"><span style="color:#bbb">—</span></td>
+          <td data-label="Link">
+            
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;max-width:260px">
+            <a href="https://1marss-2m.myshopify.com/products/ultra-pro-25-3-x-4-top-loader-card-holder" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ultra Pro 25 3 X 4 Top Loader Card Holder</a>
+          </td>
+          <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$3.79</td>
+          <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">90</span></td>
+          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
+          <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
+          <td data-label="vs. Market"><span style="color:#bbb">—</span></td>
+          <td data-label="Link">
+            
+          </td>
+        </tr>
         <tr>
           <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/destined-rivals-booster-bundle" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Destined Rivals Booster Bundle</a>
@@ -1584,14 +1589,30 @@ function resetBtn() {
           </td>
           <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$21.99</td>
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">30</span></td>
-          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB">$21.04</td>
-          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">14</span></td>
+          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB">$21.14</td>
+          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">12</span></td>
           <td data-label="TCG Market">$21.31</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$21.20</td>
           <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$0.68</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672393" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;max-width:260px">
+            <a href="https://1marss-2m.myshopify.com/products/ultra-pro-tall-semi-rigid-card-holders" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ultra Pro Tall Semi-Rigid Card Holders</a>
+          </td>
+          <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$27.99</td>
+          <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">30</span></td>
+          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
+          <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
+          <td data-label="vs. Market"><span style="color:#bbb">—</span></td>
+          <td data-label="Link">
+            
           </td>
         </tr>
         <tr>
@@ -1954,10 +1975,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$72.66</td>
+          <td data-label="TCG Market">$72.54</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-2.67</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-2.55</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/674449" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
