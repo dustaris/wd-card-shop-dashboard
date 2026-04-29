@@ -186,10 +186,10 @@
     <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">1</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
-    <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
+    <button class="tab-btn" onclick="switchTab('notes', this)">Working Notes</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: April 29, 2026 at 06:13 AM PST</div>
+    <div class="updated">Last updated: April 29, 2026 at 06:15 AM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -2038,746 +2038,133 @@ function resetBtn() {
 </div>
 
 
-<div id="pane-drops" class="tab-pane">
-<style>
-  #cal-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 1px;
-    background: #e0e0e0;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .cal-day-hdr {
-    background: #f2f3f7;
-    padding: 8px 0;
-    text-align: center;
-    font-size: 11px;
-    font-weight: 700;
-    color: #999;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .cal-cell {
-    background: white;
-    min-height: 108px;
-    padding: 6px 5px 4px;
-    position: relative;
-    overflow: hidden;
-  }
-  .cal-cell.cal-today { background: #faf8ff; }
-  .cal-cell.cal-other { background: #f9f9f9; }
-  .cal-date-num {
-    font-size: 12px;
-    font-weight: 500;
-    color: #444;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    margin-bottom: 3px;
-  }
-  .cal-date-num.today-dot {
-    background: #5b21b6;
-    color: white;
-    font-weight: 700;
-  }
-  .cal-chip {
-    display: block;
-    border-radius: 4px;
-    padding: 2px 5px;
-    font-size: 10px;
-    line-height: 1.45;
-    margin-bottom: 2px;
-    cursor: pointer;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    color: white;
-    font-weight: 600;
-    transition: filter 0.1s;
-  }
-  .cal-chip:hover { filter: brightness(1.12); }
-  .cal-more-link {
-    font-size: 10px;
-    color: #7c6fcd;
-    cursor: pointer;
-    padding: 1px 3px;
-    font-weight: 600;
-  }
-  .cal-more-link:hover { text-decoration: underline; }
-  /* Nav buttons */
-  .cal-nav-btn {
-    border: 1px solid #e0e0e0;
-    background: white;
-    border-radius: 8px;
-    padding: 5px 12px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #555;
-    line-height: 1;
-    transition: background 0.1s;
-  }
-  .cal-nav-btn:hover { background: #f5f5f5; }
-  .cal-today-btn {
-    border: 1px solid #d4c8f5;
-    background: white;
-    border-radius: 8px;
-    padding: 5px 12px;
-    cursor: pointer;
-    font-size: 11px;
-    font-weight: 700;
-    color: #5b21b6;
-    transition: background 0.1s;
-  }
-  .cal-today-btn:hover { background: #f5f0ff; }
-  /* Popover */
-  #drop-pop {
-    position: fixed;
-    z-index: 9999;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.16);
-    padding: 14px 16px;
-    width: 272px;
-    display: none;
-    border: 1px solid #ececec;
-  }
-  .pop-hdr { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; gap:8px; }
-  .pop-title { font-size:13px; font-weight:700; color:#1a1a2e; line-height:1.4; flex:1; }
-  .pop-close { background:#f2f3f7; border:none; border-radius:50%; width:22px; height:22px;
-                font-size:12px; cursor:pointer; flex-shrink:0; color:#666;
-                display:flex; align-items:center; justify-content:center; padding:0; }
-  .pop-close:hover { background:#e0e0e0; }
-  .pop-row { display:flex; justify-content:space-between; font-size:12px;
-              padding:4px 0; border-bottom:1px solid #f4f4f4; }
-  .pop-row:last-child { border-bottom:none; }
-  .pop-lbl { color:#aaa; font-weight:500; }
-  .pop-val { color:#1a1a2e; font-weight:600; text-align:right; max-width:165px; word-break:break-word; }
-  .pop-multi-item { padding:6px 0; border-bottom:1px solid #f4f4f4; cursor:pointer; }
-  .pop-multi-item:last-child { border-bottom:none; }
-  .pop-multi-item:hover { background:#fafafa; margin:0 -4px; padding:6px 4px; border-radius:4px; }
-  #cal-scroll-wrap { overflow-x: hidden; }
-  .day-short { display: none; }
-  .day-long  { display: inline; }
-  @media (max-width: 640px) {
-    /* Calendar fits screen — no horizontal scroll */
-    #cal-scroll-wrap { margin: 0; padding: 0; overflow-x: hidden; }
-    #cal-grid { min-width: unset; width: 100%; }
-    .cal-cell { min-height: 58px; padding: 3px 2px; overflow: hidden; }
-    .cal-chip { font-size: 8px; padding: 1px 3px; margin-bottom: 1px; }
-    .cal-date-num { font-size: 10px; width: 18px; height: 18px; margin-bottom: 1px; }
-    .cal-more-link { font-size: 9px; }
-    .cal-day-hdr { font-size: 10px; padding: 5px 0; }
-    .day-short { display: inline; }
-    .day-long  { display: none; }
-    /* Pop-over centered on mobile */
-    #drop-pop { width: min(88vw, 300px); left: 50% !important; transform: translateX(-50%); top: 60px !important; }
-    /* Reorder sections: calendar first, restock second, feeds last */
-    #drops-main { display: flex; flex-direction: column; }
-    #drops-cal-card     { order: 1; margin-bottom: 14px !important; }
-    #drops-restock-card { order: 2; margin-top: 0 !important; }
-    #drops-feeds        { order: 3; margin-top: 14px; margin-bottom: 0 !important; }
-    /* Feeds stack vertically on mobile */
-    #drops-feeds { flex-direction: column !important; gap: 12px !important; }
-    #drops-feeds .card  { max-height: 220px; overflow-y: auto; }
-    /* Restock: hide empty days, show 3-col active grid */
-    .restock-grid       { grid-template-columns: repeat(3,1fr) !important; }
-    .restock-empty      { display: none !important; }
-    /* Filter bar wraps */
-    .filter-bar         { flex-wrap: wrap; gap: 6px; }
-    .filter-btn         { padding: 4px 11px; font-size: 11px; }
-  }
-</style>
-
+<div id="pane-notes" class="tab-pane">
 <div class="container">
-<div id="drops-main">
-  <div id="drops-feeds" style="display:flex;gap:16px;margin-bottom:20px;align-items:flex-start">
-      <div class="card" style="flex:1;min-width:0">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
-        <h2 style="margin:0;font-size:15px">
-          <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#23a559;margin-right:6px;vertical-align:middle"></span>
-          #important-restocks
-        </h2>
-        <span style="font-size:11px;color:#bbb;margin-left:auto">last 10 messages</span>
-      </div>
-      <div style="max-height:340px;overflow-y:auto;padding-right:4px">
-        
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">40m ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">__<strong>Today’s Schedule</strong>__<br><br>Be locked in for a possible Pokemon Center release this afternoon <br><br>Walmart Wednesday Pokemon will be taking place at 9:00pm est (SKUs will be posted later today)<br><br></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">12h ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Be ready for a large Target restock at some point<br><br>Everything has been posted in <span style="color:#5b6af5;font-weight:600">#channel</span> <br><br>Expect drop Thursday or Friday night<br><br></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Walmart on Wednesday this week is like 6-7/10 depending on stock<br><br></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">2d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Lock in next week for a decent amount of drops 👀 <br><br></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/192409425514856448/acd93a64697aafc4416c94a0bcd893d0.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">B</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
-              <span style="font-size:11px;color:#bbb">3d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">ITS OVER 🥀 <br><br>We'll defintely see another drop for these so be ready.<br><br> <br><br>Make sure to post <span style="color:#5b6af5;font-weight:600">#channel</span> ! <br><br></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/192409425514856448/acd93a64697aafc4416c94a0bcd893d0.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">B</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
-              <span style="font-size:11px;color:#bbb">3d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Still in stock 🙂</div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">3d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Still in stock, be paitent. Should last a very long time!</div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/192409425514856448/acd93a64697aafc4416c94a0bcd893d0.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">B</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
-              <span style="font-size:11px;color:#bbb">3d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">stock live<br><br>checkouts coming in on logs<br><br></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">3d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Prdoduct is loaded out of stock, be paitent</div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">3d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">1 minute reminder!!<br><br>Lock in!!<br><br></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/720388098525233222/d82b449164ff81daa2bb664bd1045f7a.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">T</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">typicalenergyy</span>
-              <span style="font-size:11px;color:#bbb">3d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Looks like qty 1 for tasks</div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">3d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5"><a href="https://www.costco.com/.product.1992235.html" target="_blank" style="color:#5b6af5;word-break:break-all">https://www.costco.com/.product.1992235.html</a></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">3d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">LOCK IN</div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/192409425514856448/acd93a64697aafc4416c94a0bcd893d0.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">B</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
-              <span style="font-size:11px;color:#bbb">3d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">get ready for costco queue for ascended in 13 minutes</div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">4d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Bestbuy Live!!<br><br></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">4d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Bestbuy reminder for those invited<br><br>Prismatic etb exclusive access drop<br><br>20 Minute Reminder<br><br><a href="https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page" target="_blank" style="color:#5b6af5;word-break:break-all">https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page</a><br><br></div>
-            <div style="border-left:3px solid #5b21b6;padding:6px 10px;background:#f8f7ff;border-radius:0 6px 6px 0;margin-top:6px;font-size:12px"><a href="https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page" target="_blank" style="text-decoration:none"><strong style="color:#1a1a2e">Pokémon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...</strong></a><div style="color:#666;margin-top:2px">Shop Pokémon Trading Card Game: Scarlet & Violet Prismatic Evolutions Elite Trainer Box products at Best Buy. Find low e</div></div>
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/786662636456509470/a_f2c03663112914a5e14b2891b88f2d43.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">J</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">5d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Not sure if it’s live at all site is so dead and logs are rate limited (stellar cooks target if you guys didn’t know btw)<br><br><br>More chaos rising bundles <span style="color:#5b6af5;font-weight:600">#channel</span></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/786662636456509470/a_f2c03663112914a5e14b2891b88f2d43.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">J</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">5d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Sealed case is 25 that’s a cook RUN STELLAR</div>
-            
-          </div>
-        </div>
-        <div style="padding-top:4px"></div>
+  <div class="card" style="max-width:860px;margin:0 auto">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+      <h2 style="margin:0;font-size:18px">Working Notes</h2>
+      <span id="notes-count" style="background:#5b21b6;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0 notes</span>
+    </div>
+
+    <!-- Add note form -->
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+      <textarea id="notes-input" rows="3" placeholder="Add a note… (Shift+Enter for new line, Enter to save)"
+        style="width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:inherit;resize:vertical;outline:none;transition:border 0.15s"
+        onfocus="this.style.borderColor='#7c3aed'" onblur="this.style.borderColor='#e5e7eb'"></textarea>
+      <div style="display:flex;align-items:center;gap:10px">
+        <button onclick="addNote()"
+          style="background:#7c3aed;color:white;border:none;padding:8px 20px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer">
+          Add Note
+        </button>
+        <span style="color:#aaa;font-size:12px">Enter to save &nbsp;·&nbsp; Shift+Enter for new line</span>
       </div>
     </div>
-      <div class="card" style="flex:1;min-width:0">
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-    <h2 style="margin:0;font-size:15px">
-      <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#1d9bf0;margin-right:6px;vertical-align:middle"></span>
-      <a href="https://x.com/squirtletcgoc2" target="_blank" style="color:#1a1a2e;text-decoration:none">@squirtletcgoc2</a>
-    </h2>
-    <span style="font-size:10px;color:#bbb;margin-left:auto;background:#f0fdf4;color:#15803d;border-radius:10px;padding:2px 8px;font-weight:600">LF / MV only</span>
+
+    <!-- Notes list -->
+    <div id="notes-list"></div>
+    <div id="notes-empty" style="color:#aaa;font-size:14px;padding:20px 0;text-align:center;display:none">
+      No notes yet. Add your first note above.
+    </div>
   </div>
-  <div style="font-size:10px;color:#bbb;margin-bottom:10px">Lake Forest &amp; Mission Viejo tweets</div>
-  <div style="font-size:12px;color:#bbb;padding:8px 0">No Lake Forest / Mission Viejo tweets found yet.</div>
 </div>
-      <div class="card" style="flex:1;min-width:0">
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-    <h2 style="margin:0;font-size:15px">
-      <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#1d9bf0;margin-right:6px;vertical-align:middle"></span>
-      <a href="https://x.com/LA_PTCGRestock" target="_blank" style="color:#1a1a2e;text-decoration:none">@LA_PTCGRestock</a>
-    </h2>
-    <span style="font-size:10px;color:#bbb;margin-left:auto;background:#f0fdf4;color:#15803d;border-radius:10px;padding:2px 8px;font-weight:600">LF / MV only</span>
-  </div>
-  <div style="font-size:10px;color:#bbb;margin-bottom:10px">Lake Forest &amp; Mission Viejo tweets</div>
-  <div style="font-size:12px;color:#bbb;padding:8px 0">No Lake Forest / Mission Viejo tweets found yet.</div>
-</div>
-    </div>
-  <div id="drops-cal-card" class="card" style="margin-bottom:0">
 
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap">
-      <h2 style="margin:0">Release Calendar</h2>
-      <span id="drops-badge" style="background:#5b21b6;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">13 drops</span>
-      <div style="display:flex;align-items:center;gap:6px;margin-left:auto">
-        <button class="cal-nav-btn" onclick="calNav(-1)">&#8249;</button>
-        <span id="cal-label" style="font-size:14px;font-weight:700;color:#1a1a2e;min-width:148px;text-align:center"></span>
-        <button class="cal-nav-btn" onclick="calNav(1)">&#8250;</button>
-        <button class="cal-today-btn" onclick="calGoToday()">Today</button>
-      </div>
-      <span style="color:#bbb;font-size:11px;width:100%;margin-top:-6px">Sourced from Discord #important-restocks</span>
-    </div>
-
-    <div class="filter-bar" id="drops-filters" style="margin-bottom:16px"></div>
-
-    <div id="cal-scroll-wrap">
-      <div id="cal-grid"></div>
-    </div>
-
-  </div>
-
-  <div id="drops-restock-card" class="card" style="margin-top:20px">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap">
-      <h2 style="margin:0">Weekly Restock Schedule</h2>
-      <span style="background:#16a34a;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">Recurring</span>
-    </div>
-    <div class="restock-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px">
-
-      <div class="restock-empty" style="border:1px solid #f0f0f0;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px">
-        <div style="font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Sun</div>
-        <span style="font-size:11px;color:#ccc">No events</span>
-      </div>
-
-      <div class="restock-empty" style="border:1px solid #f0f0f0;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px">
-        <div style="font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Mon</div>
-        <span style="font-size:11px;color:#ccc">No events</span>
-      </div>
-
-      <div class="restock-empty" style="border:1px solid #f0f0f0;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px">
-        <div style="font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Tue</div>
-        <span style="font-size:11px;color:#ccc">No events</span>
-      </div>
-
-      <div style="border:1.5px solid #d1d5db;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px;background:#fafafa">
-        <div style="font-size:10px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Wed</div>
-        <div style="background:#dbeafe;border-radius:6px;padding:5px 7px;font-size:11px;line-height:1.4;color:#1e40af">
-          <span style="font-size:10px;color:#3b82f6;display:block;margin-bottom:1px">6:00 pm</span>
-          Walmart drop
-        </div>
-        <div style="background:#ede9fe;border-radius:6px;padding:5px 7px;font-size:11px;line-height:1.4;color:#4c1d95">
-          <span style="font-size:10px;color:#7c3aed;display:block;margin-bottom:1px">weekly</span>
-          Five Below restock
-        </div>
-      </div>
-
-      <div style="border:1.5px solid #d1d5db;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px;background:#fafafa">
-        <div style="font-size:10px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Thu</div>
-        <div style="background:#dbeafe;border-radius:6px;padding:5px 7px;font-size:11px;line-height:1.4;color:#1e40af;border:1px dashed #60a5fa;opacity:0.8">
-          <span style="font-size:10px;color:#3b82f6;display:block;margin-bottom:1px">possible</span>
-          Walmart restock
-        </div>
-        <div style="background:#fee2e2;border-radius:6px;padding:5px 7px;font-size:11px;line-height:1.4;color:#7f1d1d">
-          <span style="font-size:10px;color:#ef4444;display:block;margin-bottom:1px">8:00 am</span>
-          Target — Foothill Ranch
-        </div>
-        <div style="background:#dcfce7;border-radius:6px;padding:5px 7px;font-size:11px;line-height:1.4;color:#14532d">
-          <span style="font-size:10px;color:#16a34a;display:block;margin-bottom:1px">8:00 pm</span>
-          CVS restock
-        </div>
-      </div>
-
-      <div style="border:1.5px solid #d1d5db;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px;background:#fafafa">
-        <div style="font-size:10px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Fri</div>
-        <div style="background:#dbeafe;border-radius:6px;padding:5px 7px;font-size:11px;line-height:1.4;color:#1e40af;border:1px dashed #60a5fa;opacity:0.8">
-          <span style="font-size:10px;color:#3b82f6;display:block;margin-bottom:1px">possible</span>
-          Walmart restock
-        </div>
-        <div style="background:#fee2e2;border-radius:6px;padding:5px 7px;font-size:11px;line-height:1.4;color:#7f1d1d">
-          <span style="font-size:10px;color:#ef4444;display:block;margin-bottom:1px">8:00 am</span>
-          Target — Los Alisos
-        </div>
-      </div>
-
-      <div class="restock-empty" style="border:1px solid #f0f0f0;border-radius:10px;padding:10px 8px;min-height:140px;display:flex;flex-direction:column;gap:6px">
-        <div style="font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Sat</div>
-        <span style="font-size:11px;color:#ccc">No events</span>
-      </div>
-
-    </div>
-    <div style="margin-top:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-      <span style="font-size:11px;color:#aaa">Also recurring:</span>
-      <span style="background:#fef3c7;color:#78350f;border-radius:6px;padding:4px 9px;font-size:11px;font-weight:600">Aldi — random restocks (any day)</span>
-      <span style="display:flex;align-items:center;gap:5px;font-size:11px;color:#aaa;margin-left:auto">
-        <span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#dbeafe;border:1px dashed #60a5fa"></span>
-        Dashed = possible restock day
-      </span>
-    </div>
-  </div>
-
-</div><!-- /#drops-main -->
-</div><!-- /.container -->
-
-<div id="drop-pop">
-  <div class="pop-hdr">
-    <div class="pop-title" id="pop-title"></div>
-    <button class="pop-close" onclick="closePop()">&#10005;</button>
-  </div>
-  <div id="pop-body"></div>
-</div>
+<style>
+  .note-item {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    background: #fafafa;
+    position: relative;
+  }
+  .note-item:hover { border-color: #c4b5fd; background: #fdf8ff; }
+  .note-meta { font-size: 11px; color: #aaa; margin-bottom: 6px; }
+  .note-text { font-size: 14px; color: #222; white-space: pre-wrap; word-break: break-word; line-height: 1.55; }
+  .note-delete {
+    position: absolute; top: 10px; right: 10px;
+    background: none; border: none; color: #ccc; cursor: pointer;
+    font-size: 16px; line-height: 1; padding: 2px 4px; border-radius: 4px;
+  }
+  .note-delete:hover { color: #ef4444; background: #fee2e2; }
+</style>
 
 <script>
 (function() {
-  var DROPS = [{"product": "https://www.costco.com/.product.1992235.html", "url": "https://www.costco.com/.product.1992235.html", "sku": "", "retailer": "Costco", "drop_time": "2026-04-25", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-25T15:17:55.293000+00:00"}, {"product": "Pok\u00e9mon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...", "url": "https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page", "sku": "6606082", "retailer": "Best Buy", "drop_time": "2026-04-24", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-24T14:39:38.097000+00:00"}, {"product": "Ascended Heroes Bundle", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "18728422476", "retailer": "Walmart", "drop_time": "2026-04-23", "retail": "$31", "resell": "$60", "stock": "45K", "posted_by": "shermio", "timestamp": "2026-04-23T00:09:45.730000+00:00"}, {"product": "Ascended Heroes ex Boxes Assorted", "url": "https://www.walmart.com/ip/moonitor/19620004893", "sku": "19620004893", "retailer": "Walmart", "drop_time": "2026-04-22 9:00PM EST", "retail": "$22", "resell": "$40", "stock": "70K", "posted_by": "shermio", "timestamp": "2026-04-22T18:10:21.922000+00:00"}, {"product": "Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-22", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-22T00:55:10.384000+00:00"}, {"product": "Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...", "url": "https://www.walmart.com/ip/moonitor/20088667802", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-22", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-22T00:55:10.384000+00:00"}, {"product": "Ascended Heroes Bundle", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "18728422476", "retailer": "Walmart", "drop_time": "2026-04-21 9:00PM EST", "retail": "$31", "resell": "$60", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-21T16:59:16.653000+00:00"}, {"product": "Prismatic Tin Display 8ct", "url": "https://www.walmart.com/ip/moonitor/20088667802", "sku": "20088667802", "retailer": "Walmart", "drop_time": "2026-04-21 9:00PM EST", "retail": "$100", "resell": "$200", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-21T16:59:16.653000+00:00"}, {"product": "Pok\u00e9mon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...", "url": "https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page", "sku": "6606082", "retailer": "Best Buy", "drop_time": "2026-04-20", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-20T15:11:49.213000+00:00"}, {"product": "Phantasmal ETB", "url": "https://www.walmart.com/ip/moonitor/20011509005", "sku": "20011509005", "retailer": "Walmart", "drop_time": "2026-04-16 9:00PM EST", "retail": "$60", "resell": "$110", "stock": "14K", "posted_by": "shermio", "timestamp": "2026-04-16T22:19:49.923000+00:00"}, {"product": "Charizard Tin", "url": "https://www.walmart.com/ip/moonitor/20039171278", "sku": "20039171278", "retailer": "Walmart", "drop_time": "2026-04-16 9:00PM EST", "retail": "$19", "resell": "$20", "stock": "30K", "posted_by": "shermio", "timestamp": "2026-04-16T22:19:49.923000+00:00"}, {"product": "Ascended Heroes Tin Display", "url": "https://www.walmart.com/ip/moonitor/18952152504", "sku": "18952152504", "retailer": "Walmart", "drop_time": "2026-04-16 9:00PM EST", "retail": "$130", "resell": "$220", "stock": "9,000", "posted_by": "shermio", "timestamp": "2026-04-16T22:19:49.923000+00:00"}, {"product": "12ct Ascended Blister Displays", "url": "https://www.walmart.com/ip/moonitor/19581356308", "sku": "19581356308", "retailer": "Walmart", "drop_time": "2026-04-16 9:00PM EST", "retail": "$145", "resell": "$200", "stock": "4,000", "posted_by": "shermio", "timestamp": "2026-04-16T22:19:49.923000+00:00"}];
-  var RC    = {"Walmart": "#0071ce", "Target": "#cc0000", "Best Buy": "#003b8e", "Amazon": "#ff9900", "Pok\u00e9mon Center": "#e3350d", "GameStop": "#5c0e0e", "Sam's Club": "#007dc6", "Costco": "#005dab", "Barnes & Noble": "#1c4f2a", "Other": "#555"};
-  var MONTHS = ['January','February','March','April','May','June',
-                'July','August','September','October','November','December'];
-  var WDAYS      = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  var WDAYS_SHORT = ['S','M','T','W','T','F','S'];
-  var calY, calM, activeFilter = 'all';
-  var today = new Date();
+  var STORAGE_KEY = 'wdcardshop_notes';
 
-  function buildFilters() {
-    // Always show these retailers regardless of current data
-    var PINNED = ['Walmart', 'Target'];
-    // Collect any additional retailers present in data
-    var present = [];
-    DROPS.forEach(function(d) {
-      if (present.indexOf(d.retailer) === -1) present.push(d.retailer);
-    });
-    var extras = present.filter(function(r) { return PINNED.indexOf(r) === -1; }).sort();
-    var retailers = PINNED.concat(extras);
-    var bar = document.getElementById('drops-filters');
-    bar.innerHTML = '';
-    function makeBtn(label, val) {
-      var b = document.createElement('button');
-      b.className = 'filter-btn' + (val === 'all' ? ' active' : '');
-      b.textContent = label;
-      b.onclick = function() { setFilter(val, b); };
-      bar.appendChild(b);
+  function loadNotes() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+    catch(e) { return []; }
+  }
+
+  function saveNotes(notes) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+  }
+
+  function formatDate(iso) {
+    var d = new Date(iso);
+    return d.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'})
+      + ' at ' + d.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
+  }
+
+  function renderNotes() {
+    var notes = loadNotes();
+    var list = document.getElementById('notes-list');
+    var empty = document.getElementById('notes-empty');
+    var count = document.getElementById('notes-count');
+    count.textContent = notes.length + (notes.length === 1 ? ' note' : ' notes');
+    if (!notes.length) {
+      list.innerHTML = '';
+      empty.style.display = 'block';
+      return;
     }
-    makeBtn('All', 'all');
-    retailers.forEach(function(r) { makeBtn(r, r); });
+    empty.style.display = 'none';
+    list.innerHTML = notes.slice().reverse().map(function(n) {
+      return '<div class="note-item" data-id="' + n.id + '">'
+        + '<div class="note-meta">' + formatDate(n.ts) + '</div>'
+        + '<div class="note-text">' + escHtml(n.text) + '</div>'
+        + '<button class="note-delete" onclick="deleteNote(\'' + n.id + '\')" title="Delete">&#x2715;</button>'
+        + '</div>';
+    }).join('');
   }
 
-  function setFilter(f, btn) {
-    activeFilter = f;
-    document.querySelectorAll('#drops-filters .filter-btn').forEach(function(b) { b.classList.remove('active'); });
-    btn.classList.add('active');
-    renderCal();
+  function escHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
 
-  window.calNav = function(d) {
-    calM += d;
-    if (calM > 11) { calM = 0; calY++; }
-    if (calM < 0)  { calM = 11; calY--; }
-    renderCal();
+  window.addNote = function() {
+    var inp = document.getElementById('notes-input');
+    var text = inp.value.trim();
+    if (!text) return;
+    var notes = loadNotes();
+    notes.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2), text: text, ts: new Date().toISOString() });
+    saveNotes(notes);
+    inp.value = '';
+    renderNotes();
   };
 
-  window.calGoToday = function() {
-    calY = today.getFullYear();
-    calM = today.getMonth();
-    renderCal();
+  window.deleteNote = function(id) {
+    if (!confirm('Delete this note?')) return;
+    var notes = loadNotes().filter(function(n) { return n.id !== id; });
+    saveNotes(notes);
+    renderNotes();
   };
 
-  function getDropMap() {
-    var map = {};
-    var filtered = activeFilter === 'all' ? DROPS : DROPS.filter(function(d) { return d.retailer === activeFilter; });
-    filtered.forEach(function(d) {
-      var key = (d.drop_time || '').substring(0, 10);
-      if (!key || !/^\d{4}-\d{2}-\d{2}$/.test(key)) return;
-      if (!map[key]) map[key] = [];
-      map[key].push(d);
-    });
-    return map;
-  }
-
-  function renderCal() {
-    document.getElementById('cal-label').textContent = MONTHS[calM] + ' ' + calY;
-    var map        = getDropMap();
-    var firstDay   = new Date(calY, calM, 1).getDay();
-    var daysInMo   = new Date(calY, calM + 1, 0).getDate();
-
-    // Count drops this month for badge
-    var monthCount = 0;
-    Object.keys(map).forEach(function(k) {
-      var d = new Date(k + 'T12:00:00');
-      if (d.getFullYear() === calY && d.getMonth() === calM) monthCount += map[k].length;
-    });
-    document.getElementById('drops-badge').textContent = monthCount + ' drops';
-
-    var html = '';
-    WDAYS.forEach(function(d, i) { html += '<div class="cal-day-hdr"><span class="day-long">' + d + '</span><span class="day-short">' + WDAYS_SHORT[i] + '</span></div>'; });
-
-    for (var i = 0; i < firstDay; i++) html += '<div class="cal-cell cal-other"></div>';
-
-    for (var day = 1; day <= daysInMo; day++) {
-      var mo  = ('0' + (calM + 1)).slice(-2);
-      var dy  = ('0' + day).slice(-2);
-      var key = calY + '-' + mo + '-' + dy;
-      var isToday = (today.getFullYear() === calY && today.getMonth() === calM && today.getDate() === day);
-      var cellDrops = map[key] || [];
-      var MAX = 3;
-
-      var dotClass = isToday ? ' today-dot' : '';
-      var cellClass = isToday ? ' cal-today' : '';
-      var out = '<div class="cal-cell' + cellClass + '">';
-      out += '<span class="cal-date-num' + dotClass + '">' + day + '</span>';
-
-      cellDrops.slice(0, MAX).forEach(function(d) {
-        var color = RC[d.retailer] || '#555';
-        var label = d.product.length > 24 ? d.product.substring(0, 24) + '…' : d.product;
-        var idx   = DROPS.indexOf(d);
-        out += '<span class="cal-chip" style="background:' + color + '" onclick="showPop(event,' + idx + ')">' + label + '</span>';
+  // Enter to save, Shift+Enter for newline
+  document.addEventListener('DOMContentLoaded', function() {
+    var inp = document.getElementById('notes-input');
+    if (inp) {
+      inp.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); window.addNote(); }
       });
-
-      if (cellDrops.length > MAX) {
-        var extras = [];
-        cellDrops.slice(MAX).forEach(function(d) { extras.push(DROPS.indexOf(d)); });
-        out += '<span class="cal-more-link" onclick="showMorePop(event,' + JSON.stringify(extras) + ')">+' + (cellDrops.length - MAX) + ' more</span>';
-      }
-
-      out += '</div>';
-      html += out;
     }
-
-    var total = firstDay + daysInMo;
-    var tail  = (7 - (total % 7)) % 7;
-    for (var j = 0; j < tail; j++) html += '<div class="cal-cell cal-other"></div>';
-
-    document.getElementById('cal-grid').innerHTML = html;
-    closePop();
-  }
-
-  // ── Popover ────────────────────────────────────────────────────
-  window.showPop = function(e, idx) {
-    e.stopPropagation();
-    var d = DROPS[idx];
-    if (!d) return;
-    renderPop([d], e.clientX, e.clientY);
-  };
-
-  window.showMorePop = function(e, indices) {
-    e.stopPropagation();
-    var ds = indices.map(function(i) { return DROPS[i]; }).filter(Boolean);
-    renderPop(ds, e.clientX, e.clientY);
-  };
-
-  function renderPop(ds, cx, cy) {
-    var pop   = document.getElementById('drop-pop');
-    var title = document.getElementById('pop-title');
-    var body  = document.getElementById('pop-body');
-
-    if (ds.length === 1) {
-      var d     = ds[0];
-      var color = RC[d.retailer] || '#555';
-      title.innerHTML = '<a href="' + d.url + '" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">' + d.product + '</a>';
-      body.innerHTML =
-        '<div style="margin-bottom:10px">' +
-          '<span style="background:' + color + ';color:white;font-size:10px;padding:2px 9px;border-radius:12px;font-weight:700">' + d.retailer + '</span>' +
-        '</div>' +
-        popRow('Drop Time', d.drop_time || '—') +
-        popRow('SKU', '<span style="font-family:monospace">' + (d.sku || '—') + '</span>') +
-        popRow('Retail', d.retail || '—') +
-        popRow('Resell Est.', '<span style="color:#2e7d32">' + (d.resell || '—') + '</span>') +
-        popRow('Stock', d.stock || '—');
-    } else {
-      title.textContent = ds.length + ' drops this day';
-      body.innerHTML = ds.map(function(d) {
-        var color = RC[d.retailer] || '#555';
-        var name  = d.product.length > 30 ? d.product.substring(0, 30) + '…' : d.product;
-        var idx   = DROPS.indexOf(d);
-        return '<div class="pop-multi-item" onclick="showPop({stopPropagation:function(){}}, ' + idx + ')">' +
-          '<div style="font-size:11px;font-weight:600;color:#1a1a2e;margin-bottom:3px">' + name + '</div>' +
-          '<span style="background:' + color + ';color:white;font-size:9px;padding:1px 7px;border-radius:10px;font-weight:700">' + d.retailer + '</span>' +
-          '<span style="font-size:11px;color:#aaa;margin-left:7px">' + (d.drop_time || '') + '</span>' +
-        '</div>';
-      }).join('');
-    }
-
-    pop.style.display = 'block';
-    var pw = 272, ph = pop.offsetHeight || 200;
-    var left = cx + 14, top = cy + 14;
-    if (left + pw > window.innerWidth  - 12) left = cx - pw - 14;
-    if (top  + ph > window.innerHeight - 12) top  = cy - ph - 14;
-    pop.style.left = Math.max(8, left) + 'px';
-    pop.style.top  = Math.max(8, top)  + 'px';
-  }
-
-  function popRow(label, val) {
-    return '<div class="pop-row"><span class="pop-lbl">' + label + '</span><span class="pop-val">' + val + '</span></div>';
-  }
-
-  window.closePop = function() {
-    document.getElementById('drop-pop').style.display = 'none';
-  };
-
-  document.addEventListener('click', function(e) {
-    var pop = document.getElementById('drop-pop');
-    if (pop && !pop.contains(e.target) &&
-        !e.target.classList.contains('cal-chip') &&
-        !e.target.classList.contains('cal-more-link') &&
-        !e.target.classList.contains('pop-multi-item')) {
-      closePop();
-    }
+    renderNotes();
   });
 
-  // Init
-  calY = today.getFullYear();
-  calM = today.getMonth();
-  buildFilters();
-  renderCal();
+  // Also render immediately in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') {
+    setTimeout(renderNotes, 0);
+  }
 })();
 </script>
 </div>
