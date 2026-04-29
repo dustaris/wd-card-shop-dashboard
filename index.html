@@ -189,7 +189,7 @@
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: April 29, 2026 at 09:07 AM PST</div>
+    <div class="updated">Last updated: April 29, 2026 at 09:10 AM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -2617,6 +2617,10 @@ function resetBtn() {
 
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap">
       <h2 style="margin:0">Release Calendar</h2>
+      <div class="cal-view-toggle">
+        <button class="cal-view-btn active" id="view-btn-drops" onclick="switchCalView('drops')">Drops</button>
+        <button class="cal-view-btn" id="view-btn-notes" onclick="switchCalView('notes')">My Notes</button>
+      </div>
       <span id="drops-badge" style="background:#5b21b6;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">10 drops</span>
       <div style="display:flex;align-items:center;gap:6px;margin-left:auto">
         <button class="cal-nav-btn" onclick="calNav(-1)">&#8249;</button>
@@ -2632,6 +2636,12 @@ function resetBtn() {
 
     <div id="cal-scroll-wrap">
       <div id="cal-grid"></div>
+    </div>
+
+    <div id="notes-view-wrap" style="display:none">
+      <div id="notes-scroll-wrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+        <div id="notes-grid"></div>
+      </div>
     </div>
 
   </div>
@@ -2797,14 +2807,78 @@ function resetBtn() {
     calM += d;
     if (calM > 11) { calM = 0; calY++; }
     if (calM < 0)  { calM = 11; calY--; }
-    renderCal();
+    renderCurrentView();
   };
 
   window.calGoToday = function() {
     calY = today.getFullYear();
     calM = today.getMonth();
-    renderCal();
+    renderCurrentView();
   };
+
+  // ── View toggle (Drops / My Notes) ────────────────────────────
+  var calView = 'drops';
+
+  window.switchCalView = function(view) {
+    calView = view;
+    document.getElementById('view-btn-drops').classList.toggle('active', view === 'drops');
+    document.getElementById('view-btn-notes').classList.toggle('active', view === 'notes');
+    document.getElementById('cal-scroll-wrap').style.display  = view === 'drops' ? '' : 'none';
+    document.getElementById('notes-view-wrap').style.display  = view === 'notes' ? '' : 'none';
+    document.getElementById('drops-filters').style.display    = view === 'drops' ? '' : 'none';
+    document.getElementById('drops-badge').style.display      = view === 'drops' ? '' : 'none';
+    document.getElementById('publish-btn').style.display      = view === 'drops' ? '' : 'none';
+    renderCurrentView();
+  };
+
+  function renderCurrentView() {
+    if (calView === 'drops') renderCal();
+    else renderNotes();
+  }
+
+  function renderNotes() {
+    document.getElementById('cal-label').textContent = MONTHS[calM] + ' ' + calY;
+    var firstDay = new Date(calY, calM, 1).getDay();
+    var daysInMo = new Date(calY, calM + 1, 0).getDate();
+
+    var html = '';
+    WDAYS.forEach(function(d) { html += '<div class="cal-day-hdr">' + d + '</div>'; });
+
+    for (var i = 0; i < firstDay; i++) {
+      html += '<div class="notes-cell notes-other"></div>';
+    }
+
+    for (var day = 1; day <= daysInMo; day++) {
+      var mo  = ('0' + (calM + 1)).slice(-2);
+      var dy  = ('0' + day).slice(-2);
+      var key = calY + '-' + mo + '-' + dy;
+      var isToday = (today.getFullYear() === calY && today.getMonth() === calM && today.getDate() === day);
+      var cellCls = 'notes-cell' + (isToday ? ' notes-today' : '');
+      var dateCls = 'notes-date' + (isToday ? ' today-dot' : '');
+      html += '<div class="' + cellCls + '">';
+      html += '<span class="' + dateCls + '">' + day + '</span>';
+      html += '<textarea data-note-key="' + key + '" placeholder="Notes..."></textarea>';
+      html += '</div>';
+    }
+
+    var total = firstDay + daysInMo;
+    var tail = (7 - (total % 7)) % 7;
+    for (var j = 0; j < tail; j++) html += '<div class="notes-cell notes-other"></div>';
+
+    var grid = document.getElementById('notes-grid');
+    grid.innerHTML = html;
+
+    // Populate values and attach auto-save listeners
+    grid.querySelectorAll('textarea[data-note-key]').forEach(function(ta) {
+      var k = ta.getAttribute('data-note-key');
+      ta.value = localStorage.getItem(NOTE_PREFIX + k) || '';
+      ta.addEventListener('input', function() {
+        var val = ta.value;
+        if (val) localStorage.setItem(NOTE_PREFIX + k, val);
+        else localStorage.removeItem(NOTE_PREFIX + k);
+      });
+    });
+  }
 
   function getDropMap() {
     var map = {};
