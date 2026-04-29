@@ -183,13 +183,13 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">2</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">3</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: April 28, 2026 at 05:07 PM PST</div>
+    <div class="updated">Last updated: April 28, 2026 at 06:05 PM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -252,23 +252,23 @@ function resetBtn() {
     <div class="stats-grid">
       <div class="stat-card">
         <div class="label">Total Orders</div>
-        <div class="value">124</div>
+        <div class="value">125</div>
         <div class="sub">Jan 1 – Apr 29, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Total Revenue</div>
-        <div class="value">$56,474.48</div>
+        <div class="value">$57,122.36</div>
         <div class="sub">Jan 1 – Apr 29, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Avg Order Value</div>
-        <div class="value">$455.44</div>
+        <div class="value">$456.98</div>
         <div class="sub">Per order</div>
       </div>
       <div class="stat-card">
         <div class="label">Net Sales (after fees)</div>
-        <div class="value">$54,497.87</div>
-        <div class="sub">Est. fees: $1,976.61 (~3.5%)</div>
+        <div class="value">$55,123.08</div>
+        <div class="sub">Est. fees: $1,999.28 (~3.5%)</div>
       </div>
     </div>
   </div>
@@ -291,12 +291,21 @@ function resetBtn() {
         <button class="filter-btn active" onclick="filterOrders('all', this)">All</button>
         <button class="filter-btn" onclick="filterOrders('fulfilled', this)">Fulfilled</button>
         <button class="filter-btn" onclick="filterOrders('unfulfilled', this)">Unfulfilled</button>
-        <span class="order-count" id="orderCount">124 orders</span>
+        <span class="order-count" id="orderCount">125 orders</span>
       </div>
       <div class="table-scroll" id="orders-scroll">
         <table id="ordersTable">
           <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Fulfillment</th></tr></thead>
           <tbody>
+        <tr data-fulfillment="unfulfilled">
+            <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7345339564270" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1235</a></td>
+            <td data-label="Customer">Peter James Simeone II</td>
+            <td data-label="Date">2026-04-28</td>
+            <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">Ascended Heroes First Partners Deluxe Pin Collection <span style='color:#aaa;font-size:11px'>x12</span></td>
+            <td data-label="Total"><strong>$647.88</strong></td>
+            <td data-label="Payment"><span class="badge badge-green">Paid</span></td>
+            <td data-label="Status"><span class="badge badge-red">Unfulfilled</span></td>
+        </tr>
         <tr data-fulfillment="fulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7340844351726" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1234</a></td>
             <td data-label="Customer">Abdallah Abed</td>
@@ -1448,9 +1457,23 @@ function resetBtn() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#95bf47;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">Shopify</span>
         <h2 style="margin:0">Shopify — Awaiting Fulfillment</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
       </div>
-      <p style="color:#aaa;font-size:13px">No unfulfilled Shopify orders. All caught up!</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead>
+          <tbody>
+        <tr>
+          <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7345339564270" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc">#1235</a></td>
+          <td>Peter James Simeone II</td>
+          <td>2026-04-28</td>
+          <td style="font-size:12px;max-width:240px;line-height:1.5">Ascended Heroes First Partners Deluxe Pin Collection <span style='color:#aaa;font-size:11px'>x12</span></td>
+          <td><strong>$647.88</strong></td>
+          <td><span class="badge badge-green">Paid</span></td>
+          <td><span class="badge badge-red">Unfulfilled</span></td>
+        </tr></tbody>
+        </table>
+      </div>
     </div>
   
     <div class="card" style="margin-bottom:28px">
@@ -1618,10 +1641,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">30</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB">$21.14</td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">12</span></td>
-          <td data-label="TCG Market">$21.55</td>
+          <td data-label="TCG Market">$21.54</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$21.20</td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$0.44</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$0.45</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672393" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1692,22 +1715,6 @@ function resetBtn() {
         </tr>
         <tr>
           <td style="font-weight:600;max-width:260px">
-            <a href="https://1marss-2m.myshopify.com/products/ascended-heroes-first-partners-deluxe-pin-collection" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes First Partners Deluxe Pin Collection</a>
-          </td>
-          <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$53.99</td>
-          <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">18</span></td>
-          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
-          <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#bbb">—</span></td>
-          <td data-label="Link">
-            
-          </td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/terastal-fest-ex-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Terastal Fest ex Booster Box</a>
           </td>
           <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$135.99</td>
@@ -1746,10 +1753,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">9</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$206.20</td>
+          <td data-label="TCG Market">$205.60</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$224.99</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-6.21</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-5.61</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/654213" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1768,6 +1775,22 @@ function resetBtn() {
           <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$4.18</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/654136" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;max-width:260px">
+            <a href="https://1marss-2m.myshopify.com/products/ascended-heroes-first-partners-deluxe-pin-collection" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes First Partners Deluxe Pin Collection</a>
+          </td>
+          <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$53.99</td>
+          <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">6</span></td>
+          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
+          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Market"><span style="color:#bbb">—</span></td>
+          <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
+          <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
+          <td data-label="vs. Market"><span style="color:#bbb">—</span></td>
+          <td data-label="Link">
+            
           </td>
         </tr>
         <tr>
@@ -1874,10 +1897,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$159.82</td>
+          <td data-label="TCG Market">$158.99</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$132.38</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-16.83</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-16.00</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/668496" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -2790,7 +2813,7 @@ new Chart(document.getElementById('revenueChart'), {
     datasets: [
       {
         label: 'Shopify',
-        data: [7916.92, 10005.64, 21133.09, 17418.83],
+        data: [7916.92, 10005.64, 21133.09, 18066.71],
         backgroundColor: '#95bf47',
         borderRadius: 4,
         order: 2,
