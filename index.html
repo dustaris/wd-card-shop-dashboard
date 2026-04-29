@@ -189,7 +189,7 @@
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: April 29, 2026 at 09:05 AM PST</div>
+    <div class="updated">Last updated: April 29, 2026 at 09:07 AM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -2047,24 +2047,24 @@ function resetBtn() {
   }
   .cal-cell {
     background: white;
-    min-height: 108px;
-    padding: 6px 5px 4px;
+    min-height: 130px;
+    padding: 8px 7px 6px;
     position: relative;
     overflow: hidden;
   }
   .cal-cell.cal-today { background: #faf8ff; }
   .cal-cell.cal-other { background: #f9f9f9; }
   .cal-date-num {
-    font-size: 12px;
-    font-weight: 500;
-    color: #444;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 22px;
-    height: 22px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
-    margin-bottom: 3px;
+    margin-bottom: 0;
   }
   .cal-date-num.today-dot {
     background: #5b21b6;
@@ -2146,40 +2146,96 @@ function resetBtn() {
   .pop-multi-item { padding:6px 0; border-bottom:1px solid #f4f4f4; cursor:pointer; }
   .pop-multi-item:last-child { border-bottom:none; }
   .pop-multi-item:hover { background:#fafafa; margin:0 -4px; padding:6px 4px; border-radius:4px; }
-  #cal-scroll-wrap { overflow-x: hidden; }
-  .day-short { display: none; }
-  .day-long  { display: inline; }
+  #cal-scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  /* Notes calendar */
+  #notes-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: #e0e0e0;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .notes-cell {
+    background: white;
+    min-height: 108px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .notes-cell.notes-other { background: #f9f9f9; }
+  .notes-cell.notes-today { background: #faf8ff; }
+  .notes-date {
+    font-size: 12px;
+    font-weight: 500;
+    color: #444;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .notes-date.today-dot { background: #5b21b6; color: white; font-weight: 700; }
+  .notes-cell textarea {
+    flex: 1;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 10px;
+    font-family: inherit;
+    color: #333;
+    background: transparent;
+    line-height: 1.4;
+    padding: 0;
+    min-height: 60px;
+  }
+  .notes-cell textarea::placeholder { color: #ccc; }
+  .notes-cell textarea:focus { background: #fdfcff; border-radius: 4px; padding: 2px; margin: -2px; }
+  .cal-view-toggle { display:flex; gap:6px; }
+  .cal-view-btn {
+    padding: 4px 14px;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #555;
+    transition: all 0.15s;
+  }
+  .cal-view-btn.active { background: #1a1a2e; color: white; border-color: #1a1a2e; }
   @media (max-width: 640px) {
-    /* Calendar fits screen — no horizontal scroll */
-    #cal-scroll-wrap { margin: 0; padding: 0; overflow-x: hidden; }
-    #cal-grid { min-width: unset; width: 100%; }
-    .cal-cell { min-height: 58px; padding: 3px 2px; overflow: hidden; }
-    .cal-chip { font-size: 8px; padding: 1px 3px; margin-bottom: 1px; }
-    .cal-date-num { font-size: 10px; width: 18px; height: 18px; margin-bottom: 1px; }
-    .cal-more-link { font-size: 9px; }
-    .cal-day-hdr { font-size: 10px; padding: 5px 0; }
-    .day-short { display: inline; }
-    .day-long  { display: none; }
-    /* Pop-over centered on mobile */
-    #drop-pop { width: min(88vw, 300px); left: 50% !important; transform: translateX(-50%); top: 60px !important; }
+    /* Calendar — original scrollable behaviour */
+    #cal-scroll-wrap { margin: 0 -2px; padding-bottom: 4px; }
+    #cal-grid { min-width: 420px; }
+    .cal-cell { min-height: 80px; padding: 4px 3px; }
+    .cal-chip { font-size: 9px; padding: 2px 4px; }
+    .cal-date-num { font-size: 11px; }
+    #drop-pop { width: min(88vw, 300px); left: 50% !important; transform: translateX(-50%); }
+    .cal-day-hdr { font-size: 10px; padding: 6px 0; }
+    /* Notes grid also scrollable on mobile */
+    #notes-scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -2px; padding-bottom: 4px; }
+    #notes-grid { min-width: 420px; }
+    .notes-cell { min-height: 80px; }
     /* Reorder sections: calendar first, restock second, feeds last */
     #drops-main { display: flex; flex-direction: column; }
     #drops-cal-card     { order: 1; margin-bottom: 14px !important; }
     #drops-restock-card { order: 2; margin-top: 0 !important; }
     #drops-feeds        { order: 3; margin-top: 14px; margin-bottom: 0 !important; }
-    /* Feeds stack vertically on mobile */
+    /* Feeds stack vertically */
     #drops-feeds { flex-direction: column !important; gap: 12px !important; }
     #drops-feeds .card  { max-height: 220px; overflow-y: auto; }
-    /* Restock: hide empty days, show 3-col active grid */
-    .restock-grid       { grid-template-columns: repeat(3,1fr) !important; }
-    .restock-empty      { display: none !important; }
-    /* Filter bar wraps */
-    .filter-bar         { flex-wrap: wrap; gap: 6px; }
-    .filter-btn         { padding: 4px 11px; font-size: 11px; }
+    /* Restock: hide empty days */
+    .restock-grid   { grid-template-columns: repeat(3,1fr) !important; }
+    .restock-empty  { display: none !important; }
+    .filter-bar     { flex-wrap: wrap; gap: 6px; }
+    .filter-btn     { padding: 4px 11px; font-size: 11px; }
   }
-  /* Notes */
-  .cal-date-num { cursor: pointer; transition: background 0.1s; }
-  .cal-date-num:hover { background: #ede9fe; }
   /* Shared note indicator (purple, for notes visible to everyone) */
   .cal-note-dot.shared { background: #7c3aed; }
   .cal-note-preview.shared { color: #4c1d95; background: #ede9fe; }
@@ -2703,8 +2759,7 @@ function resetBtn() {
   var GITHUB_REPO   = 'dustaris/wd-card-shop-dashboard';
   var MONTHS = ['January','February','March','April','May','June',
                 'July','August','September','October','November','December'];
-  var WDAYS      = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  var WDAYS_SHORT = ['S','M','T','W','T','F','S'];
+  var WDAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   var calY, calM, activeFilter = 'all';
   var today = new Date();
 
@@ -2778,7 +2833,7 @@ function resetBtn() {
     document.getElementById('drops-badge').textContent = monthCount + ' drops';
 
     var html = '';
-    WDAYS.forEach(function(d, i) { html += '<div class="cal-day-hdr"><span class="day-long">' + d + '</span><span class="day-short">' + WDAYS_SHORT[i] + '</span></div>'; });
+    WDAYS.forEach(function(d) { html += '<div class="cal-day-hdr">' + d + '</div>'; });
 
     for (var i = 0; i < firstDay; i++) html += '<div class="cal-cell cal-other"></div>';
 
@@ -2794,14 +2849,13 @@ function resetBtn() {
       var cellClass = isToday ? ' cal-today' : '';
       var note        = getNote(key);
       var noteShared  = isSharedNote(key);
-      var notePreview = note ? note.split('
-')[0].substring(0, 30) + (note.length > 30 ? '…' : '') : '';
+      var notePreview = note ? note.split('\n')[0].substring(0, 30) + (note.length > 30 ? '...' : '') : '';
       var noteDot     = note ? '<span class="cal-note-dot' + (noteShared ? ' shared' : '') + '"></span>' : '';
 
       var out = '<div class="cal-cell' + cellClass + '">';
-      // Date number — click to open notes
-      out += '<div style="display:flex;align-items:center;gap:2px;margin-bottom:3px">';
-      out += '<span class="cal-date-num' + dotClass + '" onclick="openNote(event,'' + key + '')" title="Add note">' + day + '</span>';
+      // Date number - click to open notes
+      out += '<div style="display:flex;align-items:center;gap:2px;margin-bottom:4px">';
+      out += '<span class="cal-date-num' + dotClass + '" onclick="openNote(event,&quot;' + key + '&quot;)" title="Click to add a note for this day">' + day + '</span>';
       out += noteDot;
       out += '</div>';
 
@@ -2821,7 +2875,7 @@ function resetBtn() {
       // Note preview at bottom of cell
       if (notePreview) {
         var previewClass = 'cal-note-preview' + (noteShared ? ' shared' : '');
-        out += '<div class="' + previewClass + '" onclick="openNote(event,'' + key + '')">' + notePreview + '</div>';
+        out += '<div class="' + previewClass + '" onclick="openNote(event,&quot;' + key + '&quot;)">' + notePreview + '</div>';
       }
 
       out += '</div>';
