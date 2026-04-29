@@ -189,7 +189,7 @@
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: April 29, 2026 at 06:56 AM PST</div>
+    <div class="updated">Last updated: April 29, 2026 at 06:58 AM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -2191,6 +2191,65 @@ function resetBtn() {
     .filter-bar         { flex-wrap: wrap; gap: 6px; }
     .filter-btn         { padding: 4px 11px; font-size: 11px; }
   }
+  /* Notes */
+  .cal-date-num { cursor: pointer; transition: background 0.1s; }
+  .cal-date-num:hover { background: #ede9fe; }
+  .cal-note-dot {
+    display: inline-block; width: 6px; height: 6px;
+    border-radius: 50%; background: #f59e0b;
+    margin-left: 3px; vertical-align: middle; flex-shrink: 0;
+  }
+  .cal-note-preview {
+    font-size: 10px; color: #92400e; background: #fef3c7;
+    border-radius: 4px; padding: 2px 5px; margin-top: 2px;
+    overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    cursor: pointer; line-height: 1.4;
+  }
+  .cal-note-preview:hover { background: #fde68a; }
+  /* Notes modal overlay */
+  #notes-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.35); z-index: 10000;
+    align-items: center; justify-content: center;
+  }
+  #notes-overlay.open { display: flex; }
+  #notes-modal {
+    background: white; border-radius: 14px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+    padding: 22px 24px; width: min(460px, 92vw);
+  }
+  #notes-modal h3 {
+    font-size: 15px; font-weight: 700; color: #1a1a2e;
+    margin: 0 0 14px; display: flex; align-items: center; gap: 8px;
+  }
+  #notes-modal h3 span { font-weight: 400; color: #aaa; font-size: 13px; }
+  #notes-textarea {
+    width: 100%; box-sizing: border-box;
+    border: 1px solid #e0e0e0; border-radius: 8px;
+    padding: 10px 12px; font-size: 13px; font-family: inherit;
+    resize: vertical; min-height: 120px; outline: none;
+    color: #1a1a2e; line-height: 1.55;
+  }
+  #notes-textarea:focus { border-color: #5b21b6; box-shadow: 0 0 0 3px #ede9fe; }
+  .notes-actions { display: flex; gap: 8px; margin-top: 12px; justify-content: flex-end; }
+  .notes-btn-save {
+    background: #5b21b6; color: white; border: none;
+    border-radius: 8px; padding: 8px 20px; font-size: 13px;
+    font-weight: 700; cursor: pointer;
+  }
+  .notes-btn-save:hover { background: #4c1d95; }
+  .notes-btn-clear {
+    background: #f5f5f5; color: #666; border: none;
+    border-radius: 8px; padding: 8px 16px; font-size: 13px;
+    font-weight: 600; cursor: pointer;
+  }
+  .notes-btn-clear:hover { background: #ffe4e4; color: #c62828; }
+  .notes-btn-cancel {
+    background: white; color: #888; border: 1px solid #e0e0e0;
+    border-radius: 8px; padding: 8px 16px; font-size: 13px;
+    font-weight: 600; cursor: pointer; margin-right: auto;
+  }
+  .notes-btn-cancel:hover { background: #f5f5f5; }
 </style>
 
 <div class="container">
@@ -2577,6 +2636,18 @@ function resetBtn() {
   <div id="pop-body"></div>
 </div>
 
+<div id="notes-overlay" onclick="notesClickOutside(event)">
+  <div id="notes-modal">
+    <h3>&#128221; Notes &nbsp;<span id="notes-date-label"></span></h3>
+    <textarea id="notes-textarea" placeholder="Add notes for this day — upcoming drops, reminders, strategy..."></textarea>
+    <div class="notes-actions">
+      <button class="notes-btn-cancel" onclick="closeNotes()">Cancel</button>
+      <button class="notes-btn-clear" onclick="clearNote()">Clear</button>
+      <button class="notes-btn-save" onclick="saveNote()">Save</button>
+    </div>
+  </div>
+</div>
+
 <script>
 (function() {
   var DROPS = [{"product": "https://www.costco.com/.product.1992235.html", "url": "https://www.costco.com/.product.1992235.html", "sku": "", "retailer": "Costco", "drop_time": "2026-04-25", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-25T15:17:55.293000+00:00"}, {"product": "Pok\u00e9mon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...", "url": "https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page", "sku": "6606082", "retailer": "Best Buy", "drop_time": "2026-04-24", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-24T14:39:38.097000+00:00"}, {"product": "Ascended Heroes Bundle", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "18728422476", "retailer": "Walmart", "drop_time": "2026-04-23", "retail": "$31", "resell": "$60", "stock": "45K", "posted_by": "shermio", "timestamp": "2026-04-23T00:09:45.730000+00:00"}, {"product": "Ascended Heroes ex Boxes Assorted", "url": "https://www.walmart.com/ip/moonitor/19620004893", "sku": "19620004893", "retailer": "Walmart", "drop_time": "2026-04-22 9:00PM EST", "retail": "$22", "resell": "$40", "stock": "70K", "posted_by": "shermio", "timestamp": "2026-04-22T18:10:21.922000+00:00"}, {"product": "Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-22", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-22T00:55:10.384000+00:00"}, {"product": "Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...", "url": "https://www.walmart.com/ip/moonitor/20088667802", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-22", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-22T00:55:10.384000+00:00"}, {"product": "Ascended Heroes Bundle", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "18728422476", "retailer": "Walmart", "drop_time": "2026-04-21 9:00PM EST", "retail": "$31", "resell": "$60", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-21T16:59:16.653000+00:00"}, {"product": "Prismatic Tin Display 8ct", "url": "https://www.walmart.com/ip/moonitor/20088667802", "sku": "20088667802", "retailer": "Walmart", "drop_time": "2026-04-21 9:00PM EST", "retail": "$100", "resell": "$200", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-21T16:59:16.653000+00:00"}, {"product": "Pok\u00e9mon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...", "url": "https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page", "sku": "6606082", "retailer": "Best Buy", "drop_time": "2026-04-20", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-20T15:11:49.213000+00:00"}, {"product": "Phantasmal ETB", "url": "https://www.walmart.com/ip/moonitor/20011509005", "sku": "20011509005", "retailer": "Walmart", "drop_time": "2026-04-16 9:00PM EST", "retail": "$60", "resell": "$110", "stock": "14K", "posted_by": "shermio", "timestamp": "2026-04-16T22:19:49.923000+00:00"}, {"product": "Charizard Tin", "url": "https://www.walmart.com/ip/moonitor/20039171278", "sku": "20039171278", "retailer": "Walmart", "drop_time": "2026-04-16 9:00PM EST", "retail": "$19", "resell": "$20", "stock": "30K", "posted_by": "shermio", "timestamp": "2026-04-16T22:19:49.923000+00:00"}, {"product": "Ascended Heroes Tin Display", "url": "https://www.walmart.com/ip/moonitor/18952152504", "sku": "18952152504", "retailer": "Walmart", "drop_time": "2026-04-16 9:00PM EST", "retail": "$130", "resell": "$220", "stock": "9,000", "posted_by": "shermio", "timestamp": "2026-04-16T22:19:49.923000+00:00"}, {"product": "12ct Ascended Blister Displays", "url": "https://www.walmart.com/ip/moonitor/19581356308", "sku": "19581356308", "retailer": "Walmart", "drop_time": "2026-04-16 9:00PM EST", "retail": "$145", "resell": "$200", "stock": "4,000", "posted_by": "shermio", "timestamp": "2026-04-16T22:19:49.923000+00:00"}];
@@ -2672,8 +2743,17 @@ function resetBtn() {
 
       var dotClass = isToday ? ' today-dot' : '';
       var cellClass = isToday ? ' cal-today' : '';
+      var note      = getNote(key);
+      var notePreview = note ? note.split('
+')[0].substring(0, 30) + (note.length > 30 ? '…' : '') : '';
+      var noteDot   = note ? '<span class="cal-note-dot"></span>' : '';
+
       var out = '<div class="cal-cell' + cellClass + '">';
-      out += '<span class="cal-date-num' + dotClass + '">' + day + '</span>';
+      // Date number — click to open notes
+      out += '<div style="display:flex;align-items:center;gap:2px;margin-bottom:3px">';
+      out += '<span class="cal-date-num' + dotClass + '" onclick="openNote(event,'' + key + '')" title="Add note">' + day + '</span>';
+      out += noteDot;
+      out += '</div>';
 
       cellDrops.slice(0, MAX).forEach(function(d) {
         var color = RC[d.retailer] || '#555';
@@ -2686,6 +2766,11 @@ function resetBtn() {
         var extras = [];
         cellDrops.slice(MAX).forEach(function(d) { extras.push(DROPS.indexOf(d)); });
         out += '<span class="cal-more-link" onclick="showMorePop(event,' + JSON.stringify(extras) + ')">+' + (cellDrops.length - MAX) + ' more</span>';
+      }
+
+      // Note preview at bottom of cell
+      if (notePreview) {
+        out += '<div class="cal-note-preview" onclick="openNote(event,'' + key + '')">' + notePreview + '</div>';
       }
 
       out += '</div>';
@@ -2771,6 +2856,58 @@ function resetBtn() {
         !e.target.classList.contains('pop-multi-item')) {
       closePop();
     }
+  });
+
+  // ── Notes ──────────────────────────────────────────────────────
+  var NOTE_PREFIX = 'wdcs_note_';
+  var activeNoteDate = null;
+
+  function getNoteKey(date) { return NOTE_PREFIX + date; }
+
+  function getNote(date) { return localStorage.getItem(getNoteKey(date)) || ''; }
+
+  window.openNote = function(e, date) {
+    e.stopPropagation();
+    closePop();
+    activeNoteDate = date;
+    var d = new Date(date + 'T12:00:00');
+    var label = d.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
+    document.getElementById('notes-date-label').textContent = label;
+    document.getElementById('notes-textarea').value = getNote(date);
+    document.getElementById('notes-overlay').classList.add('open');
+    setTimeout(function() { document.getElementById('notes-textarea').focus(); }, 60);
+  };
+
+  window.saveNote = function() {
+    if (!activeNoteDate) return;
+    var val = document.getElementById('notes-textarea').value.trim();
+    if (val) {
+      localStorage.setItem(getNoteKey(activeNoteDate), val);
+    } else {
+      localStorage.removeItem(getNoteKey(activeNoteDate));
+    }
+    closeNotes();
+    renderCal();
+  };
+
+  window.clearNote = function() {
+    if (!activeNoteDate) return;
+    document.getElementById('notes-textarea').value = '';
+  };
+
+  window.closeNotes = function() {
+    document.getElementById('notes-overlay').classList.remove('open');
+    activeNoteDate = null;
+  };
+
+  window.notesClickOutside = function(e) {
+    if (e.target === document.getElementById('notes-overlay')) closeNotes();
+  };
+
+  // Keyboard shortcut: Cmd/Ctrl+Enter to save, Escape to cancel
+  document.getElementById('notes-textarea').addEventListener('keydown', function(e) {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); saveNote(); }
+    if (e.key === 'Escape') closeNotes();
   });
 
   // Init
