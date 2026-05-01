@@ -183,13 +183,13 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">2</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">1</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: April 30, 2026 at 05:05 PM PST</div>
+    <div class="updated">Last updated: April 30, 2026 at 06:09 PM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -252,23 +252,23 @@ function resetBtn() {
     <div class="stats-grid">
       <div class="stat-card">
         <div class="label">Total Orders</div>
-        <div class="value">126</div>
+        <div class="value">127</div>
         <div class="sub">Jan 1 – May 1, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Total Revenue</div>
-        <div class="value">$57,561.90</div>
+        <div class="value">$57,768.87</div>
         <div class="sub">Jan 1 – May 1, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Avg Order Value</div>
-        <div class="value">$456.84</div>
+        <div class="value">$454.87</div>
         <div class="sub">Per order</div>
       </div>
       <div class="stat-card">
         <div class="label">Net Sales (after fees)</div>
-        <div class="value">$55,547.23</div>
-        <div class="sub">Est. fees: $2,014.67 (~3.5%)</div>
+        <div class="value">$55,746.96</div>
+        <div class="sub">Est. fees: $2,021.91 (~3.5%)</div>
       </div>
     </div>
   </div>
@@ -291,12 +291,21 @@ function resetBtn() {
         <button class="filter-btn active" onclick="filterOrders('all', this)">All</button>
         <button class="filter-btn" onclick="filterOrders('fulfilled', this)">Fulfilled</button>
         <button class="filter-btn" onclick="filterOrders('unfulfilled', this)">Unfulfilled</button>
-        <span class="order-count" id="orderCount">126 orders</span>
+        <span class="order-count" id="orderCount">127 orders</span>
       </div>
       <div class="table-scroll" id="orders-scroll">
         <table id="ordersTable">
           <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Fulfillment</th></tr></thead>
           <tbody>
+        <tr data-fulfillment="unfulfilled">
+            <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7349447065838" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1237</a></td>
+            <td data-label="Customer">Alex Penaloza</td>
+            <td data-label="Date">2026-04-30</td>
+            <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">Perfect Order Elite Trainer Box <span style='color:#aaa;font-size:11px'>x3</span></td>
+            <td data-label="Total"><strong>$206.97</strong></td>
+            <td data-label="Payment"><span class="badge badge-green">Paid</span></td>
+            <td data-label="Status"><span class="badge badge-red">Unfulfilled</span></td>
+        </tr>
         <tr data-fulfillment="fulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7345753194734" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1236</a></td>
             <td data-label="Customer">Alex Lefkowitz</td>
@@ -1466,9 +1475,23 @@ function resetBtn() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#95bf47;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">Shopify</span>
         <h2 style="margin:0">Shopify — Awaiting Fulfillment</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
       </div>
-      <p style="color:#aaa;font-size:13px">No unfulfilled Shopify orders. All caught up!</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead>
+          <tbody>
+        <tr>
+          <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7349447065838" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc">#1237</a></td>
+          <td>Alex Penaloza</td>
+          <td>2026-04-30</td>
+          <td style="font-size:12px;max-width:240px;line-height:1.5">Perfect Order Elite Trainer Box <span style='color:#aaa;font-size:11px'>x3</span></td>
+          <td><strong>$206.97</strong></td>
+          <td><span class="badge badge-green">Paid</span></td>
+          <td><span class="badge badge-red">Unfulfilled</span></td>
+        </tr></tbody>
+        </table>
+      </div>
     </div>
   
     <div class="card" style="margin-bottom:28px">
@@ -1484,32 +1507,9 @@ function resetBtn() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">2</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
-          <tbody>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-798CC1-248C8</a></td>
-          <td>John Lee Hughey</td>
-          <td>2026-04-30</td>
-          <td style="font-size:12px;max-width:220px;line-height:1.5">—</td>
-          <td>Standard</td>
-          <td><strong>$42.28</strong></td>
-          <td><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-E4E3D4-96761</a></td>
-          <td>Angel Fontan</td>
-          <td>2026-04-30</td>
-          <td style="font-size:12px;max-width:220px;line-height:1.5">—</td>
-          <td>Standard</td>
-          <td><strong>$19.38</strong></td>
-          <td><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr></tbody>
-        </table>
-      </div>
+      <p style="color:#aaa;font-size:13px">No outstanding orders found. Run 3_tcgplayer_scraper.py to refresh.</p>
     </div>
 </div>
 </div>
@@ -1920,10 +1920,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$163.02</td>
+          <td data-label="TCG Market">$164.18</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$132.38</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-20.03</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-21.19</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/668496" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -2414,12 +2414,25 @@ function resetBtn() {
         
         <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
           <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
+            <img src="https://cdn.discordapp.com/avatars/192409425514856448/acd93a64697aafc4416c94a0bcd893d0.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">B</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
+              <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
+              <span style="font-size:11px;color:#bbb">6m ago</span>
+            </div>
+            <div style="font-size:13px;color:#333;line-height:1.5">Make sure youre keeping an eye out for Target it should drop either<br><br><strong>tonight or tomorrow night between 12:00am-3:00am est.</strong><br><br>All skus and stock here <span style="color:#5b6af5;font-weight:600">#channel</span> <br><br></div>
+            
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
             <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
           </div>
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">22h ago</span>
+              <span style="font-size:11px;color:#bbb">23h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Everything is showing out of stock now<br><br>Feel free to run for trickle stock<br><br>Please post <span style="color:#5b6af5;font-weight:600">#channel</span> !!!<br><br></div>
             
@@ -2432,7 +2445,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">22h ago</span>
+              <span style="font-size:11px;color:#bbb">23h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Posters showing out of stock<br><br>Keep running for trickle stock<br><br></div>
             
@@ -2445,7 +2458,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">23h ago</span>
+              <span style="font-size:11px;color:#bbb">1d ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"><strong>__LIVE__</strong><br><br></div>
             
@@ -2458,7 +2471,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">23h ago</span>
+              <span style="font-size:11px;color:#bbb">1d ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">10 Minute reminder for Walmart <br><br></div>
             
@@ -2653,22 +2666,9 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
+              <span style="font-size:11px;color:#bbb">2d ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Be ready for a large Target restock at some point<br><br>Everything has been posted in <span style="color:#5b6af5;font-weight:600">#channel</span> <br><br>Expect drop Thursday or Friday night<br><br></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">3d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Walmart on Wednesday this week is like 6-7/10 depending on stock<br><br></div>
             
           </div>
         </div>
@@ -2687,7 +2687,7 @@ function resetBtn() {
   <div style="max-height:300px;overflow-y:auto;padding-right:2px"><div style="padding:9px 0;border-bottom:1px solid #f3f4f6">
   <div style="font-size:12px;color:#374151;line-height:1.5">RT @scalpforalivin: <mark style="background:#fef08a;border-radius:2px;padding:0 2px">Mission Viejo</mark> Best Buy to have 4+ Prismatic Tins, 2 Prismatic Binder Collections, 1 PF ETB, &amp; 4+ 151 Poster Collections…</div>
   <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
-    <a href="https://x.com/squirtletcgoc2/status/2049696847674102136" target="_blank" style="font-size:10px;color:#60a5fa;text-decoration:none">20h ago</a>
+    <a href="https://x.com/squirtletcgoc2/status/2049696847674102136" target="_blank" style="font-size:10px;color:#60a5fa;text-decoration:none">21h ago</a>
   </div>
 </div></div>
 </div>
@@ -3314,7 +3314,7 @@ new Chart(document.getElementById('revenueChart'), {
     datasets: [
       {
         label: 'Shopify',
-        data: [7916.92, 10005.64, 21133.09, 18506.25],
+        data: [7916.92, 10005.64, 21133.09, 18713.22],
         backgroundColor: '#95bf47',
         borderRadius: 4,
         order: 2,
