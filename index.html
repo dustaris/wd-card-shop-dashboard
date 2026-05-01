@@ -183,13 +183,13 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">4</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">5</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: May 01, 2026 at 04:05 AM PST</div>
+    <div class="updated">Last updated: May 01, 2026 at 04:48 AM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -1516,17 +1516,26 @@ function resetBtn() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">3</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">4</span>
       </div>
       <div class="table-scroll">
         <table>
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
         <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-C5008C-F4155</a></td>
+          <td>Douglas Ewing</td>
+          <td>2026-05-01</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Card Sleeves ×4</td>
+          <td>Standard</td>
+          <td><strong>$38.76</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-A3EC16-A6C74</a></td>
           <td>Gabriel Marsh-Niccum</td>
           <td>2026-05-01</td>
-          <td style="font-size:12px;max-width:220px;line-height:1.5">—</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon Japan</td>
           <td>Standard</td>
           <td><strong>$86.99</strong></td>
           <td><span class="badge badge-yellow">Ready to Ship</span></td>
@@ -1535,7 +1544,7 @@ function resetBtn() {
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-170388-D44CB</a></td>
           <td>Kipp Davis</td>
           <td>2026-05-01</td>
-          <td style="font-size:12px;max-width:220px;line-height:1.5">—</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Card Sleeves ×2</td>
           <td>Standard</td>
           <td><strong>$21.78</strong></td>
           <td><span class="badge badge-yellow">Ready to Ship</span></td>
@@ -1544,7 +1553,7 @@ function resetBtn() {
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-78C88B-45B46</a></td>
           <td>Yerbis Pena</td>
           <td>2026-05-01</td>
-          <td style="font-size:12px;max-width:220px;line-height:1.5">—</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Card Sleeves ×2</td>
           <td>Standard</td>
           <td><strong>$18.78</strong></td>
           <td><span class="badge badge-yellow">Ready to Ship</span></td>
@@ -2538,7 +2547,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">2h ago</span>
+              <span style="font-size:11px;color:#bbb">3h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">ex boxes like 3k stock per sku</div>
             
@@ -2551,7 +2560,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">2h ago</span>
+              <span style="font-size:11px;color:#bbb">3h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"><span style="color:#5b6af5;font-weight:600">#channel</span></div>
             
@@ -2564,7 +2573,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">2h ago</span>
+              <span style="font-size:11px;color:#bbb">3h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">GO GO GO FIRST PARTNER</div>
             
@@ -2577,7 +2586,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">2h ago</span>
+              <span style="font-size:11px;color:#bbb">3h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">KEEP GOING STILL CHECKING OUT</div>
             
@@ -2590,7 +2599,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">2h ago</span>
+              <span style="font-size:11px;color:#bbb">3h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"></div>
             
@@ -2603,7 +2612,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">2h ago</span>
+              <span style="font-size:11px;color:#bbb">3h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">RESTOCK</div>
             
@@ -2616,7 +2625,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">2h ago</span>
+              <span style="font-size:11px;color:#bbb">3h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">GO AGAIN</div>
             
@@ -2629,7 +2638,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">3h ago</span>
+              <span style="font-size:11px;color:#bbb">4h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">theyre dropping in waves</div>
             
@@ -2642,7 +2651,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">3h ago</span>
+              <span style="font-size:11px;color:#bbb">4h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">BUNDLES</div>
             
@@ -2655,7 +2664,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">typicalenergyy</span>
-              <span style="font-size:11px;color:#bbb">3h ago</span>
+              <span style="font-size:11px;color:#bbb">4h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"><span style="color:#5b6af5;font-weight:600">#channel</span><br><br>AH BUNDLES</div>
             
