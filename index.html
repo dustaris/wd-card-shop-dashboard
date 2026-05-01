@@ -183,13 +183,13 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">6</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">4</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: May 01, 2026 at 11:05 AM PST</div>
+    <div class="updated">Last updated: May 01, 2026 at 12:06 PM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -297,14 +297,14 @@ function resetBtn() {
         <table id="ordersTable">
           <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Fulfillment</th></tr></thead>
           <tbody>
-        <tr data-fulfillment="unfulfilled">
+        <tr data-fulfillment="fulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7349803122926" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1238</a></td>
             <td data-label="Customer">Hailey Wiseman</td>
             <td data-label="Date">2026-04-30</td>
             <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
             <td data-label="Total"><strong>$248.02</strong></td>
             <td data-label="Payment"><span class="badge badge-green">Paid</span></td>
-            <td data-label="Status"><span class="badge badge-red">Unfulfilled</span></td>
+            <td data-label="Status"><span class="badge badge-green">Fulfilled</span></td>
         </tr>
         <tr data-fulfillment="fulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7349447065838" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1237</a></td>
@@ -1484,23 +1484,9 @@ function resetBtn() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#95bf47;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">Shopify</span>
         <h2 style="margin:0">Shopify — Awaiting Fulfillment</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead>
-          <tbody>
-        <tr>
-          <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7349803122926" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc">#1238</a></td>
-          <td>Hailey Wiseman</td>
-          <td>2026-04-30</td>
-          <td style="font-size:12px;max-width:240px;line-height:1.5">Paldean Fates Great Tusk ex & Iron Treads ex Premium Collection</td>
-          <td><strong>$248.02</strong></td>
-          <td><span class="badge badge-green">Paid</span></td>
-          <td><span class="badge badge-red">Unfulfilled</span></td>
-        </tr></tbody>
-        </table>
-      </div>
+      <p style="color:#aaa;font-size:13px">No unfulfilled Shopify orders. All caught up!</p>
     </div>
   
     <div class="card" style="margin-bottom:28px">
@@ -1516,7 +1502,7 @@ function resetBtn() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">5</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">4</span>
       </div>
       <div class="table-scroll">
         <table>
@@ -1556,15 +1542,6 @@ function resetBtn() {
           <td style="font-size:12px;max-width:220px;line-height:1.5">—</td>
           <td>Standard</td>
           <td><strong>$21.78</strong></td>
-          <td><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-78C88B-45B46</a></td>
-          <td>Yerbis Pena</td>
-          <td>2026-05-01</td>
-          <td style="font-size:12px;max-width:220px;line-height:1.5">—</td>
-          <td>Standard</td>
-          <td><strong>$18.78</strong></td>
           <td><span class="badge badge-yellow">Ready to Ship</span></td>
         </tr></tbody>
         </table>
@@ -1659,10 +1636,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">60</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$56.35</td>
+          <td data-label="TCG Market">$56.11</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$57.98</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-0.36</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-0.12</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672391" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1675,10 +1652,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">40</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB">$334.98</td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">4</span></td>
-          <td data-label="TCG Market">$319.01</td>
+          <td data-label="TCG Market">$319.32</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$332.95</td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$10.98</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$10.67</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/644298" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1707,10 +1684,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">30</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB">$21.14</td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">6</span></td>
-          <td data-label="TCG Market">$22.42</td>
+          <td data-label="TCG Market">$22.41</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$21.56</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-0.43</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-0.42</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672393" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1755,10 +1732,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">17</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$68.03</td>
+          <td data-label="TCG Market">$67.24</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$59.99</td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$0.96</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$1.75</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672401" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1803,10 +1780,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">12</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$12.19</td>
+          <td data-label="TCG Market">$12.33</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$13.80</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$13.66</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672434.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1819,10 +1796,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">12</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$12.19</td>
+          <td data-label="TCG Market">$12.33</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$13.80</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$13.66</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672434.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1835,10 +1812,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">10</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$108.00</td>
+          <td data-label="TCG Market">$108.25</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$114.69</td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$1.99</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$1.74</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/630689" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1867,10 +1844,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">7</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$121.35</td>
+          <td data-label="TCG Market">$121.83</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$129.69</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-1.36</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-1.84</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/654136" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1899,10 +1876,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">5</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$109.69</td>
+          <td data-label="TCG Market">$109.29</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$132.00</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-6.70</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-6.30</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/496914" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1963,10 +1940,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">1</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$12.19</td>
+          <td data-label="TCG Market">$12.33</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$627.80</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$627.66</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672434.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -2478,7 +2455,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Not terrible if yall want</div>
             
@@ -2491,7 +2468,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">That was super low stock, stellar ripped tho post success I guess the nights not over</div>
             
@@ -2504,7 +2481,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"><span style="color:#5b6af5;font-weight:600">#channel</span></div>
             
@@ -2517,7 +2494,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">DR ETBS</div>
             
@@ -2530,7 +2507,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"></div>
             
@@ -2543,7 +2520,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Last sku seems to be OOS now, congrats if you hit! Post <span style="color:#5b6af5;font-weight:600">#channel</span> that’s the last sku im<br>personally expecting unless they restock a few hundred Etbs or posters</div>
             
@@ -2556,7 +2533,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">ex boxes like 3k stock per sku</div>
             
@@ -2569,7 +2546,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"><span style="color:#5b6af5;font-weight:600">#channel</span></div>
             
@@ -2582,7 +2559,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">GO GO GO FIRST PARTNER</div>
             
@@ -2595,7 +2572,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">KEEP GOING STILL CHECKING OUT</div>
             
@@ -2608,7 +2585,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"></div>
             
@@ -2621,7 +2598,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">RESTOCK</div>
             
@@ -2634,7 +2611,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">GO AGAIN</div>
             
@@ -2647,7 +2624,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">10h ago</span>
+              <span style="font-size:11px;color:#bbb">11h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">theyre dropping in waves</div>
             
@@ -2660,7 +2637,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">10h ago</span>
+              <span style="font-size:11px;color:#bbb">11h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">BUNDLES</div>
             
@@ -2673,7 +2650,7 @@ function resetBtn() {
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">typicalenergyy</span>
-              <span style="font-size:11px;color:#bbb">10h ago</span>
+              <span style="font-size:11px;color:#bbb">11h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"><span style="color:#5b6af5;font-weight:600">#channel</span><br><br>AH BUNDLES</div>
             
