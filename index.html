@@ -183,13 +183,13 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">3</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">4</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: May 01, 2026 at 12:05 AM PST</div>
+    <div class="updated">Last updated: May 01, 2026 at 01:05 AM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -1516,12 +1516,21 @@ function resetBtn() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">2</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">3</span>
       </div>
       <div class="table-scroll">
         <table>
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-A3EC16-A6C74</a></td>
+          <td>Gabriel Marsh-Niccum</td>
+          <td>2026-05-01</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">—</td>
+          <td>Standard</td>
+          <td><strong>$86.99</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
         <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-170388-D44CB</a></td>
           <td>Kipp Davis</td>
@@ -1664,10 +1673,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">36</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$36.45</td>
+          <td data-label="TCG Market">$36.25</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$30.00</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-0.46</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-0.26</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/593359" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1711,11 +1720,11 @@ function resetBtn() {
           <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$78.99</td>
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">20</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB">$86.99</td>
-          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">9</span></td>
-          <td data-label="TCG Market">$87.58</td>
+          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">8</span></td>
+          <td data-label="TCG Market">$87.78</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$92.99</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-8.59</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-8.79</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/565247" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1776,10 +1785,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">12</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$12.38</td>
+          <td data-label="TCG Market">$12.34</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$13.61</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$13.65</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672434.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1792,10 +1801,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">12</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$12.38</td>
+          <td data-label="TCG Market">$12.34</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$13.61</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$13.65</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672434.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1810,7 +1819,7 @@ function resetBtn() {
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
           <td data-label="TCG Market">$107.19</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
-          <td data-label="Verified Low">$113.88</td>
+          <td data-label="Verified Low">$114.69</td>
           <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$2.80</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/630689" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
@@ -1826,7 +1835,7 @@ function resetBtn() {
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
           <td data-label="TCG Market">$213.74</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
-          <td data-label="Verified Low">$219.99</td>
+          <td data-label="Verified Low">$239.96</td>
           <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-13.75</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/654213" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
@@ -1840,10 +1849,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">7</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$122.63</td>
+          <td data-label="TCG Market">$122.79</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$129.69</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-2.64</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-2.80</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/654136" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1920,10 +1929,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">2</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$60.82</td>
+          <td data-label="TCG Market">$61.22</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$60.00</td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$1.17</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$0.77</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/593466" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1936,10 +1945,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">1</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$12.38</td>
+          <td data-label="TCG Market">$12.34</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$627.61</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$627.65</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672434.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -2446,12 +2455,116 @@ function resetBtn() {
         
         <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
           <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
+            <img src="https://cdn.discordapp.com/avatars/786662636456509470/a_f2c03663112914a5e14b2891b88f2d43.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">J</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
+              <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
+              <span style="font-size:11px;color:#bbb">41m ago</span>
+            </div>
+            <div style="font-size:13px;color:#333;line-height:1.5">theyre dropping in waves</div>
+            
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
+            <img src="https://cdn.discordapp.com/avatars/786662636456509470/a_f2c03663112914a5e14b2891b88f2d43.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">J</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
+              <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
+              <span style="font-size:11px;color:#bbb">45m ago</span>
+            </div>
+            <div style="font-size:13px;color:#333;line-height:1.5">BUNDLES</div>
+            
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
+            <img src="https://cdn.discordapp.com/avatars/720388098525233222/d82b449164ff81daa2bb664bd1045f7a.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">T</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
+              <span style="font-size:13px;font-weight:700;color:#1a1a2e">typicalenergyy</span>
+              <span style="font-size:11px;color:#bbb">45m ago</span>
+            </div>
+            <div style="font-size:13px;color:#333;line-height:1.5"><span style="color:#5b6af5;font-weight:600">#channel</span><br><br>AH BUNDLES</div>
+            
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
+            <img src="https://cdn.discordapp.com/avatars/786662636456509470/a_f2c03663112914a5e14b2891b88f2d43.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">J</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
+              <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
+              <span style="font-size:11px;color:#bbb">50m ago</span>
+            </div>
+            <div style="font-size:13px;color:#333;line-height:1.5">In stock again I just hit two manually</div>
+            
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
+            <img src="https://cdn.discordapp.com/avatars/786662636456509470/a_f2c03663112914a5e14b2891b88f2d43.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">J</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
+              <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
+              <span style="font-size:11px;color:#bbb">55m ago</span>
+            </div>
+            <div style="font-size:13px;color:#333;line-height:1.5">Go go go go</div>
+            
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
+            <img src="https://cdn.discordapp.com/avatars/786662636456509470/a_f2c03663112914a5e14b2891b88f2d43.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">J</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
+              <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
+              <span style="font-size:11px;color:#bbb">55m ago</span>
+            </div>
+            <div style="font-size:13px;color:#333;line-height:1.5">Nice clown reacts I’ll hit for myself</div>
+            
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
+            <img src="https://cdn.discordapp.com/avatars/786662636456509470/a_f2c03663112914a5e14b2891b88f2d43.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">J</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
+              <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
+              <span style="font-size:11px;color:#bbb">57m ago</span>
+            </div>
+            <div style="font-size:13px;color:#333;line-height:1.5"></div>
+            
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
+            <img src="https://cdn.discordapp.com/avatars/786662636456509470/a_f2c03663112914a5e14b2891b88f2d43.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">J</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
+              <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
+              <span style="font-size:11px;color:#bbb">58m ago</span>
+            </div>
+            <div style="font-size:13px;color:#333;line-height:1.5"><a href="https://www.target.com/p/pok-233-mon-scarlet-violet-elite-trainer-box/-/A-1011206804" target="_blank" style="color:#5b6af5;word-break:break-all">https://www.target.com/p/pok-233-mon-scarlet-violet-elite-trainer-box/-/A-1011206804</a></div>
+            <div style="border-left:3px solid #5b21b6;padding:6px 10px;background:#f8f7ff;border-radius:0 6px 6px 0;margin-top:6px;font-size:12px"><a href="https://www.target.com/p/pok-233-mon-scarlet-violet-elite-trainer-box/-/A-1011206804" target="_blank" style="text-decoration:none"><strong style="color:#1a1a2e">Pokémon Scarlet Violet Elite Trainer Box</strong></a><div style="color:#666;margin-top:2px">Read reviews and buy Pokémon Scarlet Violet Elite Trainer Box at Target. Choose from contactless Same Day Delivery, Driv</div></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
             <img src="https://cdn.discordapp.com/avatars/192409425514856448/acd93a64697aafc4416c94a0bcd893d0.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">B</span>
           </div>
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
-              <span style="font-size:11px;color:#bbb">6h ago</span>
+              <span style="font-size:11px;color:#bbb">7h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Make sure youre keeping an eye out for Target it should drop either<br><br><strong>tonight or tomorrow night between 12:00am-3:00am est.</strong><br><br>All skus and stock here <span style="color:#5b6af5;font-weight:600">#channel</span> <br><br></div>
             
@@ -2587,123 +2700,6 @@ function resetBtn() {
             
           </div>
         </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/192409425514856448/acd93a64697aafc4416c94a0bcd893d0.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">B</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Ascended stickers checking out now</div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/192409425514856448/acd93a64697aafc4416c94a0bcd893d0.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">B</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Phantasmal and pins checking out btw</div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/192409425514856448/acd93a64697aafc4416c94a0bcd893d0.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">B</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">`10-10187-114,10-10187-108,10-10185-101,10-10314-122,10-10314-121,10-10301-108`</div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/192409425514856448/acd93a64697aafc4416c94a0bcd893d0.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">B</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">multisku for everything</div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/192409425514856448/acd93a64697aafc4416c94a0bcd893d0.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">B</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">blubs</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">__<strong>Pokémon Center Queue is Live!</strong>__<br><br><strong>PLEASE JOIN QUEUE OFF THE LINK BELOW AND DO NOT CLICK PRODUCT LINKS</strong><br><br><a href="https://www.pokemoncenter.com" target="_blank" style="color:#5b6af5;word-break:break-all">https://www.pokemoncenter.com</a><br><br>> - All live products will ping in <span style="color:#5b6af5;font-weight:600">#channel</span> <br><br><strong>__Products Dropping__</strong><br><br><strong>Phantasmal Flames Weavile 3-Pack Blister</strong><br><a href="https://www.pokemoncenter.com/product/10-10187-114" target="_blank" style="color:#5b6af5;word-break:break-all">https://www.pokemoncenter.com/product/10-10187-114</a> | `10-10187-114`<br><br><strong>Phantasmal Flames Sneasel 3-Pack Blister</strong><br><a href="https://www.pokemoncenter.com/product/10-10187-108" target="_blank" style="color:#5b6af5;word-break:break-all">https://www.pokemoncenter.com/product/10-10187-108</a> | `10-10187-108`<br><br><strong>Phantasmal Flames Build and Battle Box</strong><br><a href="https://www.pokemoncenter.com/product/10-10185-101" target="_blank" style="color:#5b6af5;word-break:break-all">https://www.pokemoncenter.com/product/10-10185-101</a> | `10-10185-101`<br><br><strong>Ascended Heroes Tech Sticker Packs - Charmander</strong><br><a href="https://www.pokemoncenter.com/product/10-10314-122" target="_blank" style="color:#5b6af5;word-break:break-all">https://www.pokemoncenter.com/product/10-10314-122</a> | `10-10314-122`<br><br><strong>Ascended Heroes Tech Sticker Packs - Ghastly</strong><br><a href="https://www.pokemoncenter.com/product/10-10314-121" target="_blank" style="color:#5b6af5;word-break:break-all">https://www.pokemoncenter.com/product/10-10314-121</a>  | `10-10314-121`<br><br><strong>Ascended Heroes Pin Collection Box</strong><br><a href="https://www.pokemoncenter.com/product/10-10301-108" target="_blank" style="color:#5b6af5;word-break:break-all">https://www.pokemoncenter.com/product/10-10301-108</a> | `10-10301-108`<br><br></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Lock in for Pokemon center release in 1-2 hours (:<br><br>All SKUs will be posted if queue goes live<br><br></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5"><a href="https://www.amazon.com/dp/B0DZ5ZW14T" target="_blank" style="color:#5b6af5;word-break:break-all">https://www.amazon.com/dp/B0DZ5ZW14T</a><br><br>In stock if you want promos<br><br>Market like $45</div>
-            <div style="border-left:3px solid #5b21b6;padding:6px 10px;background:#f8f7ff;border-radius:0 6px 6px 0;margin-top:6px;font-size:12px"><a href="https://www.amazon.com/dp/B0DZ5ZW14T" target="_blank" style="text-decoration:none"><strong style="color:#1a1a2e">Pokémon TCG: Rival Battle Deck—Marnie/Steven</strong></a><div style="color:#666;margin-top:2px">Unleash a Battle of Rivals! Pokémon TCG: Rival Battle Deck—Marnie Pokémon TCG: Rival Battle Deck—Steven Two new Pokémon </div></div>
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">1d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">__<strong>Today’s Schedule</strong>__<br><br>Be locked in for a possible Pokemon Center release this afternoon <br><br>Walmart Wednesday Pokemon will be taking place at 9:00pm est (SKUs will be posted later today)<br><br></div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">2d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">Be ready for a large Target restock at some point<br><br>Everything has been posted in <span style="color:#5b6af5;font-weight:600">#channel</span> <br><br>Expect drop Thursday or Friday night<br><br></div>
-            
-          </div>
-        </div>
         <div style="padding-top:4px"></div>
       </div>
     </div>
@@ -2738,7 +2734,7 @@ function resetBtn() {
         <button class="cal-view-btn active" id="view-btn-drops" onclick="switchCalView('drops')">Drops</button>
         <button class="cal-view-btn" id="view-btn-notes" onclick="switchCalView('notes')">My Notes</button>
       </div>
-      <span id="drops-badge" style="background:#5b21b6;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">14 drops</span>
+      <span id="drops-badge" style="background:#5b21b6;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">12 drops</span>
       <div style="display:flex;align-items:center;gap:6px;margin-left:auto">
         <button class="cal-nav-btn" onclick="calNav(-1)">&#8249;</button>
         <span id="cal-label" style="font-size:14px;font-weight:700;color:#1a1a2e;min-width:148px;text-align:center"></span>
@@ -2887,7 +2883,7 @@ function resetBtn() {
 
 <script>
 (function() {
-  var DROPS         = [{"product": "WALMART WEDNESDAY", "url": "https://www.walmart.com/ip/19283656289)", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-29 9:00 PM EST", "retail": "$17", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-29T17:15:34.094000+00:00"}, {"product": "WALMART WEDNESDAY", "url": "https://www.walmart.com/ip/19009204107)", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-29 9:00 PM EST", "retail": "$17", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-29T17:15:34.094000+00:00"}, {"product": "Pok\u00e9mon Center Queue is Live!", "url": "https://www.pokemoncenter.com", "sku": "", "retailer": "Pok\u00e9mon Center", "drop_time": "2026-04-29", "retail": "", "resell": "", "stock": "", "posted_by": "blubs.", "timestamp": "2026-04-29T16:11:25.636000+00:00"}, {"product": "Pok\u00e9mon Center Queue is Live!", "url": "https://www.pokemoncenter.com/product/10-10187-114", "sku": "", "retailer": "Pok\u00e9mon Center", "drop_time": "2026-04-29", "retail": "", "resell": "", "stock": "", "posted_by": "blubs.", "timestamp": "2026-04-29T16:11:25.636000+00:00"}, {"product": "Pok\u00e9mon TCG: Rival Battle Deck\u2014Marnie/Steven", "url": "https://www.amazon.com/dp/B0DZ5ZW14T", "sku": "", "retailer": "Amazon", "drop_time": "2026-04-29", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-29T13:49:29.251000+00:00"}, {"product": "https://www.costco.com/.product.1992235.html", "url": "https://www.costco.com/.product.1992235.html", "sku": "", "retailer": "Costco", "drop_time": "2026-04-25", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-25T15:17:55.293000+00:00"}, {"product": "Pok\u00e9mon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...", "url": "https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page", "sku": "6606082", "retailer": "Best Buy", "drop_time": "2026-04-24", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-24T14:39:38.097000+00:00"}, {"product": "Ascended Heroes Bundle", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "18728422476", "retailer": "Walmart", "drop_time": "2026-04-23", "retail": "$31", "resell": "$60", "stock": "45K", "posted_by": "shermio", "timestamp": "2026-04-23T00:09:45.730000+00:00"}, {"product": "Ascended Heroes ex Boxes Assorted", "url": "https://www.walmart.com/ip/moonitor/19620004893", "sku": "19620004893", "retailer": "Walmart", "drop_time": "2026-04-22 9:00PM EST", "retail": "$22", "resell": "$40", "stock": "70K", "posted_by": "shermio", "timestamp": "2026-04-22T18:10:21.922000+00:00"}, {"product": "Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-22", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-22T00:55:10.384000+00:00"}, {"product": "Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...", "url": "https://www.walmart.com/ip/moonitor/20088667802", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-22", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-22T00:55:10.384000+00:00"}, {"product": "Ascended Heroes Bundle", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "18728422476", "retailer": "Walmart", "drop_time": "2026-04-21 9:00PM EST", "retail": "$31", "resell": "$60", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-21T16:59:16.653000+00:00"}, {"product": "Prismatic Tin Display 8ct", "url": "https://www.walmart.com/ip/moonitor/20088667802", "sku": "20088667802", "retailer": "Walmart", "drop_time": "2026-04-21 9:00PM EST", "retail": "$100", "resell": "$200", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-21T16:59:16.653000+00:00"}, {"product": "Pok\u00e9mon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...", "url": "https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page", "sku": "6606082", "retailer": "Best Buy", "drop_time": "2026-04-20", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-20T15:11:49.213000+00:00"}];
+  var DROPS         = [{"product": "Pok\u00e9mon Scarlet Violet Elite Trainer Box", "url": "https://www.target.com/p/pok-233-mon-scarlet-violet-elite-trainer-box/-/A-1011206804", "sku": "", "retailer": "Target", "drop_time": "2026-05-01", "retail": "", "resell": "", "stock": "", "posted_by": "joeyy8888", "timestamp": "2026-05-01T07:06:32.526000+00:00"}, {"product": "WALMART WEDNESDAY", "url": "https://www.walmart.com/ip/19283656289)", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-29 9:00 PM EST", "retail": "$17", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-29T17:15:34.094000+00:00"}, {"product": "WALMART WEDNESDAY", "url": "https://www.walmart.com/ip/19009204107)", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-29 9:00 PM EST", "retail": "$17", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-29T17:15:34.094000+00:00"}, {"product": "Pok\u00e9mon Center Queue is Live!", "url": "https://www.pokemoncenter.com", "sku": "", "retailer": "Pok\u00e9mon Center", "drop_time": "2026-04-29", "retail": "", "resell": "", "stock": "", "posted_by": "blubs.", "timestamp": "2026-04-29T16:11:25.636000+00:00"}, {"product": "Pok\u00e9mon Center Queue is Live!", "url": "https://www.pokemoncenter.com/product/10-10187-114", "sku": "", "retailer": "Pok\u00e9mon Center", "drop_time": "2026-04-29", "retail": "", "resell": "", "stock": "", "posted_by": "blubs.", "timestamp": "2026-04-29T16:11:25.636000+00:00"}, {"product": "Pok\u00e9mon TCG: Rival Battle Deck\u2014Marnie/Steven", "url": "https://www.amazon.com/dp/B0DZ5ZW14T", "sku": "", "retailer": "Amazon", "drop_time": "2026-04-29", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-29T13:49:29.251000+00:00"}, {"product": "https://www.costco.com/.product.1992235.html", "url": "https://www.costco.com/.product.1992235.html", "sku": "", "retailer": "Costco", "drop_time": "2026-04-25", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-25T15:17:55.293000+00:00"}, {"product": "Pok\u00e9mon Trading Card Game: Scarlet & Violet Prismatic Evolutions E...", "url": "https://www.bestbuy.com/product/pokemon-trading-card-game-scarlet-violet-prismatic-evolutions-elite-trainer-box/JJG2TLCW3L/sku/6606082?sb_share_source=PDP&ref=app_pdp&loc=pdp_page", "sku": "6606082", "retailer": "Best Buy", "drop_time": "2026-04-24", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-24T14:39:38.097000+00:00"}, {"product": "Ascended Heroes Bundle", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "18728422476", "retailer": "Walmart", "drop_time": "2026-04-23", "retail": "$31", "resell": "$60", "stock": "45K", "posted_by": "shermio", "timestamp": "2026-04-23T00:09:45.730000+00:00"}, {"product": "Ascended Heroes ex Boxes Assorted", "url": "https://www.walmart.com/ip/moonitor/19620004893", "sku": "19620004893", "retailer": "Walmart", "drop_time": "2026-04-22 9:00PM EST", "retail": "$22", "resell": "$40", "stock": "70K", "posted_by": "shermio", "timestamp": "2026-04-22T18:10:21.922000+00:00"}, {"product": "Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...", "url": "https://www.walmart.com/ip/moonitor/18728422476", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-22", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-22T00:55:10.384000+00:00"}, {"product": "Pokemon Trading Card Games  Mega Evolution 2.5 Ascended Heroes Boos...", "url": "https://www.walmart.com/ip/moonitor/20088667802", "sku": "", "retailer": "Walmart", "drop_time": "2026-04-22", "retail": "", "resell": "", "stock": "", "posted_by": "shermio", "timestamp": "2026-04-22T00:55:10.384000+00:00"}];
   var RC            = {"Walmart": "#0071ce", "Target": "#cc0000", "Best Buy": "#003b8e", "Amazon": "#ff9900", "Pok\u00e9mon Center": "#e3350d", "GameStop": "#5c0e0e", "Sam's Club": "#007dc6", "Costco": "#005dab", "Barnes & Noble": "#1c4f2a", "Other": "#555"};
   var SHARED_NOTES  = {};
   var GITHUB_REPO   = 'dustaris/wd-card-shop-dashboard';
