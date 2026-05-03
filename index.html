@@ -183,13 +183,13 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge hidden" id="awaiting-badge">0</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">14</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: May 02, 2026 at 09:05 PM PST</div>
+    <div class="updated">Last updated: May 02, 2026 at 10:07 PM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -1511,9 +1511,140 @@ function resetBtn() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">14</span>
       </div>
-      <p style="color:#aaa;font-size:13px">No outstanding orders found. Run 3_tcgplayer_scraper.py to refresh.</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
+          <tbody>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-63172B-16F60</a></td>
+          <td>Kevin Yu</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon ×2<br>Pokemon<br>Pokemon ×2<br>Pokemon ×3<br>Pokemon ×2<br>Pokemon<br>Pokemon<br>Pokemon</td>
+          <td>Standard</td>
+          <td><strong>$10.72</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-974F33-2359B</a></td>
+          <td>Domingo Perez</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Card Sleeves ×5</td>
+          <td>Standard</td>
+          <td><strong>$47.45</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-B35F1A-6C378</a></td>
+          <td>Alex Ramos Angueira</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon<br>Pokemon</td>
+          <td>Standard</td>
+          <td><strong>$5.74</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-28DD69-A1AAA</a></td>
+          <td>Reuben Goy</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon</td>
+          <td>Standard</td>
+          <td><strong>$17.21</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-F2EA1E-FDB2E</a></td>
+          <td>Justin Harp</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon</td>
+          <td>Standard</td>
+          <td><strong>$5.31</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-BFCF3F-A987C</a></td>
+          <td>Alex DeBoni</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon<br>Pokemon<br>Pokemon</td>
+          <td>Standard</td>
+          <td><strong>$5.14</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-A59872-0B895</a></td>
+          <td>Darcie Holbrook</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon</td>
+          <td>Standard</td>
+          <td><strong>$2.93</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-169F64-7A390</a></td>
+          <td>Anthony Deming</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon<br>Pokemon<br>Pokemon<br>Pokemon</td>
+          <td>Standard</td>
+          <td><strong>$8.63</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-C53C09-ED9DB</a></td>
+          <td>Darren Mould</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon</td>
+          <td>Standard</td>
+          <td><strong>$3.53</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-44E2BF-09A0B</a></td>
+          <td>Julious Morales</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon<br>Pokemon<br>Pokemon<br>Pokemon<br>Pokemon<br>Pokemon<br>Pokemon</td>
+          <td>Standard</td>
+          <td><strong>$5.06</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-A8F224-2F670</a></td>
+          <td>Mario Fischetti</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon</td>
+          <td>Standard</td>
+          <td><strong>$3.16</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-29F867-AEDCC</a></td>
+          <td>Joshua Thomas</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon ×7</td>
+          <td>Standard</td>
+          <td><strong>$8.05</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-97727F-7B285</a></td>
+          <td>Ang M</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon ×12<br>Pokemon ×12<br>Pokemon ×12</td>
+          <td>Standard</td>
+          <td><strong>$28.80</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-4FC35A-665EC</a></td>
+          <td>Anastasia Klemm</td>
+          <td>2026-05-03</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon</td>
+          <td>Standard</td>
+          <td><strong>$2.40</strong></td>
+          <td><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr></tbody>
+        </table>
+      </div>
     </div>
 </div>
 </div>
@@ -1588,10 +1719,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">71</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$188.10</td>
+          <td data-label="TCG Market">$188.54</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$65.00</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-119.11</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-119.55</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/625670" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1604,10 +1735,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">55</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$58.18</td>
+          <td data-label="TCG Market">$58.04</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$57.98</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-2.19</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-2.05</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672391" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1654,7 +1785,7 @@ function resetBtn() {
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">9</span></td>
           <td data-label="TCG Market">$21.71</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
-          <td data-label="Verified Low">$21.93</td>
+          <td data-label="Verified Low">$23.99</td>
           <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$0.28</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672393" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
@@ -1716,10 +1847,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">17</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$69.36</td>
+          <td data-label="TCG Market">$69.71</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
-          <td data-label="Verified Low">$70.50</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-0.37</span></td>
+          <td data-label="Verified Low">$75.20</td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-0.72</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672401" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1764,10 +1895,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">12</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$13.13</td>
+          <td data-label="TCG Market">$13.07</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$12.86</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$12.92</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672434.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1780,10 +1911,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">12</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$13.13</td>
+          <td data-label="TCG Market">$13.07</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$12.86</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$12.92</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672434.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1796,10 +1927,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">10</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$116.05</td>
+          <td data-label="TCG Market">$116.20</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$115.00</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-6.06</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-6.21</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/630689" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1812,10 +1943,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">7</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$224.97</td>
+          <td data-label="TCG Market">$225.00</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$239.96</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-24.98</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-25.01</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/654213" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1828,10 +1959,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">7</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$117.93</td>
+          <td data-label="TCG Market">$117.13</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$132.00</td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$2.06</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$2.86</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/654136" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1908,10 +2039,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">2</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$13.13</td>
+          <td data-label="TCG Market">$13.07</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$296.86</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$296.92</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672434.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1924,10 +2055,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">1</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$13.13</td>
+          <td data-label="TCG Market">$13.07</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$626.86</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$626.92</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672434.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1940,10 +2071,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$170.95</td>
+          <td data-label="TCG Market">$175.37</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$132.38</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-27.96</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-32.38</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/668496" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1988,10 +2119,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$153.95</td>
+          <td data-label="TCG Market">$153.35</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$194.99</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-12.96</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-12.36</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/637384" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -2084,10 +2215,10 @@ function resetBtn() {
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$73.12</td>
+          <td data-label="TCG Market">$73.27</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-3.13</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-3.28</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/674449" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
