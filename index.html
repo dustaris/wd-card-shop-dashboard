@@ -183,13 +183,13 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">1</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">2</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: May 04, 2026 at 06:05 AM PST</div>
+    <div class="updated">Last updated: May 04, 2026 at 07:05 AM PST</div>
     
   </div>
 </header>
@@ -229,7 +229,7 @@
 
   <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 5/3/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">835</div><div class="sub">Jan 1 – 5/3/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$125,961.70</div><div class="sub">Jan 1 – 5/3/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$150.85</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$106,689.57</div><div class="sub">Fees: $17,012.33</div></div></div></div>
 
-  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – May 4, 2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">352</div><div class="sub">Jan 1 – May 4, 2026</div></div><div class="stat-card"><div class="label">Total Revenue</div><div class="value">$6,838.47</div><div class="sub">Jan 1 – May 4, 2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$19.43</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$5,816.62</div><div class="sub">Fees: $1,021.85</div></div></div></div>
+  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – May 4, 2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">353</div><div class="sub">Jan 1 – May 4, 2026</div></div><div class="stat-card"><div class="label">Total Revenue</div><div class="value">$6,849.90</div><div class="sub">Jan 1 – May 4, 2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$19.40</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$5,825.42</div><div class="sub">Fees: $1,024.48</div></div></div></div>
 
   <div style="margin-bottom:28px">
     <div class="card">
@@ -1519,9 +1519,22 @@
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span>
         <h2 style="margin:0">eBay — Awaiting Shipment</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
       </div>
-      <p style="color:#aaa;font-size:13px">No orders awaiting shipment. Run 5_ebay_orders.py to refresh.</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Order ID</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Total</th><th>Status</th></tr></thead>
+          <tbody>
+        <tr>
+          <td><a href="https://www.ebay.com/sh/ord/" target="_blank" style="color:#0064D2;font-weight:600">09-14592-78386</a></td>
+          <td>brt444</td>
+          <td>05/04/2026 01:59 PM</td>
+          <td style="max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">2025 Donruss Football Rated Rookie Red Pandora 8 Card Lot (x1)</td>
+          <td><strong>$11.43</strong></td>
+          <td><span class="badge badge-yellow">Awaiting Shipment</span></td>
+        </tr></tbody>
+        </table>
+      </div>
     </div>
   
     <div class="card" style="margin-bottom:28px">
@@ -1651,10 +1664,10 @@
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">48</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB">$349.98</td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">10</span></td>
-          <td data-label="TCG Market">$321.45</td>
+          <td data-label="TCG Market">$322.50</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$350.00</td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$18.54</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$17.49</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/644298" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1699,10 +1712,10 @@
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">17</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$66.92</td>
+          <td data-label="TCG Market">$67.16</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$59.99</td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$2.07</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$1.83</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672401" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1811,10 +1824,10 @@
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">6</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$358.84</td>
+          <td data-label="TCG Market">$358.88</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$394.49</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-9.84</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-9.88</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/673439" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1939,10 +1952,10 @@
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$176.90</td>
+          <td data-label="TCG Market">$177.50</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$132.38</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-33.91</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-34.51</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/668496" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1955,10 +1968,10 @@
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$58.74</td>
+          <td data-label="TCG Market">$58.51</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$57.98</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-2.75</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-2.52</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672391" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -2067,10 +2080,10 @@
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$244.56</td>
+          <td data-label="TCG Market">$244.32</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$250.00</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-44.57</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-44.33</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/654213" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -2502,7 +2515,20 @@
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">1h ago</span>
+              <span style="font-size:11px;color:#bbb">6m ago</span>
+            </div>
+            <div style="font-size:13px;color:#333;line-height:1.5"><strong>Walmart Wednesday SKU Rating</strong><br><br>8/10<br><br></div>
+            
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
+            <img src="https://cdn.discordapp.com/avatars/554485762771517440/16c5bc4aefa14c0dedc0593654e20264.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">S</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
+              <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
+              <span style="font-size:11px;color:#bbb">2h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"><strong>__Costco In-Store Ascended__</strong><br><br>We are going to start seeing the release of the ascended 3-pack in store. Be sure to be on the lookout and utilize <br><br>Currently West Coast are the only stores that are in transit to warehouses<br><br>INSTORE SKU: `1992235`<br><br>The best thing you can do is call here and there for the most up to date info<br><br></div>
             
@@ -2515,7 +2541,7 @@
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">9h ago</span>
+              <span style="font-size:11px;color:#bbb">10h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Be sure to be running Prismatic ETBs<br><br>Expect a restock in the coming days!<br><br></div>
             
@@ -2528,7 +2554,7 @@
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">10h ago</span>
+              <span style="font-size:11px;color:#bbb">11h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Lock in this week we got multiple drops on a couple sites (:<br><br></div>
             
@@ -2674,19 +2700,6 @@
               <span style="font-size:11px;color:#bbb">3d ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">GO GO GO FIRST PARTNER</div>
-            
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px">
-            <img src="https://cdn.discordapp.com/avatars/786662636456509470/a_f2c03663112914a5e14b2891b88f2d43.png?size=32" width="28" height="28" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;width:28px;height:28px;border-radius:50%;background:#5b21b6;color:white;font-size:11px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">J</span>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
-              <span style="font-size:13px;font-weight:700;color:#1a1a2e">joeyy</span>
-              <span style="font-size:11px;color:#bbb">3d ago</span>
-            </div>
-            <div style="font-size:13px;color:#333;line-height:1.5">KEEP GOING STILL CHECKING OUT</div>
             
           </div>
         </div>
