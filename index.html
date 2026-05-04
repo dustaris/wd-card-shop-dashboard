@@ -189,7 +189,7 @@
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: May 03, 2026 at 05:05 PM PST</div>
+    <div class="updated">Last updated: May 03, 2026 at 05:06 PM PST</div>
     <button id="refreshBtn" onclick="triggerRefresh()" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.4);color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">&#x21BB; Refresh Data</button><div id="refreshStatus" style="font-size:11px;color:rgba(255,255,255,0.6);min-height:16px;text-align:right"></div>
   </div>
 </header>
@@ -252,23 +252,23 @@ function resetBtn() {
     <div class="stats-grid">
       <div class="stat-card">
         <div class="label">Total Orders</div>
-        <div class="value">136</div>
+        <div class="value">135</div>
         <div class="sub">Jan 1 – May 4, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Total Revenue</div>
-        <div class="value">$62,071.09</div>
+        <div class="value">$61,811.91</div>
         <div class="sub">Jan 1 – May 4, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Avg Order Value</div>
-        <div class="value">$456.41</div>
+        <div class="value">$457.87</div>
         <div class="sub">Per order</div>
       </div>
       <div class="stat-card">
         <div class="label">Net Sales (after fees)</div>
-        <div class="value">$59,898.60</div>
-        <div class="sub">Est. fees: $2,172.49 (~3.5%)</div>
+        <div class="value">$59,648.49</div>
+        <div class="sub">Est. fees: $2,163.42 (~3.5%)</div>
       </div>
     </div>
   </div>
@@ -291,7 +291,7 @@ function resetBtn() {
         <button class="filter-btn active" onclick="filterOrders('all', this)">All</button>
         <button class="filter-btn" onclick="filterOrders('fulfilled', this)">Fulfilled</button>
         <button class="filter-btn" onclick="filterOrders('unfulfilled', this)">Unfulfilled</button>
-        <span class="order-count" id="orderCount">136 orders</span>
+        <span class="order-count" id="orderCount">135 orders</span>
       </div>
       <div class="table-scroll" id="orders-scroll">
         <table id="ordersTable">
@@ -3384,7 +3384,7 @@ new Chart(document.getElementById('revenueChart'), {
     datasets: [
       {
         label: 'Shopify',
-        data: [7916.92, 10005.64, 21133.09, 18961.24, 4054.2],
+        data: [7916.92, 10005.64, 20873.91, 18961.24, 4054.2],
         backgroundColor: '#95bf47',
         borderRadius: 4,
         order: 2,
