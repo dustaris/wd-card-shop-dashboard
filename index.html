@@ -183,13 +183,13 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">2</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">1</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: May 04, 2026 at 08:05 AM PST</div>
+    <div class="updated">Last updated: May 04, 2026 at 10:05 AM PST</div>
     
   </div>
 </header>
@@ -1519,22 +1519,9 @@
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span>
         <h2 style="margin:0">eBay — Awaiting Shipment</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Order ID</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Total</th><th>Status</th></tr></thead>
-          <tbody>
-        <tr>
-          <td><a href="https://www.ebay.com/sh/ord/" target="_blank" style="color:#0064D2;font-weight:600">09-14592-78386</a></td>
-          <td>brt444</td>
-          <td>05/04/2026 01:59 PM</td>
-          <td style="max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">2025 Donruss Football Rated Rookie Red Pandora 8 Card Lot (x1)</td>
-          <td><strong>$11.43</strong></td>
-          <td><span class="badge badge-yellow">Awaiting Shipment</span></td>
-        </tr></tbody>
-        </table>
-      </div>
+      <p style="color:#aaa;font-size:13px">No orders awaiting shipment. Run 5_ebay_orders.py to refresh.</p>
     </div>
   
     <div class="card" style="margin-bottom:28px">
@@ -1548,12 +1535,12 @@
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
         <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-6D17AC-1C9C5</a></td>
-          <td>Cody Crain</td>
-          <td>2026-05-03</td>
-          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon ×2</td>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-B96C8F-C1B06</a></td>
+          <td>Game Factory</td>
+          <td>2026-05-04</td>
+          <td style="font-size:12px;max-width:220px;line-height:1.5">Pokemon Japan ×2</td>
           <td>Standard</td>
-          <td><strong>$42.82</strong></td>
+          <td><strong>$173.98</strong></td>
           <td><span class="badge badge-yellow">Ready to Ship</span></td>
         </tr></tbody>
         </table>
@@ -1572,7 +1559,7 @@
     <div class="card" style="margin-bottom:0">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap">
         <h2 style="margin:0">Price Tracker</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">37 products</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">32 products</span>
         <span style="color:#aaa;font-size:12px;margin-left:auto">vs. Market = your Shopify price minus TCGPlayer market price</span>
       </div>
       <div class="table-scroll">
@@ -1712,10 +1699,10 @@
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">17</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$67.16</td>
+          <td data-label="TCG Market">$67.24</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$59.99</td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$1.83</span></td>
+          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$1.75</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/672401" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -1866,22 +1853,6 @@
         </tr>
         <tr>
           <td style="font-weight:600;max-width:260px">
-            <a href="https://1marss-2m.myshopify.com/products/scarlet-ex-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Scarlet ex Booster Box</a>
-          </td>
-          <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$78.99</td>
-          <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">5</span></td>
-          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB">$86.99</td>
-          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">7</span></td>
-          <td data-label="TCG Market">$87.98</td>
-          <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
-          <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-8.99</span></td>
-          <td data-label="Link">
-            <a href="https://www.tcgplayer.com/product/565247" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
-          </td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/stellar-crown-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Stellar Crown Booster Box</a>
           </td>
           <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$309.99</td>
@@ -1946,50 +1917,34 @@
         </tr>
         <tr>
           <td style="font-weight:600;max-width:260px">
+            <a href="https://1marss-2m.myshopify.com/products/scarlet-ex-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Scarlet ex Booster Box</a>
+          </td>
+          <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$78.99</td>
+          <td data-label="Shopify Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">2</span></td>
+          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB">$86.99</td>
+          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#2e7d32;font-weight:600">5</span></td>
+          <td data-label="TCG Market">$87.94</td>
+          <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
+          <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-8.95</span></td>
+          <td data-label="Link">
+            <a href="https://www.tcgplayer.com/product/565247" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/ascended-heroes-elite-trainer-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes Elite Trainer Box</a>
           </td>
           <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$142.99</td>
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$177.50</td>
+          <td data-label="TCG Market">$177.98</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$132.38</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-34.51</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-34.99</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/668496" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
-          </td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;max-width:260px">
-            <a href="https://1marss-2m.myshopify.com/products/ascended-heroes-first-partners-deluxe-pin-collection" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes First Partners Deluxe Pin Collection</a>
-          </td>
-          <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$55.99</td>
-          <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
-          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$58.51</td>
-          <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
-          <td data-label="Verified Low">$57.98</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-2.52</span></td>
-          <td data-label="Link">
-            <a href="https://www.tcgplayer.com/product/672391" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
-          </td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;max-width:260px">
-            <a href="https://1marss-2m.myshopify.com/products/ascended-heroes-first-partners-deluxe-pin-collection-case-sealed" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Ascended Heroes First Partners Deluxe Pin Collection Case - Sealed</a>
-          </td>
-          <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$339.99</td>
-          <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
-          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$356.30</td>
-          <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
-          <td data-label="Verified Low">$419.99</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-16.31</span></td>
-          <td data-label="Link">
-            <a href="https://www.tcgplayer.com/product/672392" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
         <tr>
@@ -2074,50 +2029,18 @@
         </tr>
         <tr>
           <td style="font-weight:600;max-width:260px">
-            <a href="https://1marss-2m.myshopify.com/products/mega-charizard-x-ex-ultra-premium-collection" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Mega Charizard X ex Ultra-Premium Collection</a>
-          </td>
-          <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$199.99</td>
-          <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
-          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$243.71</td>
-          <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
-          <td data-label="Verified Low">$250.00</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-43.72</span></td>
-          <td data-label="Link">
-            <a href="https://www.tcgplayer.com/product/654213" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
-          </td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/mega-dream-ex-booster-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Mega Dream ex Booster Box</a>
           </td>
           <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$87.99</td>
           <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
           <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
           <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$128.90</td>
+          <td data-label="TCG Market">$128.42</td>
           <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
           <td data-label="Verified Low">$149.99</td>
-          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-40.91</span></td>
+          <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-40.43</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/666254" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
-          </td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;max-width:260px">
-            <a href="https://1marss-2m.myshopify.com/products/mega-evolution-ascended-heroes-collection-case" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Mega Evolution: Ascended Heroes Collection case</a>
-          </td>
-          <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$639.99</td>
-          <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
-          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$14.23</td>
-          <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
-          <td data-label="Verified Low"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$625.76</span></td>
-          <td data-label="Link">
-            <a href="https://www.tcgplayer.com/product/672434.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
         <tr>
@@ -2150,22 +2073,6 @@
           <td data-label="vs. Market"><span style="color:#c62828;font-weight:600">$-3.44</span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/674449" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
-          </td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;max-width:260px">
-            <a href="https://1marss-2m.myshopify.com/products/prismatic-evolutions-surprise-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Prismatic Evolutions Surprise Box</a>
-          </td>
-          <td data-label="Shopify Price" style="font-weight:700;color:#1a1a2e">$61.99</td>
-          <td data-label="Shopify Qty" style="text-align:center"><span style="color:#c62828;font-weight:600">0</span></td>
-          <td data-label="My TCG Price" style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></td>
-          <td data-label="My TCG Qty" style="text-align:center"><span style="color:#bbb">—</span></td>
-          <td data-label="TCG Market">$58.58</td>
-          <td data-label="TCG Low"><span style="color:#bbb">—</span></td>
-          <td data-label="Verified Low">$60.00</td>
-          <td data-label="vs. Market"><span style="color:#2e7d32;font-weight:600">+$3.41</span></td>
-          <td data-label="Link">
-            <a href="https://www.tcgplayer.com/product/593466" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
         <tr>
@@ -2515,7 +2422,7 @@
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">1h ago</span>
+              <span style="font-size:11px;color:#bbb">3h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"><strong>Walmart Wednesday SKU Rating</strong><br><br>8/10<br><br></div>
             
@@ -2528,7 +2435,7 @@
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">3h ago</span>
+              <span style="font-size:11px;color:#bbb">5h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5"><strong>__Costco In-Store Ascended__</strong><br><br>We are going to start seeing the release of the ascended 3-pack in store. Be sure to be on the lookout and utilize <br><br>Currently West Coast are the only stores that are in transit to warehouses<br><br>INSTORE SKU: `1992235`<br><br>The best thing you can do is call here and there for the most up to date info<br><br></div>
             
@@ -2541,7 +2448,7 @@
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">11h ago</span>
+              <span style="font-size:11px;color:#bbb">13h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Be sure to be running Prismatic ETBs<br><br>Expect a restock in the coming days!<br><br></div>
             
@@ -2554,7 +2461,7 @@
           <div style="flex:1;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
               <span style="font-size:13px;font-weight:700;color:#1a1a2e">Sherm</span>
-              <span style="font-size:11px;color:#bbb">12h ago</span>
+              <span style="font-size:11px;color:#bbb">14h ago</span>
             </div>
             <div style="font-size:13px;color:#333;line-height:1.5">Lock in this week we got multiple drops on a couple sites (:<br><br></div>
             
