@@ -2044,7 +2044,7 @@
           }
         },
         "psa10": {
-          "date": "2026-05-26"
+          "date": "2026-05-27"
         }
       },
       {
@@ -2069,7 +2069,7 @@
           "price": 127.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-05-26"
+          "date": "2026-05-27"
         }
       },
       {
@@ -2086,7 +2086,7 @@
           "url": "https://www.tcgplayer.com/product/188409/pokemon-sm---unbroken-bonds-reshiram-and-charizard-gx",
           "prices": {
             "normal": {
-              "market": 56.14
+              "market": 55.9
             }
           }
         },
@@ -2094,7 +2094,7 @@
           "price": 119.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-05-26"
+          "date": "2026-05-27"
         }
       },
       {
@@ -2111,15 +2111,15 @@
           "url": "https://www.tcgplayer.com/product/188404/pokemon-sm---unbroken-bonds-gardevoir-and-sylveon-gx",
           "prices": {
             "normal": {
-              "market": 65.15
+              "market": 65.63
             }
           }
         },
         "psa10": {
-          "price": 122.66,
+          "price": 122.59,
           "listings": 20,
           "source": "active",
-          "date": "2026-05-26"
+          "date": "2026-05-27"
         }
       },
       {
