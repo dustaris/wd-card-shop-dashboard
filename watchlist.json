@@ -2308,9 +2308,9 @@
         },
         "psa10": {
           "price": 190.0,
-          "listings": 9,
+          "listings": 10,
           "source": "active",
-          "date": "2026-05-26"
+          "date": "2026-05-27"
         }
       },
       {
@@ -2354,10 +2354,10 @@
           }
         },
         "psa10": {
-          "price": 440.0,
+          "price": 437.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-05-26"
+          "date": "2026-05-27"
         }
       },
       {
@@ -2402,9 +2402,9 @@
         },
         "psa10": {
           "price": 599.99,
-          "listings": 20,
+          "listings": 18,
           "source": "active",
-          "date": "2026-05-26"
+          "date": "2026-05-27"
         }
       },
       {
@@ -2448,10 +2448,10 @@
           }
         },
         "psa10": {
-          "price": 119.99,
-          "listings": 15,
+          "price": 120.0,
+          "listings": 14,
           "source": "active",
-          "date": "2026-05-26"
+          "date": "2026-05-27"
         }
       },
       {
@@ -2495,10 +2495,10 @@
           }
         },
         "psa10": {
-          "price": 90.0,
-          "listings": 11,
+          "price": 99.99,
+          "listings": 10,
           "source": "active",
-          "date": "2026-05-26"
+          "date": "2026-05-27"
         }
       },
       {
@@ -2545,7 +2545,7 @@
           "price": 90.0,
           "listings": 10,
           "source": "active",
-          "date": "2026-05-26"
+          "date": "2026-05-27"
         }
       },
       {
