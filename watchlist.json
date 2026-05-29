@@ -1488,7 +1488,7 @@
           "price": 1210.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
@@ -1535,7 +1535,7 @@
           "price": 550.0,
           "listings": 18,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
@@ -1579,10 +1579,10 @@
           }
         },
         "psa10": {
-          "price": 449.99,
+          "price": 445.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
@@ -1599,7 +1599,7 @@
           "url": "https://www.tcgplayer.com/product/185985/pokemon-sm-promos-pikachu-and-zekrom-gx",
           "prices": {
             "normal": {
-              "market": 166.56
+              "market": 171.33
             }
           }
         },
@@ -1607,7 +1607,7 @@
           "price": 49.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
