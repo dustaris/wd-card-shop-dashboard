@@ -2730,7 +2730,7 @@
           "price": 349.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
@@ -2773,10 +2773,10 @@
           }
         },
         "psa10": {
-          "price": 199.95,
-          "listings": 3,
+          "price": 250.0,
+          "listings": 2,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
@@ -2819,10 +2819,10 @@
           }
         },
         "psa10": {
-          "price": 260.0,
+          "price": 274.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
@@ -2839,7 +2839,7 @@
           "url": "https://www.tcgplayer.com/product/659232/pokemon-me-mega-evolution-promo-haunter-027",
           "prices": {
             "normal": {
-              "market": 57.98
+              "market": 58.4
             }
           }
         },
@@ -2847,7 +2847,7 @@
           "price": 125.0,
           "listings": 2,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
