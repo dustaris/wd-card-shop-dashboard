@@ -353,10 +353,10 @@
           }
         },
         "psa10": {
-          "price": 450.0,
-          "listings": 11,
+          "price": 500.0,
+          "listings": 10,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
@@ -400,9 +400,9 @@
         },
         "psa10": {
           "price": 545.0,
-          "listings": 19,
+          "listings": 18,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
@@ -449,7 +449,7 @@
           "price": 52.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
@@ -496,7 +496,7 @@
           "price": 39.99,
           "listings": 17,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
