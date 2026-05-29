@@ -4175,7 +4175,7 @@
           "price": 114.99,
           "listings": 18,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       }
     ],
@@ -4220,10 +4220,10 @@
           }
         },
         "psa10": {
-          "price": 3200.0,
+          "price": 2500.0,
           "listings": 18,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
@@ -4270,7 +4270,7 @@
           "price": 3350.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       },
       {
@@ -4304,10 +4304,10 @@
           "url": "https://prices.pokemontcg.io/tcgplayer/me2pt5-276"
         },
         "psa10": {
-          "price": 3800.0,
+          "price": 3850.0,
           "listings": 19,
           "source": "active",
-          "date": "2026-05-28"
+          "date": "2026-05-29"
         }
       }
     ]
