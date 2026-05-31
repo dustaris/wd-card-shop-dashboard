@@ -1,15 +1,15 @@
 {
   "year": 2026,
-  "updated": "April 26, 2026 at 06:13 PM",
+  "updated": "May 30, 2026 at 09:21 PM",
   "months": [
     {
       "month_num": 1,
       "month_name": "January",
       "shopify_gross": 7916.92,
       "shopify_fees": 277.09,
-      "tcg_gross": 2043.81,
-      "tcg_fees": 275.6,
-      "tcg_refunds": 55.64,
+      "tcg_gross": 0,
+      "tcg_fees": 0,
+      "tcg_refunds": 0,
       "ebay_gross": 4442.48,
       "ebay_fees": 644.61
     },
@@ -18,9 +18,9 @@
       "month_name": "February",
       "shopify_gross": 10005.64,
       "shopify_fees": 350.2,
-      "tcg_gross": 3050.29,
-      "tcg_fees": 411.32,
-      "tcg_refunds": 83.04,
+      "tcg_gross": 4095.17,
+      "tcg_fees": 553.09,
+      "tcg_refunds": 117.37,
       "ebay_gross": 574.94,
       "ebay_fees": 92.32
     },
@@ -29,33 +29,33 @@
       "month_name": "March",
       "shopify_gross": 21133.09,
       "shopify_fees": 739.66,
-      "tcg_gross": 38129.1,
-      "tcg_fees": 5141.63,
-      "tcg_refunds": 1037.97,
+      "tcg_gross": 58762.76,
+      "tcg_fees": 7936.47,
+      "tcg_refunds": 1684.22,
       "ebay_gross": 1455.89,
       "ebay_fees": 222.01
     },
     {
       "month_num": 4,
       "month_name": "April",
-      "shopify_gross": 16822.91,
-      "shopify_fees": 588.8,
-      "tcg_gross": 23554.86,
-      "tcg_fees": 3176.32,
-      "tcg_refunds": 641.23,
-      "ebay_gross": 355.03,
-      "ebay_fees": 59.85
+      "shopify_gross": 18961.24,
+      "shopify_fees": 663.64,
+      "tcg_gross": 38690.11,
+      "tcg_fees": 5225.47,
+      "tcg_refunds": 1108.91,
+      "ebay_gross": 361.51,
+      "ebay_fees": 61.59
     },
     {
       "month_num": 5,
       "month_name": "May",
-      "shopify_gross": 0,
-      "shopify_fees": 0,
-      "tcg_gross": 0,
-      "tcg_fees": 0,
-      "tcg_refunds": 0,
-      "ebay_gross": 0,
-      "ebay_fees": 0
+      "shopify_gross": 7486.71,
+      "shopify_fees": 262.03,
+      "tcg_gross": 3917.95,
+      "tcg_fees": 529.16,
+      "tcg_refunds": 112.29,
+      "ebay_gross": 15.08,
+      "ebay_fees": 3.95
     },
     {
       "month_num": 6,
