@@ -7,15 +7,10 @@
       "name": "151 Elite Trainer Box",
       "setName": "SV: Scarlet & Violet 151",
       "image": "https://product-images.tcgplayer.com/fit-in/200x200/503313.jpg",
-      "marketPrice": 647.74,
+      "marketPrice": 643.49,
       "purchasePrice": null,
       "qty": null,
       "priceHistory": [
-        {
-          "date": "2026-03-05",
-          "price": 563.75,
-          "qty": 14
-        },
         {
           "date": "2026-03-08",
           "price": 583.23,
@@ -158,11 +153,16 @@
         },
         {
           "date": "2026-05-31",
-          "price": 647.74,
-          "qty": 3
+          "price": 643.49,
+          "qty": 8
+        },
+        {
+          "date": "2026-06-03",
+          "price": 643.49,
+          "qty": 0
         }
       ],
-      "updatedAt": "2026-06-02",
+      "updatedAt": "2026-06-03",
       "addedAt": "2026-05-08"
     },
     {
@@ -171,15 +171,10 @@
       "name": "151 Booster Bundle",
       "setName": "SV: Scarlet & Violet 151",
       "image": "https://product-images.tcgplayer.com/fit-in/200x200/502000.jpg",
-      "marketPrice": 188.34,
+      "marketPrice": 187.19,
       "purchasePrice": null,
       "qty": 1,
       "priceHistory": [
-        {
-          "date": "2026-03-05",
-          "price": 157.5,
-          "qty": 98
-        },
         {
           "date": "2026-03-08",
           "price": 163.53,
@@ -262,7 +257,7 @@
         },
         {
           "date": "2026-04-25",
-          "price": 191.0,
+          "price": 191,
           "qty": 19
         },
         {
@@ -313,7 +308,7 @@
         {
           "date": "2026-05-25",
           "price": 181.87,
-          "qty": 42
+          "qty": 41
         },
         {
           "date": "2026-05-28",
@@ -322,13 +317,18 @@
         },
         {
           "date": "2026-05-31",
-          "price": 188.34,
-          "qty": 22
+          "price": 187.19,
+          "qty": 33
+        },
+        {
+          "date": "2026-06-03",
+          "price": 187.19,
+          "qty": 0
         }
       ],
-      "updatedAt": "2026-06-02",
+      "updatedAt": "2026-06-03",
       "addedAt": "2026-05-08"
     }
   ],
-  "ts": 1780405994383
+  "ts": 1780455915581
 }
