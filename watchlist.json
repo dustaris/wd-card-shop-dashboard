@@ -3577,7 +3577,7 @@
           "price": 574.99,
           "listings": 4,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -3620,10 +3620,10 @@
           }
         },
         "psa10": {
-          "price": 549.0,
-          "listings": 1,
+          "price": 350.0,
+          "listings": 4,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -3666,10 +3666,10 @@
           }
         },
         "psa10": {
-          "price": 242.88,
+          "price": 224.99,
           "listings": 3,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -3712,10 +3712,10 @@
           }
         },
         "psa10": {
-          "price": 120.0,
+          "price": 125.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -3758,10 +3758,10 @@
           }
         },
         "psa10": {
-          "price": 402.54,
-          "listings": 5,
+          "price": 400.26,
+          "listings": 6,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -3807,7 +3807,7 @@
           "price": 294.99,
           "listings": 4,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -3850,10 +3850,10 @@
           }
         },
         "psa10": {
-          "price": 399.0,
-          "listings": 4,
+          "price": 299.99,
+          "listings": 6,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -3896,10 +3896,10 @@
           }
         },
         "psa10": {
-          "price": 200.0,
-          "listings": 15,
+          "price": 225.0,
+          "listings": 10,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -3942,10 +3942,10 @@
           }
         },
         "psa10": {
-          "price": 349.99,
+          "price": 340.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -3991,7 +3991,7 @@
           "price": 199.99,
           "listings": 11,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -4034,10 +4034,10 @@
           }
         },
         "psa10": {
-          "price": 240.9,
+          "price": 240.29,
           "listings": 9,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -4082,7 +4082,7 @@
           "price": 22500.0,
           "listings": 1,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -4128,7 +4128,7 @@
           "price": 150.0,
           "listings": 2,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -4172,10 +4172,10 @@
           }
         },
         "psa10": {
-          "price": 112.99,
+          "price": 110.4,
           "listings": 18,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       }
     ],
@@ -4220,10 +4220,10 @@
           }
         },
         "psa10": {
-          "price": 3500.0,
+          "price": 3669.05,
           "listings": 18,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -4270,7 +4270,7 @@
           "price": 3239.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -4304,10 +4304,10 @@
           "url": "https://prices.pokemontcg.io/tcgplayer/me2pt5-276"
         },
         "psa10": {
-          "price": 3799.99,
+          "price": 3399.99,
           "listings": 19,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       }
     ]
