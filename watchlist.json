@@ -634,10 +634,10 @@
           }
         },
         "psa10": {
-          "price": 35.0,
-          "listings": 16,
+          "price": 32.0,
+          "listings": 15,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -684,7 +684,7 @@
           "price": 74.99,
           "listings": 17,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -728,10 +728,10 @@
           }
         },
         "psa10": {
-          "price": 79.99,
+          "price": 85.0,
           "listings": 17,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -778,7 +778,7 @@
           "price": 30.0,
           "listings": 14,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -825,7 +825,7 @@
           "price": 54.99,
           "listings": 17,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -869,10 +869,10 @@
           }
         },
         "psa10": {
-          "price": 280.0,
+          "price": 270.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -915,10 +915,10 @@
           }
         },
         "psa10": {
-          "price": 139.99,
-          "listings": 9,
+          "price": 129.99,
+          "listings": 7,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       }
     ],
@@ -963,10 +963,10 @@
           }
         },
         "psa10": {
-          "price": 729.99,
+          "price": 725.0,
           "listings": 18,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -1013,7 +1013,7 @@
           "price": 499.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -1057,10 +1057,10 @@
           }
         },
         "psa10": {
-          "price": 2999.0,
+          "price": 2755.86,
           "listings": 19,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -1085,7 +1085,7 @@
           "price": 79.95,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
@@ -1102,7 +1102,7 @@
           "url": "https://www.tcgplayer.com/product/490070/pokemon-sv01-scarlet-and-violet-base-set-drowzee---210-198",
           "prices": {
             "normal": {
-              "market": 69.82
+              "market": 69.09
             }
           }
         },
@@ -1110,7 +1110,7 @@
           "price": 1299.99,
           "listings": 1,
           "source": "active",
-          "date": "2026-06-05"
+          "date": "2026-06-07"
         }
       },
       {
