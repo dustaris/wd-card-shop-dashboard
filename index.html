@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">2</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge hidden" id="awaiting-badge">0</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: June 08, 2026 at 08:30 AM PST</div>
+    <div class="updated">Last updated: June 08, 2026 at 08:40 AM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -1788,45 +1788,18 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span>
         <h2 style="margin:0">eBay — Awaiting Shipment</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Order ID</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Total</th><th>Status</th></tr></thead>
-          <tbody>
-        <tr>
-          <td><a href="https://www.ebay.com/sh/ord/" target="_blank" style="color:#0064D2;font-weight:600">09-14744-21439</a></td>
-          <td data-label="Buyer">sneakerheadnick12_5</td>
-          <td data-label="Date">06/08/2026 08:24 AM</td>
-          <td data-label="Items" style="max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Trafalgar Law (022) OP10-022 Royal Blood Regular (x1)</td>
-          <td data-label="Total"><strong>$0.99</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Awaiting Shipment</span></td>
-        </tr></tbody>
-        </table>
-      </div>
+      <p style="color:#aaa;font-size:13px">No orders awaiting shipment. Run 5_ebay_orders.py to refresh.</p>
     </div>
   
     <div class="card" style="margin-bottom:28px">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
-          <tbody>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-E63976-607C2</a></td>
-          <td data-label="Buyer">Gage York</td>
-          <td data-label="Date">2026-06-08</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Mega Symphonia Booster Box</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$102.79</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr></tbody>
-        </table>
-      </div>
+      <p style="color:#aaa;font-size:13px">No outstanding orders found. Run 3_tcgplayer_scraper.py to refresh.</p>
     </div>
 </div>
 </div>
@@ -2244,7 +2217,7 @@ function pollStatus() {
           </td>
           <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$127.63</td>
           <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-39.64<span style="color:#c62828;font-size:9px;font-weight:400"> -31.1%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($127.63)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Gold &#9733;</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-37.01<span style="color:#c62828;font-size:9px;font-weight:400"> -29.6%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($125.00)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Avg 10 (qty)</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-49.48<span style="color:#c62828;font-size:9px;font-weight:400"> -36.0%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($137.47)</span></span></div></div></td>
+          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-39.64<span style="color:#c62828;font-size:9px;font-weight:400"> -31.1%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($127.63)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Gold &#9733;</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-36.01<span style="color:#c62828;font-size:9px;font-weight:400"> -29.0%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($124.00)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Avg 10 (qty)</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-49.38<span style="color:#c62828;font-size:9px;font-weight:400"> -35.9%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($137.37)</span></span></div></div></td>
           <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#888;font-weight:700">+0.7% 7d</span></td>
           <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8593; +3.1% / 30d <span style="color:#bbb;font-size:10px">(trend)</span></span></td>
           <td data-label="Link">
