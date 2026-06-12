@@ -1488,7 +1488,7 @@
           "price": 1200.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1532,10 +1532,10 @@
           }
         },
         "psa10": {
-          "price": 555.83,
-          "listings": 20,
+          "price": 554.84,
+          "listings": 19,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1579,10 +1579,10 @@
           }
         },
         "psa10": {
-          "price": 474.99,
+          "price": 549.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1607,7 +1607,7 @@
           "price": 300.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1624,15 +1624,15 @@
           "url": "https://www.tcgplayer.com/product/497625/pokemon-sv02-paldea-evolved-tyranitar---222-193",
           "prices": {
             "normal": {
-              "market": 80.62
+              "market": 80.47
             }
           }
         },
         "psa10": {
-          "price": 717.17,
+          "price": 715.89,
           "listings": 3,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1654,10 +1654,10 @@
           }
         },
         "psa10": {
-          "price": 1000.0,
+          "price": 2400.0,
           "listings": 1,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1700,10 +1700,10 @@
           }
         },
         "psa10": {
-          "price": 403.61,
+          "price": 405.11,
           "listings": 15,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1750,7 +1750,7 @@
           "price": 399.95,
           "listings": 18,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1775,7 +1775,7 @@
           "price": 149.49,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1792,15 +1792,15 @@
           "url": "https://www.tcgplayer.com/product/113771/pokemon-generations-radiant-collection-pikachu-full-art",
           "prices": {
             "normal": {
-              "market": 134.09
+              "market": 135.89
             }
           }
         },
         "psa10": {
-          "price": 69.09,
+          "price": 69.35,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1817,15 +1817,15 @@
           "url": "https://www.tcgplayer.com/product/111531/pokemon-xy-breakpoint-gyarados-ex-secret",
           "prices": {
             "normal": {
-              "market": 174.68
+              "market": 169.68
             }
           }
         },
         "psa10": {
           "price": 3399.99,
-          "listings": 11,
+          "listings": 12,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1842,15 +1842,15 @@
           "url": "https://www.tcgplayer.com/product/486623/pokemon-sv01-scarlet-and-violet-base-set-gardevoir-ex---245-198",
           "prices": {
             "normal": {
-              "market": 88.53
+              "market": 89.05
             }
           }
         },
         "psa10": {
-          "price": 249.75,
+          "price": 250.67,
           "listings": 2,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1867,12 +1867,12 @@
           "url": "https://www.tcgplayer.com/product/490072/pokemon-sv01-scarlet-and-violet-base-set-kirlia---212-198",
           "prices": {
             "normal": {
-              "market": 51.52
+              "market": 51.81
             }
           }
         },
         "psa10": {
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1889,15 +1889,15 @@
           "url": "https://www.tcgplayer.com/product/490071/pokemon-sv01-scarlet-and-violet-base-set-ralts---211-198",
           "prices": {
             "normal": {
-              "market": 53.56
+              "market": 54.12
             }
           }
         },
         "psa10": {
           "price": 75.5,
-          "listings": 2,
+          "listings": 1,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1922,7 +1922,7 @@
           "price": 141.25,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -1939,7 +1939,7 @@
           "url": "https://www.tcgplayer.com/product/205163/pokemon-sm-promos-charizard-and-braixen-gx---sm230",
           "prices": {
             "normal": {
-              "market": 84.19
+              "market": 84.42
             }
           }
         },
@@ -1947,7 +1947,7 @@
           "price": 675.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
