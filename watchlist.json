@@ -3991,7 +3991,7 @@
           "price": 200.0,
           "listings": 14,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -4037,7 +4037,7 @@
           "price": 230.0,
           "listings": 10,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -4082,7 +4082,7 @@
           "price": 25000.0,
           "listings": 1,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -4128,7 +4128,7 @@
           "price": 150.0,
           "listings": 2,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -4172,10 +4172,10 @@
           }
         },
         "psa10": {
-          "price": 109.99,
+          "price": 105.0,
           "listings": 18,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       }
     ],
@@ -4223,7 +4223,7 @@
           "price": 3800.0,
           "listings": 18,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -4267,10 +4267,10 @@
           }
         },
         "psa10": {
-          "price": 3239.99,
+          "price": 3250.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       },
       {
@@ -4304,10 +4304,10 @@
           "url": "https://prices.pokemontcg.io/tcgplayer/me2pt5-276"
         },
         "psa10": {
-          "price": 3249.99,
+          "price": 3244.44,
           "listings": 18,
           "source": "active",
-          "date": "2026-06-11"
+          "date": "2026-06-12"
         }
       }
     ]
