@@ -1654,10 +1654,10 @@
           }
         },
         "psa10": {
-          "price": 2100.0,
-          "listings": 2,
+          "price": 2099.0,
+          "listings": 3,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1700,10 +1700,10 @@
           }
         },
         "psa10": {
-          "price": 399.66,
-          "listings": 19,
+          "price": 400.37,
+          "listings": 18,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1747,10 +1747,10 @@
           }
         },
         "psa10": {
-          "price": 375.0,
+          "price": 369.99,
           "listings": 18,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1772,10 +1772,10 @@
           }
         },
         "psa10": {
-          "price": 144.0,
+          "price": 133.94,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1797,10 +1797,10 @@
           }
         },
         "psa10": {
-          "price": 68.42,
+          "price": 68.48,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1817,15 +1817,15 @@
           "url": "https://www.tcgplayer.com/product/111531/pokemon-xy-breakpoint-gyarados-ex-secret",
           "prices": {
             "normal": {
-              "market": 189.71
+              "market": 191.51
             }
           }
         },
         "psa10": {
           "price": 3400.0,
-          "listings": 8,
+          "listings": 6,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1842,15 +1842,15 @@
           "url": "https://www.tcgplayer.com/product/486623/pokemon-sv01-scarlet-and-violet-base-set-gardevoir-ex---245-198",
           "prices": {
             "normal": {
-              "market": 83.05
+              "market": 85.02
             }
           }
         },
         "psa10": {
-          "price": 247.77,
-          "listings": 3,
+          "price": 320.0,
+          "listings": 2,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1867,7 +1867,7 @@
           "url": "https://www.tcgplayer.com/product/490072/pokemon-sv01-scarlet-and-violet-base-set-kirlia---212-198",
           "prices": {
             "normal": {
-              "market": 53.46
+              "market": 53.33
             }
           }
         },
@@ -1875,7 +1875,7 @@
           "price": 998.0,
           "listings": 1,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1892,15 +1892,15 @@
           "url": "https://www.tcgplayer.com/product/490071/pokemon-sv01-scarlet-and-violet-base-set-ralts---211-198",
           "prices": {
             "normal": {
-              "market": 53.55
+              "market": 53.51
             }
           }
         },
         "psa10": {
           "price": 75.5,
-          "listings": 1,
+          "listings": 2,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
