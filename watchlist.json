@@ -1297,10 +1297,10 @@
           }
         },
         "psa10": {
-          "price": 55.35,
+          "price": 55.38,
           "listings": 17,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1344,10 +1344,10 @@
           }
         },
         "psa10": {
-          "price": 70.44,
+          "price": 70.51,
           "listings": 18,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1394,7 +1394,7 @@
           "price": 15.0,
           "listings": 2,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1438,10 +1438,10 @@
           }
         },
         "psa10": {
-          "price": 229.99,
+          "price": 225.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1488,7 +1488,7 @@
           "price": 1100.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1532,10 +1532,10 @@
           }
         },
         "psa10": {
-          "price": 474.0,
+          "price": 460.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1582,7 +1582,7 @@
           "price": 474.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1604,10 +1604,10 @@
           }
         },
         "psa10": {
-          "price": 220.0,
-          "listings": 20,
+          "price": 205.78,
+          "listings": 19,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
@@ -1624,15 +1624,15 @@
           "url": "https://www.tcgplayer.com/product/497625/pokemon-sv02-paldea-evolved-tyranitar---222-193",
           "prices": {
             "normal": {
-              "market": 77.18
+              "market": 77.02
             }
           }
         },
         "psa10": {
           "price": 995.0,
-          "listings": 3,
+          "listings": 4,
           "source": "active",
-          "date": "2026-07-02"
+          "date": "2026-07-03"
         }
       },
       {
