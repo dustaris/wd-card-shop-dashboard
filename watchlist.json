@@ -1485,10 +1485,10 @@
           }
         },
         "psa10": {
-          "price": 1100.0,
+          "price": 1099.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1532,10 +1532,10 @@
           }
         },
         "psa10": {
-          "price": 460.0,
+          "price": 445.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1579,10 +1579,10 @@
           }
         },
         "psa10": {
-          "price": 474.99,
+          "price": 470.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1599,15 +1599,15 @@
           "url": "https://www.tcgplayer.com/product/185985/pokemon-sm-promos-pikachu-and-zekrom-gx",
           "prices": {
             "normal": {
-              "market": 235.11
+              "market": 233.35
             }
           }
         },
         "psa10": {
-          "price": 205.78,
-          "listings": 19,
+          "price": 245.0,
+          "listings": 20,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1624,15 +1624,15 @@
           "url": "https://www.tcgplayer.com/product/497625/pokemon-sv02-paldea-evolved-tyranitar---222-193",
           "prices": {
             "normal": {
-              "market": 75.44
+              "market": 75.93
             }
           }
         },
         "psa10": {
           "price": 995.0,
-          "listings": 4,
+          "listings": 5,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1649,15 +1649,15 @@
           "url": "https://www.tcgplayer.com/product/497629/pokemon-sv02-paldea-evolved-maushold---226-193",
           "prices": {
             "normal": {
-              "market": 102.65
+              "market": 101.76
             }
           }
         },
         "psa10": {
-          "price": 2099.0,
+          "price": 1995.0,
           "listings": 3,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1700,10 +1700,10 @@
           }
         },
         "psa10": {
-          "price": 400.37,
+          "price": 400.0,
           "listings": 18,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1747,10 +1747,10 @@
           }
         },
         "psa10": {
-          "price": 369.99,
+          "price": 360.0,
           "listings": 18,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1767,15 +1767,15 @@
           "url": "https://www.tcgplayer.com/product/113748/pokemon-generations-radiant-collection-flareon-ex-full-art",
           "prices": {
             "normal": {
-              "market": 223.77
+              "market": 234.24
             }
           }
         },
         "psa10": {
-          "price": 133.94,
+          "price": 144.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1792,15 +1792,15 @@
           "url": "https://www.tcgplayer.com/product/113771/pokemon-generations-radiant-collection-pikachu-full-art",
           "prices": {
             "normal": {
-              "market": 167.8
+              "market": 167.59
             }
           }
         },
         "psa10": {
-          "price": 68.48,
+          "price": 68.36,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1817,15 +1817,15 @@
           "url": "https://www.tcgplayer.com/product/111531/pokemon-xy-breakpoint-gyarados-ex-secret",
           "prices": {
             "normal": {
-              "market": 191.51
+              "market": 194.59
             }
           }
         },
         "psa10": {
-          "price": 3400.0,
-          "listings": 6,
+          "price": 3750.0,
+          "listings": 5,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1842,15 +1842,15 @@
           "url": "https://www.tcgplayer.com/product/486623/pokemon-sv01-scarlet-and-violet-base-set-gardevoir-ex---245-198",
           "prices": {
             "normal": {
-              "market": 84.33
+              "market": 80.6
             }
           }
         },
         "psa10": {
-          "price": 320.0,
-          "listings": 2,
+          "price": 299.99,
+          "listings": 3,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1867,7 +1867,7 @@
           "url": "https://www.tcgplayer.com/product/490072/pokemon-sv01-scarlet-and-violet-base-set-kirlia---212-198",
           "prices": {
             "normal": {
-              "market": 53.1
+              "market": 52.91
             }
           }
         },
@@ -1875,7 +1875,7 @@
           "price": 998.0,
           "listings": 1,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1892,15 +1892,15 @@
           "url": "https://www.tcgplayer.com/product/490071/pokemon-sv01-scarlet-and-violet-base-set-ralts---211-198",
           "prices": {
             "normal": {
-              "market": 53.82
+              "market": 53.16
             }
           }
         },
         "psa10": {
           "price": 75.5,
-          "listings": 2,
+          "listings": 1,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1917,7 +1917,7 @@
           "url": "https://www.tcgplayer.com/product/201205/pokemon-sm---cosmic-eclipse-reshiram-and-zekrom-gx",
           "prices": {
             "normal": {
-              "market": 97.9
+              "market": 97.19
             }
           }
         },
@@ -1925,7 +1925,7 @@
           "price": 145.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1942,7 +1942,7 @@
           "url": "https://www.tcgplayer.com/product/205163/pokemon-sm-promos-charizard-and-braixen-gx---sm230",
           "prices": {
             "normal": {
-              "market": 96.64
+              "market": 101.98
             }
           }
         },
@@ -1950,7 +1950,7 @@
           "price": 675.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1967,15 +1967,15 @@
           "url": "https://www.tcgplayer.com/product/181694/pokemon-sm-promos-magikarp-and-wailord-gx",
           "prices": {
             "normal": {
-              "market": 129.4
+              "market": 135.4
             }
           }
         },
         "psa10": {
-          "price": 135.29,
+          "price": 138.95,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -1992,7 +1992,7 @@
           "url": "https://www.tcgplayer.com/product/196347/pokemon-sm-promos-reshiram-and-charizard-gx---sm201",
           "prices": {
             "normal": {
-              "market": 189.93
+              "market": 195.88
             }
           }
         },
@@ -2000,7 +2000,7 @@
           "price": 8250.0,
           "listings": 1,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -2017,15 +2017,15 @@
           "url": "https://www.tcgplayer.com/product/197873/pokemon-sm-promos-garchomp-and-giratina-gx-sm193",
           "prices": {
             "normal": {
-              "market": 98.54
+              "market": 98.35
             }
           }
         },
         "psa10": {
-          "price": 625.0,
+          "price": 650.0,
           "listings": 1,
           "source": "active",
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
@@ -2042,12 +2042,12 @@
           "url": "https://www.tcgplayer.com/product/226129/pokemon-alternate-art-promos-togepi-and-cleffa-and-igglybuff-gx-143a-236",
           "prices": {
             "normal": {
-              "market": 256.4
+              "market": 262.72
             }
           }
         },
         "psa10": {
-          "date": "2026-07-03"
+          "date": "2026-07-08"
         }
       },
       {
