@@ -12,11 +12,6 @@
       "qty": null,
       "priceHistory": [
         {
-          "date": "2026-04-11",
-          "price": 633.75,
-          "qty": 7
-        },
-        {
           "date": "2026-04-14",
           "price": 640.98,
           "qty": 2
@@ -160,9 +155,14 @@
           "date": "2026-07-07",
           "price": 619.15,
           "qty": 6
+        },
+        {
+          "date": "2026-07-10",
+          "price": 619.15,
+          "qty": 0
         }
       ],
-      "updatedAt": "2026-07-09",
+      "updatedAt": "2026-07-10",
       "addedAt": "2026-05-08"
     },
     {
@@ -171,15 +171,10 @@
       "name": "151 Booster Bundle",
       "setName": "SV: Scarlet & Violet 151",
       "image": "https://product-images.tcgplayer.com/fit-in/200x200/502000.jpg",
-      "marketPrice": 190.61,
+      "marketPrice": 190.97,
       "purchasePrice": null,
       "qty": 1,
       "priceHistory": [
-        {
-          "date": "2026-04-11",
-          "price": 186.21,
-          "qty": 79
-        },
         {
           "date": "2026-04-14",
           "price": 188.32,
@@ -322,13 +317,18 @@
         },
         {
           "date": "2026-07-07",
-          "price": 190.61,
-          "qty": 21
+          "price": 190.97,
+          "qty": 26
+        },
+        {
+          "date": "2026-07-10",
+          "price": 190.97,
+          "qty": 0
         }
       ],
-      "updatedAt": "2026-07-09",
+      "updatedAt": "2026-07-10",
       "addedAt": "2026-05-08"
     }
   ],
-  "ts": 1783628137480
+  "ts": 1783714408994
 }
