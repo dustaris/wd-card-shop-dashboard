@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">6</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge hidden" id="awaiting-badge">0</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: July 13, 2026 at 08:18 AM PST</div>
+    <div class="updated">Last updated: July 13, 2026 at 08:24 AM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -1824,68 +1824,9 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">6</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
-          <tbody>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-D0D929-F1A83</a></td>
-          <td data-label="Buyer">Allen Sullivan</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Dual Matte Standard Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$12.51</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-A4AA8D-BEC9F</a></td>
-          <td data-label="Buyer">Yasuyuki Dainobu</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Mega Brave Booster Box</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$109.46</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-FFB500-36C12</a></td>
-          <td data-label="Buyer">Ryan MacLeod</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$10.82</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-EB8C4D-B6F69</a></td>
-          <td data-label="Buyer">Anthony Lange</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$10.82</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-C36731-F6EC4</a></td>
-          <td data-label="Buyer">Johnathan Kropke</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Japanese Size Matte Clear Outer Sleeves (60-Pack)</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$12.37</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-FD5CA5-43032</a></td>
-          <td data-label="Buyer">Levi Glass</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">2× Mega Symphonia Booster Box</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$188.92</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr></tbody>
-        </table>
-      </div>
+      <p style="color:#aaa;font-size:13px">No outstanding orders found. Run 3_tcgplayer_scraper.py to refresh.</p>
     </div>
 </div>
 </div>
@@ -2233,10 +2174,10 @@ function pollStatus() {
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$142.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×0)</span></div>
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
           </td>
-          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$168.20</td>
+          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$168.28</td>
           <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-25.21<span style="color:#c62828;font-size:9px;font-weight:400"> -15.0%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($168.20)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Gold &#9733;</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-31.91<span style="color:#c62828;font-size:9px;font-weight:400"> -18.2%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($174.90)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Avg 10 (qty)</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-33.85<span style="color:#c62828;font-size:9px;font-weight:400"> -19.1%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($176.84)</span></span></div></div></td>
-          <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#dc2626;font-weight:700">-1.5% 7d</span></td>
+          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-25.29<span style="color:#c62828;font-size:9px;font-weight:400"> -15.0%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($168.28)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Gold &#9733;</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-31.91<span style="color:#c62828;font-size:9px;font-weight:400"> -18.2%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($174.90)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Avg 10 (qty)</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-33.85<span style="color:#c62828;font-size:9px;font-weight:400"> -19.1%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($176.84)</span></span></div></div></td>
+          <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#dc2626;font-weight:700">-1.4% 7d</span></td>
           <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8595; -4.1% / 30d <span style="color:#bbb;font-size:10px">(trend)</span></span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/668496" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
