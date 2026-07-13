@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">10</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">6</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: July 13, 2026 at 08:15 AM PST</div>
+    <div class="updated">Last updated: July 13, 2026 at 08:18 AM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -1824,30 +1824,12 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">10</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">6</span>
       </div>
       <div class="table-scroll">
         <table>
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-6AFAF8-A44EA</a></td>
-          <td data-label="Buyer">Daniel Lopez</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">8× Monkey.D.Garp</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$2.93</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-BB5872-31ECF</a></td>
-          <td data-label="Buyer">Amber Adams</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Mega Charizard Y ex</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$5.73</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
         <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-D0D929-F1A83</a></td>
           <td data-label="Buyer">Allen Sullivan</td>
@@ -1891,24 +1873,6 @@ function pollStatus() {
           <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Japanese Size Matte Clear Outer Sleeves (60-Pack)</td>
           <td data-label="Shipping">Standard</td>
           <td data-label="Total"><strong>$12.37</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-C92181-7F879</a></td>
-          <td data-label="Buyer">Jermaine Rogers</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Jinbe (031)</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$1.63</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-CF5BBE-0CCE2</a></td>
-          <td data-label="Buyer">Daniel Fleuranvil</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">3× St. Jaygarcia Saturn</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$2.06</strong></td>
           <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
         </tr>
         <tr>
