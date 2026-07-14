@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">11</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge hidden" id="awaiting-badge">0</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: July 13, 2026 at 09:24 PM PST</div>
+    <div class="updated">Last updated: July 13, 2026 at 09:27 PM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -1824,113 +1824,9 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">11</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
-          <tbody>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-84AC95-658FB</a></td>
-          <td data-label="Buyer">Jillian Faccini</td>
-          <td data-label="Date">2026-07-14</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$10.81</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-D1EC9C-18243</a></td>
-          <td data-label="Buyer">Derek Wong</td>
-          <td data-label="Date">2026-07-14</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$11.29</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-BE72A3-F465C</a></td>
-          <td data-label="Buyer">Jeremy Simard</td>
-          <td data-label="Date">2026-07-14</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Standard Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$12.66</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-EAA967-C602A</a></td>
-          <td data-label="Buyer">Reuben Jacobson</td>
-          <td data-label="Date">2026-07-14</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$10.82</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-2D9FCC-FB314</a></td>
-          <td data-label="Buyer">Jason Smithburn</td>
-          <td data-label="Date">2026-07-14</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$10.82</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-067E83-93FE9</a></td>
-          <td data-label="Buyer">Tristan Harp</td>
-          <td data-label="Date">2026-07-14</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Dual Matte Standard Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$12.51</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-F10623-D4125</a></td>
-          <td data-label="Buyer">Henry Pysher</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$11.29</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-E24838-B6F0B</a></td>
-          <td data-label="Buyer">Yitzchok asher wilner</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Japanese Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$12.79</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-646A24-A01C1</a></td>
-          <td data-label="Buyer">James Crowdis</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Japanese Size Matte Clear Outer Sleeves (60-Pack)<br>1× Dragon Shield Matte Japanese Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$25.16</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-126B65-5340C</a></td>
-          <td data-label="Buyer">Jesse Griffiths</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$10.82</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-51E111-4ED2C</a></td>
-          <td data-label="Buyer">Andrew Dupree</td>
-          <td data-label="Date">2026-07-13</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$10.97</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr></tbody>
-        </table>
-      </div>
+      <p style="color:#aaa;font-size:13px">No outstanding orders found. Run 3_tcgplayer_scraper.py to refresh.</p>
     </div>
 </div>
 </div>
