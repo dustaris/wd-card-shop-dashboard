@@ -1,12 +1,12 @@
 {
   "year": 2026,
-  "updated": "July 15, 2026 at 11:24 AM",
+  "updated": "July 15, 2026 at 11:30 AM",
   "months": [
     {
       "month_num": 1,
       "month_name": "January",
-      "shopify_gross": 0,
-      "shopify_fees": 0,
+      "shopify_gross": 7916.92,
+      "shopify_fees": 277.09,
       "tcg_gross": 18527.27,
       "tcg_fees": 2423.27,
       "tcg_refunds": 0.0,
@@ -16,8 +16,8 @@
     {
       "month_num": 2,
       "month_name": "February",
-      "shopify_gross": 0,
-      "shopify_fees": 0,
+      "shopify_gross": 10005.64,
+      "shopify_fees": 350.2,
       "tcg_gross": 6224.53,
       "tcg_fees": 843.94,
       "tcg_refunds": 646.06,
@@ -27,8 +27,8 @@
     {
       "month_num": 3,
       "month_name": "March",
-      "shopify_gross": 0,
-      "shopify_fees": 0,
+      "shopify_gross": 21133.09,
+      "shopify_fees": 739.66,
       "tcg_gross": 59575.95,
       "tcg_fees": 8101.03,
       "tcg_refunds": 888.39,
@@ -38,8 +38,8 @@
     {
       "month_num": 4,
       "month_name": "April",
-      "shopify_gross": 0,
-      "shopify_fees": 0,
+      "shopify_gross": 18961.24,
+      "shopify_fees": 663.64,
       "tcg_gross": 38880.89,
       "tcg_fees": 5255.65,
       "tcg_refunds": 2028.52,
@@ -49,8 +49,8 @@
     {
       "month_num": 5,
       "month_name": "May",
-      "shopify_gross": 0,
-      "shopify_fees": 0,
+      "shopify_gross": 7486.71,
+      "shopify_fees": 262.03,
       "tcg_gross": 24105.17,
       "tcg_fees": 3312.34,
       "tcg_refunds": 681.31,
@@ -60,8 +60,8 @@
     {
       "month_num": 6,
       "month_name": "June",
-      "shopify_gross": 0,
-      "shopify_fees": 0,
+      "shopify_gross": 1250.69,
+      "shopify_fees": 43.77,
       "tcg_gross": 16775.01,
       "tcg_fees": 2398.67,
       "tcg_refunds": 513.63,
@@ -71,8 +71,8 @@
     {
       "month_num": 7,
       "month_name": "July",
-      "shopify_gross": 0,
-      "shopify_fees": 0,
+      "shopify_gross": 37.71,
+      "shopify_fees": 1.32,
       "tcg_gross": 11255.74,
       "tcg_fees": 1532.78,
       "tcg_refunds": 0.0,
