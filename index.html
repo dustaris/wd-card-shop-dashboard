@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">4</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">5</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: July 16, 2026 at 03:03 PM PST</div>
+    <div class="updated">Last updated: July 16, 2026 at 03:06 PM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -433,7 +433,7 @@ function pollStatus() {
     </div>
   </div>
 
-  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 7/16/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">2,161</div><div class="sub">Jan 1 – 7/16/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$176,095.51</div><div class="sub">Jan 1 – 7/16/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$81.49</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$148,993.32</div><div class="sub">Fees: $24,053.41</div></div></div></div>
+  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 7/16/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">2,162</div><div class="sub">Jan 1 – 7/16/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$176,235.49</div><div class="sub">Jan 1 – 7/16/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$81.52</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$149,133.30</div><div class="sub">Fees: $24,053.41</div></div></div></div>
 
   <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – Jul 16, 2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">409</div><div class="sub">Jan 1 – Jul 16, 2026</div></div><div class="stat-card"><div class="label">Total Revenue</div><div class="value">$7,750.94</div><div class="sub">Jan 1 – Jul 16, 2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$18.95</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$6,541.96</div><div class="sub">Fees: $1,208.98</div></div></div></div>
 
@@ -1833,12 +1833,21 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">4</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">5</span>
       </div>
       <div class="table-scroll">
         <table>
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-4C724C-0DDE4</a></td>
+          <td data-label="Buyer">Jorge Aldrete</td>
+          <td data-label="Date">2026-07-16</td>
+          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Terastal Fest ex Booster Box</td>
+          <td data-label="Shipping">Standard</td>
+          <td data-label="Total"><strong>$139.98</strong></td>
+          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
         <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-73919F-2AD00</a></td>
           <td data-label="Buyer">Michael Brown</td>
@@ -5513,7 +5522,7 @@ new Chart(document.getElementById('revenueChart'), {
       },
       {
         label: 'TCGPlayer',
-        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 12052.4],
+        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 12192.38],
         backgroundColor: 'rgba(229, 57, 53, 0.82)',
         borderRadius: 4,
         order: 1,
