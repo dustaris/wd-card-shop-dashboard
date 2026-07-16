@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">1</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">2</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: July 15, 2026 at 06:45 PM PST</div>
+    <div class="updated">Last updated: July 15, 2026 at 06:48 PM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -433,7 +433,7 @@ function pollStatus() {
     </div>
   </div>
 
-  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 7/15/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">2,141</div><div class="sub">Jan 1 – 7/15/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$175,647.29</div><div class="sub">Jan 1 – 7/15/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$82.04</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$148,612.18</div><div class="sub">Fees: $23,986.33</div></div></div></div>
+  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 7/15/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">2,141</div><div class="sub">Jan 1 – 7/15/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$175,647.29</div><div class="sub">Jan 1 – 7/15/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$82.04</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$148,611.20</div><div class="sub">Fees: $23,987.31</div></div></div></div>
 
   <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – Jul 15, 2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">409</div><div class="sub">Jan 1 – Jul 15, 2026</div></div><div class="stat-card"><div class="label">Total Revenue</div><div class="value">$7,750.94</div><div class="sub">Jan 1 – Jul 15, 2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$18.95</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$6,541.96</div><div class="sub">Fees: $1,208.98</div></div></div></div>
 
@@ -1833,12 +1833,21 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">2</span>
       </div>
       <div class="table-scroll">
         <table>
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-B9E987-D4E0F</a></td>
+          <td data-label="Buyer">Cody Zimmerman</td>
+          <td data-label="Date">2026-07-16</td>
+          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× The Mechanist, Aerial Artisan (Extended Art)<br>1× Swiftfoot Boots (Showcase)<br>1× Vayne Carudas Solidor<br>1× Dancer's Chakrams Art Card<br>1× Red XIII, Proud Warrior Art Card<br>1× Sage's Nouliths Art Card<br>1× Ruinous Ultimatum Art Card<br>1× Machinist's Arsenal Art Card<br>1× Shantotto, Tactician Magician Art Card<br>1× Stiltzkin, Moogle Merchant Art Card<br>1× Braska's Final Aeon Art Card<br>1× Yuna, Hope of Spira Art Card<br>1× Squall, SeeD Mercenary Art Card</td>
+          <td data-label="Shipping">Standard</td>
+          <td data-label="Total"><strong>$5.04</strong></td>
+          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
         <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-09AB91-0F635</a></td>
           <td data-label="Buyer">Hayden Garner</td>
@@ -2180,11 +2189,11 @@ function pollStatus() {
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$142.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×0)</span></div>
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
           </td>
-          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$171.91</td>
+          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$173.71</td>
           <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-28.92<span style="color:#c62828;font-size:9px;font-weight:400"> -16.8%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($171.91)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Gold &#9733;</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-32.00<span style="color:#c62828;font-size:9px;font-weight:400"> -18.3%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($174.99)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Avg 10 (qty)</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-34.95<span style="color:#c62828;font-size:9px;font-weight:400"> -19.6%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($177.94)</span></span></div></div></td>
-          <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#16a34a;font-weight:700">+3.4% 7d</span></td>
-          <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8595; -2.5% / 30d <span style="color:#bbb;font-size:10px">(trend)</span></span></td>
+          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-30.72<span style="color:#c62828;font-size:9px;font-weight:400"> -17.7%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($173.71)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Gold &#9733;</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-32.00<span style="color:#c62828;font-size:9px;font-weight:400"> -18.3%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($174.99)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Avg 10 (qty)</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-34.95<span style="color:#c62828;font-size:9px;font-weight:400"> -19.6%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($177.94)</span></span></div></div></td>
+          <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#16a34a;font-weight:700">+4.5% 7d</span></td>
+          <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8595; -1.5% / 30d <span style="color:#bbb;font-size:10px">(trend)</span></span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/668496" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
