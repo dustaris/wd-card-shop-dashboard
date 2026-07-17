@@ -17,7 +17,7 @@
           "url": "https://www.tcgplayer.com/product/655095/pokemon-sv-scarlet-and-violet-promo-cards-espeon-ex-175",
           "prices": {
             "normal": {
-              "market": 25.92
+              "market": 25.61
             }
           }
         },
@@ -42,7 +42,7 @@
           "url": "https://www.tcgplayer.com/product/655094/pokemon-sv-scarlet-and-violet-promo-cards-umbreon-ex-176",
           "prices": {
             "normal": {
-              "market": 41.45
+              "market": 40.76
             }
           }
         },
@@ -208,7 +208,7 @@
           "url": "https://www.tcgplayer.com/product/285384/pokemon-swsh-sword-and-shield-promo-cards-charizard-v---swsh260",
           "prices": {
             "normal": {
-              "market": 53.95
+              "market": 53.23
             }
           }
         },
@@ -260,10 +260,10 @@
           }
         },
         "psa10": {
-          "price": 116.95,
+          "price": 125.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-09"
+          "date": "2026-07-17"
         }
       },
       {
@@ -353,10 +353,10 @@
           }
         },
         "psa10": {
-          "price": 599.99,
-          "listings": 7,
+          "price": 551.95,
+          "listings": 10,
           "source": "active",
-          "date": "2026-07-09"
+          "date": "2026-07-17"
         }
       },
       {
@@ -1102,7 +1102,7 @@
           "url": "https://www.tcgplayer.com/product/490070/pokemon-sv01-scarlet-and-violet-base-set-drowzee---210-198",
           "prices": {
             "normal": {
-              "market": 64.01
+              "market": 63.2
             }
           }
         },
@@ -1174,7 +1174,7 @@
           "url": "https://www.tcgplayer.com/product/659612/pokemon-me-mega-evolution-promo-mega-charizard-x-ex-023",
           "prices": {
             "normal": {
-              "market": 39.25
+              "market": 37.39
             }
           }
         },
@@ -1199,7 +1199,7 @@
           "url": "https://www.tcgplayer.com/product/665894/pokemon-japan-m2a-high-class-pack-mega-dream-ex-mega-charizard-x-ex",
           "prices": {
             "normal": {
-              "market": 43.15
+              "market": 42.98
             }
           }
         },
@@ -1599,7 +1599,7 @@
           "url": "https://www.tcgplayer.com/product/185985/pokemon-sm-promos-pikachu-and-zekrom-gx",
           "prices": {
             "normal": {
-              "market": 231.03
+              "market": 228.98
             }
           }
         },
@@ -1624,7 +1624,7 @@
           "url": "https://www.tcgplayer.com/product/497625/pokemon-sv02-paldea-evolved-tyranitar---222-193",
           "prices": {
             "normal": {
-              "market": 77.02
+              "market": 76.37
             }
           }
         },
@@ -1649,7 +1649,7 @@
           "url": "https://www.tcgplayer.com/product/497629/pokemon-sv02-paldea-evolved-maushold---226-193",
           "prices": {
             "normal": {
-              "market": 102.01
+              "market": 101.65
             }
           }
         },
