@@ -23,9 +23,9 @@
         },
         "psa10": {
           "price": 139.99,
-          "listings": 2,
+          "listings": 3,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -48,9 +48,9 @@
         },
         "psa10": {
           "price": 239.99,
-          "listings": 8,
+          "listings": 7,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -97,7 +97,7 @@
           "price": 430.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -141,10 +141,10 @@
           }
         },
         "psa10": {
-          "price": 369.99,
+          "price": 363.19,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -188,10 +188,10 @@
           }
         },
         "psa10": {
-          "price": 398.77,
+          "price": 398.08,
           "listings": 2,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -216,7 +216,7 @@
           "price": 740.98,
           "listings": 1,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -354,9 +354,9 @@
         },
         "psa10": {
           "price": 551.95,
-          "listings": 10,
+          "listings": 9,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -402,7 +402,7 @@
           "price": 499.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -449,7 +449,7 @@
           "price": 59.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -496,7 +496,7 @@
           "price": 39.99,
           "listings": 16,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -543,7 +543,7 @@
           "price": 55.0,
           "listings": 19,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -587,10 +587,10 @@
           }
         },
         "psa10": {
-          "price": 40.0,
+          "price": 44.95,
           "listings": 9,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -637,7 +637,7 @@
           "price": 35.0,
           "listings": 13,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -681,10 +681,10 @@
           }
         },
         "psa10": {
-          "price": 87.45,
-          "listings": 17,
+          "price": 85.0,
+          "listings": 18,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -728,10 +728,10 @@
           }
         },
         "psa10": {
-          "price": 89.8,
+          "price": 89.63,
           "listings": 17,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -778,7 +778,7 @@
           "price": 38.0,
           "listings": 12,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -825,7 +825,7 @@
           "price": 54.99,
           "listings": 17,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -869,10 +869,10 @@
           }
         },
         "psa10": {
-          "price": 280.0,
+          "price": 269.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1010,10 +1010,10 @@
           }
         },
         "psa10": {
-          "price": 449.99,
+          "price": 445.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1057,10 +1057,10 @@
           }
         },
         "psa10": {
-          "price": 2848.36,
+          "price": 2769.69,
           "listings": 19,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1085,7 +1085,7 @@
           "price": 89.95,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1110,7 +1110,7 @@
           "price": 1299.99,
           "listings": 1,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1157,7 +1157,7 @@
           "price": 40.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1179,10 +1179,10 @@
           }
         },
         "psa10": {
-          "price": 219.0,
+          "price": 225.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1204,10 +1204,10 @@
           }
         },
         "psa10": {
-          "price": 62.0,
+          "price": 60.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1250,10 +1250,10 @@
           }
         },
         "psa10": {
-          "price": 1908.42,
+          "price": 1911.28,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1300,7 +1300,7 @@
           "price": 76.18,
           "listings": 17,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1344,10 +1344,10 @@
           }
         },
         "psa10": {
-          "price": 71.21,
-          "listings": 18,
+          "price": 71.94,
+          "listings": 15,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1392,9 +1392,9 @@
         },
         "psa10": {
           "price": 15.0,
-          "listings": 2,
+          "listings": 3,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1438,10 +1438,10 @@
           }
         },
         "psa10": {
-          "price": 219.99,
+          "price": 219.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1485,10 +1485,10 @@
           }
         },
         "psa10": {
-          "price": 999.99,
+          "price": 1045.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1532,10 +1532,10 @@
           }
         },
         "psa10": {
-          "price": 420.0,
+          "price": 424.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1579,10 +1579,10 @@
           }
         },
         "psa10": {
-          "price": 454.99,
+          "price": 440.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1632,7 +1632,7 @@
           "price": 899.99,
           "listings": 8,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1654,10 +1654,10 @@
           }
         },
         "psa10": {
-          "price": 2100.0,
-          "listings": 2,
+          "price": 2300.0,
+          "listings": 1,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1700,10 +1700,10 @@
           }
         },
         "psa10": {
-          "price": 400.36,
-          "listings": 18,
+          "price": 400.0,
+          "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1747,10 +1747,10 @@
           }
         },
         "psa10": {
-          "price": 355.0,
+          "price": 343.16,
           "listings": 18,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1772,10 +1772,10 @@
           }
         },
         "psa10": {
-          "price": 141.99,
+          "price": 137.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1797,10 +1797,10 @@
           }
         },
         "psa10": {
-          "price": 80.0,
+          "price": 72.64,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1823,9 +1823,9 @@
         },
         "psa10": {
           "price": 3550.0,
-          "listings": 9,
+          "listings": 8,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1842,7 +1842,7 @@
           "url": "https://www.tcgplayer.com/product/486623/pokemon-sv01-scarlet-and-violet-base-set-gardevoir-ex---245-198",
           "prices": {
             "normal": {
-              "market": 76.48
+              "market": 76.03
             }
           }
         },
@@ -1850,7 +1850,7 @@
           "price": 299.0,
           "listings": 3,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1867,7 +1867,7 @@
           "url": "https://www.tcgplayer.com/product/490072/pokemon-sv01-scarlet-and-violet-base-set-kirlia---212-198",
           "prices": {
             "normal": {
-              "market": 50.31
+              "market": 47.31
             }
           }
         },
@@ -1892,7 +1892,7 @@
           "url": "https://www.tcgplayer.com/product/490071/pokemon-sv01-scarlet-and-violet-base-set-ralts---211-198",
           "prices": {
             "normal": {
-              "market": 48.16
+              "market": 46.77
             }
           }
         },
@@ -1917,15 +1917,15 @@
           "url": "https://www.tcgplayer.com/product/201205/pokemon-sm---cosmic-eclipse-reshiram-and-zekrom-gx",
           "prices": {
             "normal": {
-              "market": 97.76
+              "market": 97.96
             }
           }
         },
         "psa10": {
-          "price": 148.65,
+          "price": 144.95,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -2017,7 +2017,7 @@
           "url": "https://www.tcgplayer.com/product/197873/pokemon-sm-promos-garchomp-and-giratina-gx-sm193",
           "prices": {
             "normal": {
-              "market": 98.31
+              "market": 98.66
             }
           }
         },
@@ -2064,7 +2064,7 @@
           "url": "https://www.tcgplayer.com/product/183907/pokemon-sm---team-up-eevee-and-snorlax-gx",
           "prices": {
             "normal": {
-              "market": 90.43
+              "market": 91.33
             }
           }
         },
@@ -2089,7 +2089,7 @@
           "url": "https://www.tcgplayer.com/product/188409/pokemon-sm---unbroken-bonds-reshiram-and-charizard-gx",
           "prices": {
             "normal": {
-              "market": 60.94
+              "market": 54.24
             }
           }
         },
@@ -2114,7 +2114,7 @@
           "url": "https://www.tcgplayer.com/product/188404/pokemon-sm---unbroken-bonds-gardevoir-and-sylveon-gx",
           "prices": {
             "normal": {
-              "market": 74.76
+              "market": 75.4
             }
           }
         },
@@ -2139,7 +2139,7 @@
           "url": "https://www.tcgplayer.com/product/272425/pokemon-swsh10-astral-radiance-hisuian-sneasler-v-alternate-full-art",
           "prices": {
             "normal": {
-              "market": 38.31
+              "market": 38.29
             }
           }
         },
@@ -2147,7 +2147,7 @@
           "price": 89.95,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -2164,7 +2164,7 @@
           "url": "https://www.tcgplayer.com/product/241719/pokemon-swsh06-chilling-reign-galarian-articuno-v-alternate-full-art",
           "prices": {
             "normal": {
-              "market": 84.12
+              "market": 83.74
             }
           }
         },
@@ -2404,10 +2404,10 @@
           }
         },
         "psa10": {
-          "price": 605.2,
+          "price": 606.1,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -2451,10 +2451,10 @@
           }
         },
         "psa10": {
-          "price": 175.0,
-          "listings": 10,
+          "price": 190.0,
+          "listings": 8,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -2842,7 +2842,7 @@
           "url": "https://www.tcgplayer.com/product/659232/pokemon-me-mega-evolution-promo-haunter-027",
           "prices": {
             "normal": {
-              "market": 48.65
+              "market": 51.53
             }
           }
         },
