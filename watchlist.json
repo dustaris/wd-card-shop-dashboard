@@ -17,7 +17,7 @@
           "url": "https://www.tcgplayer.com/product/655095/pokemon-sv-scarlet-and-violet-promo-cards-espeon-ex-175",
           "prices": {
             "normal": {
-              "market": 25.61
+              "market": 25.13
             }
           }
         },
@@ -42,7 +42,7 @@
           "url": "https://www.tcgplayer.com/product/655094/pokemon-sv-scarlet-and-violet-promo-cards-umbreon-ex-176",
           "prices": {
             "normal": {
-              "market": 40.76
+              "market": 35.11
             }
           }
         },
@@ -208,7 +208,7 @@
           "url": "https://www.tcgplayer.com/product/285384/pokemon-swsh-sword-and-shield-promo-cards-charizard-v---swsh260",
           "prices": {
             "normal": {
-              "market": 53.23
+              "market": 47.94
             }
           }
         },
@@ -263,7 +263,7 @@
           "price": 125.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -307,10 +307,10 @@
           }
         },
         "psa10": {
-          "price": 1999.0,
+          "price": 2100.0,
           "listings": 19,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -916,9 +916,9 @@
         },
         "psa10": {
           "price": 150.0,
-          "listings": 5,
+          "listings": 4,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       }
     ],
@@ -963,10 +963,10 @@
           }
         },
         "psa10": {
-          "price": 680.0,
+          "price": 674.99,
           "listings": 18,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1077,7 +1077,7 @@
           "url": "https://www.tcgplayer.com/product/451834/pokemon-swsh12-silver-tempest-lugia-v-alternate-full-art",
           "prices": {
             "normal": {
-              "market": 531.28
+              "market": 533.08
             }
           }
         },
@@ -1102,7 +1102,7 @@
           "url": "https://www.tcgplayer.com/product/490070/pokemon-sv01-scarlet-and-violet-base-set-drowzee---210-198",
           "prices": {
             "normal": {
-              "market": 63.2
+              "market": 61.73
             }
           }
         },
@@ -1174,7 +1174,7 @@
           "url": "https://www.tcgplayer.com/product/659612/pokemon-me-mega-evolution-promo-mega-charizard-x-ex-023",
           "prices": {
             "normal": {
-              "market": 37.39
+              "market": 37.76
             }
           }
         },
@@ -1199,7 +1199,7 @@
           "url": "https://www.tcgplayer.com/product/665894/pokemon-japan-m2a-high-class-pack-mega-dream-ex-mega-charizard-x-ex",
           "prices": {
             "normal": {
-              "market": 42.98
+              "market": 42.44
             }
           }
         },
@@ -1599,15 +1599,15 @@
           "url": "https://www.tcgplayer.com/product/185985/pokemon-sm-promos-pikachu-and-zekrom-gx",
           "prices": {
             "normal": {
-              "market": 228.98
+              "market": 219.8
             }
           }
         },
         "psa10": {
-          "price": 219.99,
+          "price": 209.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-17"
+          "date": "2026-07-20"
         }
       },
       {
@@ -1624,7 +1624,7 @@
           "url": "https://www.tcgplayer.com/product/497625/pokemon-sv02-paldea-evolved-tyranitar---222-193",
           "prices": {
             "normal": {
-              "market": 76.37
+              "market": 76.93
             }
           }
         },
@@ -1649,7 +1649,7 @@
           "url": "https://www.tcgplayer.com/product/497629/pokemon-sv02-paldea-evolved-maushold---226-193",
           "prices": {
             "normal": {
-              "market": 101.65
+              "market": 99.94
             }
           }
         },
@@ -1767,7 +1767,7 @@
           "url": "https://www.tcgplayer.com/product/113748/pokemon-generations-radiant-collection-flareon-ex-full-art",
           "prices": {
             "normal": {
-              "market": 247.19
+              "market": 243.5
             }
           }
         },
