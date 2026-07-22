@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">7</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">2</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: July 22, 2026 at 11:51 AM PST</div>
+    <div class="updated">Last updated: July 22, 2026 at 11:55 AM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -1846,21 +1846,12 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">6</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
       </div>
       <div class="table-scroll">
         <table>
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-F4ACCA-C1E90</a></td>
-          <td data-label="Buyer">Isaac Dechant</td>
-          <td data-label="Date">2026-07-22</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$10.79</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
         <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-7990FE-C51AB</a></td>
           <td data-label="Buyer">Justin Smith</td>
@@ -1868,42 +1859,6 @@ function pollStatus() {
           <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
           <td data-label="Shipping">Standard</td>
           <td data-label="Total"><strong>$11.93</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-30180F-D227F</a></td>
-          <td data-label="Buyer">Edison Wright</td>
-          <td data-label="Date">2026-07-22</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$11.93</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-5FBB0F-F343B</a></td>
-          <td data-label="Buyer">William Pelton Jr</td>
-          <td data-label="Date">2026-07-22</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$10.79</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-CCD333-3CCBF</a></td>
-          <td data-label="Buyer">Taylor King</td>
-          <td data-label="Date">2026-07-22</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$10.79</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-48D45B-D88F2</a></td>
-          <td data-label="Buyer">Saveros Starling</td>
-          <td data-label="Date">2026-07-22</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$13.14</strong></td>
           <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
         </tr></tbody>
         </table>
@@ -2681,7 +2636,7 @@ function pollStatus() {
     <span style="font-size:10px;margin-left:auto;background:#f0fdf4;color:#15803d;border-radius:10px;padding:2px 8px;font-weight:600">SoCal cities</span>
   </div>
   <div style="font-size:10px;color:#bbb;margin-bottom:10px">Lake Forest · Mission Viejo · Aliso Viejo · RSM · more</div>
-  <div style="font-size:12px;color:#bbb;padding:8px 0">No recent tweets found.</div>
+  <div style="font-size:12px;color:#f87171;padding:8px 0">HTTPSConnectionPool(host='x.com', port=443): Max retries exceeded with url: /i/api/graphql/V7H0Ap3_Hh2FyS75OCDO3Q/UserTweets?variables=%7B%22userId%22%3A+%22464049610%22%2C+%22count%22%3A+50%2C+%22includePromotedContent%22%3A+false%2C+%22withQuickPromoteEligibilityTweetFields%22%3A+true%2C+%22withVoice%22%3A+true%2C+%22withV2Timeline%22%3A+true%7D&features=%7B%22rweb_tipjar_consumption_enabled%22%3A+true%2C+%22responsive_web_graphql_exclude_directive_enabled%22%3A+true%2C+%22verified_phone_label_enabled%22%3A+false%2C+%22creator_subscriptions_tweet_preview_api_enabled%22%3A+true%2C+%22responsive_web_graphql_timeline_navigation_enabled%22%3A+true%2C+%22responsive_web_graphql_skip_user_profile_image_extensions_enabled%22%3A+false%2C+%22communities_web_enable_tweet_community_results_fetch%22%3A+true%2C+%22c9s_tweet_anatomy_moderator_badge_enabled%22%3A+true%2C+%22articles_preview_enabled%22%3A+true%2C+%22tweetypie_unmention_optimization_enabled%22%3A+true%2C+%22responsive_web_edit_tweet_api_enabled%22%3A+true%2C+%22graphql_is_translatable_rweb_tweet_is_translatable_enabled%22%3A+true%2C+%22view_counts_everywhere_api_enabled%22%3A+true%2C+%22longform_notetweets_consumption_enabled%22%3A+true%2C+%22responsive_web_twitter_article_tweet_consumption_enabled%22%3A+true%2C+%22tweet_awards_web_tipping_enabled%22%3A+false%2C+%22creator_subscriptions_quote_tweet_preview_enabled%22%3A+false%2C+%22freedom_of_speech_not_reach_fetch_enabled%22%3A+true%2C+%22standardized_nudges_misinfo%22%3A+true%2C+%22tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled%22%3A+true%2C+%22rweb_video_timestamps_enabled%22%3A+true%2C+%22longform_notetweets_rich_text_read_enabled%22%3A+true%2C+%22longform_notetweets_inline_media_enabled%22%3A+true%2C+%22responsive_web_enhance_cards_enabled%22%3A+false%7D (Caused by ConnectTimeoutError(<HTTPSConnection(host='x.com', port=443) at 0x1090a9bd0>, 'Connection to x.com timed out. (connect timeout=15)'))</div>
 </div></div>
     </div>
   <div id="drops-cal-card" class="card" style="margin-bottom:0">
