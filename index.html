@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">8</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">5</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: July 22, 2026 at 08:42 AM PST</div>
+    <div class="updated">Last updated: July 22, 2026 at 08:45 AM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -1833,21 +1833,12 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">8</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">5</span>
       </div>
       <div class="table-scroll">
         <table>
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-EE1C67-E323D</a></td>
-          <td data-label="Buyer">Gregory Johnsrude</td>
-          <td data-label="Date">2026-07-22</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">2× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$24.58</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
         <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-80D159-F75E1</a></td>
           <td data-label="Buyer">Zachary Zinderman</td>
@@ -1867,30 +1858,12 @@ function pollStatus() {
           <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
         </tr>
         <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-3347FB-9F373</a></td>
-          <td data-label="Buyer">Jeremiah Mills</td>
-          <td data-label="Date">2026-07-22</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Spider-Sense</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$3.07</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-B9D017-62F10</a></td>
           <td data-label="Buyer">Margaret Ann Cordes</td>
           <td data-label="Date">2026-07-22</td>
           <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Destined Rivals Booster Bundle</td>
           <td data-label="Shipping">Standard</td>
           <td data-label="Total"><strong>$79.98</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-1C92EE-A68DB</a></td>
-          <td data-label="Buyer">Mikayla Wirth-Menges</td>
-          <td data-label="Date">2026-07-22</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Maximum Carnage</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$1.85</strong></td>
           <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
         </tr>
         <tr>
