@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">2</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">3</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: July 22, 2026 at 11:51 PM PST</div>
+    <div class="updated">Last updated: July 22, 2026 at 11:54 PM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -1833,12 +1833,21 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">2</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">3</span>
       </div>
       <div class="table-scroll">
         <table>
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-BFEF4E-8BC8A</a></td>
+          <td data-label="Buyer">Ulises Xiong</td>
+          <td data-label="Date">2026-07-23</td>
+          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Radioactive Spider</td>
+          <td data-label="Shipping">Standard</td>
+          <td data-label="Total"><strong>$1.73</strong></td>
+          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
         <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-9A3026-4B7E1</a></td>
           <td data-label="Buyer">Christopher Harris</td>
@@ -2625,7 +2634,7 @@ function pollStatus() {
   <div style="max-height:300px;overflow-y:auto;padding-right:2px"><div style="padding:9px 0;border-bottom:1px solid #f3f4f6">
   <div style="font-size:12px;color:#374151;line-height:1.5">RT @LookAtDissRip: Found some #ChaisRising scraps at Target 🎯 in <mark style="background:#fef08a;border-radius:2px;padding:0 2px">Mission Viejo</mark> off Crown Valley. Saw a slight glimpse of a box full of sing…</div>
   <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
-    <a href="https://x.com/squirtletcgoc2/status/2080093682418790664" target="_blank" style="font-size:10px;color:#60a5fa;text-decoration:none">5h ago</a>
+    <a href="https://x.com/squirtletcgoc2/status/2080093682418790664" target="_blank" style="font-size:10px;color:#60a5fa;text-decoration:none">6h ago</a>
   </div>
 </div></div>
 </div><div class="card" style="flex:1;min-width:0">
@@ -5500,7 +5509,7 @@ new Chart(document.getElementById('revenueChart'), {
       },
       {
         label: 'TCGPlayer',
-        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 29928.78],
+        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 29929.02],
         backgroundColor: 'rgba(229, 57, 53, 0.82)',
         borderRadius: 4,
         order: 1,
