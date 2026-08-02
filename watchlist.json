@@ -588,9 +588,9 @@
         },
         "psa10": {
           "price": 44.95,
-          "listings": 9,
+          "listings": 10,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -635,9 +635,9 @@
         },
         "psa10": {
           "price": 35.0,
-          "listings": 13,
+          "listings": 14,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -681,10 +681,10 @@
           }
         },
         "psa10": {
-          "price": 82.95,
+          "price": 79.65,
           "listings": 18,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -728,10 +728,10 @@
           }
         },
         "psa10": {
-          "price": 89.49,
+          "price": 88.0,
           "listings": 17,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -775,10 +775,10 @@
           }
         },
         "psa10": {
-          "price": 38.0,
-          "listings": 12,
+          "price": 39.99,
+          "listings": 13,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -823,9 +823,9 @@
         },
         "psa10": {
           "price": 54.99,
-          "listings": 17,
+          "listings": 18,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -869,10 +869,10 @@
           }
         },
         "psa10": {
-          "price": 265.0,
+          "price": 250.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -915,10 +915,10 @@
           }
         },
         "psa10": {
-          "price": 150.0,
-          "listings": 4,
+          "price": 199.99,
+          "listings": 5,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       }
     ],
@@ -963,10 +963,10 @@
           }
         },
         "psa10": {
-          "price": 629.0,
-          "listings": 18,
+          "price": 725.0,
+          "listings": 15,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -1010,10 +1010,10 @@
           }
         },
         "psa10": {
-          "price": 445.0,
+          "price": 429.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -1057,10 +1057,10 @@
           }
         },
         "psa10": {
-          "price": 2756.38,
+          "price": 2699.99,
           "listings": 19,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -1077,7 +1077,7 @@
           "url": "https://www.tcgplayer.com/product/451834/pokemon-swsh12-silver-tempest-lugia-v-alternate-full-art",
           "prices": {
             "normal": {
-              "market": 527.69
+              "market": 529.22
             }
           }
         },
@@ -1085,7 +1085,7 @@
           "price": 89.95,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -1102,7 +1102,7 @@
           "url": "https://www.tcgplayer.com/product/490070/pokemon-sv01-scarlet-and-violet-base-set-drowzee---210-198",
           "prices": {
             "normal": {
-              "market": 60.06
+              "market": 59.59
             }
           }
         },
@@ -1110,7 +1110,7 @@
           "price": 1170.0,
           "listings": 2,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -1157,7 +1157,7 @@
           "price": 40.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
