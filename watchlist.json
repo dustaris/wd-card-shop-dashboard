@@ -2592,10 +2592,10 @@
           }
         },
         "psa10": {
-          "price": 555.0,
+          "price": 560.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -2639,7 +2639,7 @@
           }
         },
         "psa10": {
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -2683,10 +2683,10 @@
           }
         },
         "psa10": {
-          "price": 159.99,
+          "price": 150.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -2733,7 +2733,7 @@
           "price": 300.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -2776,10 +2776,10 @@
           }
         },
         "psa10": {
-          "price": 219.99,
-          "listings": 18,
+          "price": 207.99,
+          "listings": 16,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -2822,10 +2822,10 @@
           }
         },
         "psa10": {
-          "price": 354.99,
+          "price": 369.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -2842,15 +2842,15 @@
           "url": "https://www.tcgplayer.com/product/659232/pokemon-me-mega-evolution-promo-haunter-027",
           "prices": {
             "normal": {
-              "market": 50.85
+              "market": 49.93
             }
           }
         },
         "psa10": {
-          "price": 1600.0,
-          "listings": 3,
+          "price": 1595.0,
+          "listings": 4,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -2880,10 +2880,10 @@
           "large": "https://images.pokemontcg.io/sm7/177a_hires.png"
         },
         "psa10": {
-          "price": 160.0,
+          "price": 138.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -2927,10 +2927,10 @@
           }
         },
         "psa10": {
-          "price": 1700.0,
+          "price": 1600.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -3020,10 +3020,10 @@
           }
         },
         "psa10": {
-          "price": 489.99,
+          "price": 499.99,
           "listings": 5,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
@@ -3066,10 +3066,10 @@
           }
         },
         "psa10": {
-          "price": 1999.0,
-          "listings": 1,
+          "price": 570.57,
+          "listings": 2,
           "source": "active",
-          "date": "2026-07-23"
+          "date": "2026-08-02"
         }
       },
       {
