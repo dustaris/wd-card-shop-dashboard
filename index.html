@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: August 02, 2026 at 06:54 PM PST</div>
+    <div class="updated">Last updated: August 02, 2026 at 06:57 PM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -433,7 +433,7 @@ function pollStatus() {
     </div>
   </div>
 
-  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 8/2/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">2,711</div><div class="sub">Jan 1 – 8/2/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$199,849.62</div><div class="sub">Jan 1 – 8/2/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$73.72</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$168,867.67</div><div class="sub">Fees: $27,182.62</div></div></div></div>
+  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 8/2/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">2,712</div><div class="sub">Jan 1 – 8/2/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$199,852.46</div><div class="sub">Jan 1 – 8/2/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$73.69</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$168,869.16</div><div class="sub">Fees: $27,183.97</div></div></div></div>
 
   <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – Aug 2, 2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">416</div><div class="sub">Jan 1 – Aug 2, 2026</div></div><div class="stat-card"><div class="label">Total Revenue</div><div class="value">$8,052.80</div><div class="sub">Jan 1 – Aug 2, 2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$19.36</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$6,780.91</div><div class="sub">Fees: $1,271.89</div></div></div></div>
 
@@ -1840,21 +1840,21 @@ function pollStatus() {
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
         <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-C0A6AF-2BD5E</a></td>
+          <td data-label="Buyer">Richard LeFevre</td>
+          <td data-label="Date">2026-08-03</td>
+          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">3× Gengar</td>
+          <td data-label="Shipping">Standard</td>
+          <td data-label="Total"><strong>$2.84</strong></td>
+          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-71E940-77DB6</a></td>
           <td data-label="Buyer">Ninette Holbrook</td>
           <td data-label="Date">2026-08-03</td>
           <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Cinccino ex</td>
           <td data-label="Shipping">Standard</td>
           <td data-label="Total"><strong>$6.35</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-5C6FC9-D1EC1</a></td>
-          <td data-label="Buyer">Francisco Quintana</td>
-          <td data-label="Date">2026-08-03</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Blaziken ex</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$2.73</strong></td>
           <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
         </tr></tbody>
         </table>
@@ -5495,7 +5495,7 @@ new Chart(document.getElementById('revenueChart'), {
       },
       {
         label: 'TCGPlayer',
-        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 34157.33, 1561.27],
+        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 34157.33, 1562.62],
         backgroundColor: 'rgba(229, 57, 53, 0.82)',
         borderRadius: 4,
         order: 1,
