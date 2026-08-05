@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">5</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">1</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: August 04, 2026 at 10:51 PM PST</div>
+    <div class="updated">Last updated: August 04, 2026 at 10:54 PM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -1824,46 +1824,9 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span>
         <h2 style="margin:0">eBay — Awaiting Shipment</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">4</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Order ID</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Total</th><th>Status</th></tr></thead>
-          <tbody>
-        <tr>
-          <td><a href="https://www.ebay.com/sh/ord/" target="_blank" style="color:#0064D2;font-weight:600">01-15007-24257</a></td>
-          <td data-label="Buyer">jabcoll_91</td>
-          <td data-label="Date">08/05/2026 05:14 AM</td>
-          <td data-label="Items" style="max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">2026 Topps Chrome Marvel KID JUGGERNAUT Future Stars Base Refractor FS-10 (x1)</td>
-          <td data-label="Total"><strong>$1.78</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Awaiting Shipment</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://www.ebay.com/sh/ord/" target="_blank" style="color:#0064D2;font-weight:600">24-14980-12600</a></td>
-          <td data-label="Buyer">muchogusto20</td>
-          <td data-label="Date">08/05/2026 05:03 AM</td>
-          <td data-label="Items" style="max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">2026 Topps Chrome Marvel Comics #MW-04 Ghost Riders Unite Meanwhile... (x1), 2026 Topps Chrome Marvel #MI-18 Scarlet Witch MARVEL ICONS Insert Refractor (x1), 2026 Topps Chrome Marvel KID JUGGERNAUT Future Stars Base Refractor FS-10 (x1) +2 more</td>
-          <td data-label="Total"><strong>$11.23</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Awaiting Shipment</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://www.ebay.com/sh/ord/" target="_blank" style="color:#0064D2;font-weight:600">18-14975-05826</a></td>
-          <td data-label="Buyer">bu_4118</td>
-          <td data-label="Date">08/05/2026 12:34 AM</td>
-          <td data-label="Items" style="max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">2026 Topps Chrome Marvel Shatterstar X-Force 35th X-Fractor Insert #XF-08 (x1)</td>
-          <td data-label="Total"><strong>$2.19</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Awaiting Shipment</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://www.ebay.com/sh/ord/" target="_blank" style="color:#0064D2;font-weight:600">07-14994-09463</a></td>
-          <td data-label="Buyer">gmanni-48</td>
-          <td data-label="Date">08/04/2026 10:14 PM</td>
-          <td data-label="Items" style="max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Black Cat 2026 Topps Chrome Marvel Comics Icons Insert Card #MI-01 (x1),  2026 Topps Chrome Marvel Comics - Black Cat Fanfare #FF-03  (x1), 2026 Topps Chrome Marvel Comics #FF-12 Dazzler Fanfare SP 🔥 (x1) +1 more</td>
-          <td data-label="Total"><strong>$27.81</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Awaiting Shipment</span></td>
-        </tr></tbody>
-        </table>
-      </div>
+      <p style="color:#aaa;font-size:13px">No orders awaiting shipment. Run 5_ebay_orders.py to refresh.</p>
     </div>
   
     <div class="card" style="margin-bottom:28px">
