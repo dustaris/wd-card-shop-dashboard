@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "updated": "August 06, 2026 at 12:27 AM",
+  "updated": "August 06, 2026 at 12:30 AM",
   "months": [
     {
       "month_num": 1,
@@ -10,8 +10,8 @@
       "tcg_gross": 18527.27,
       "tcg_fees": 2423.27,
       "tcg_refunds": 0.0,
-      "ebay_gross": 4243.1,
-      "ebay_fees": 614.1
+      "ebay_gross": 4442.48,
+      "ebay_fees": 644.61
     },
     {
       "month_num": 2,
@@ -21,8 +21,8 @@
       "tcg_gross": 6224.53,
       "tcg_fees": 843.94,
       "tcg_refunds": 646.06,
-      "ebay_gross": 496.9,
-      "ebay_fees": 80.78
+      "ebay_gross": 574.94,
+      "ebay_fees": 92.32
     },
     {
       "month_num": 3,
@@ -32,8 +32,8 @@
       "tcg_gross": 59575.95,
       "tcg_fees": 8101.03,
       "tcg_refunds": 888.39,
-      "ebay_gross": 1443.59,
-      "ebay_fees": 219.96
+      "ebay_gross": 1455.89,
+      "ebay_fees": 222.01
     },
     {
       "month_num": 4,
@@ -76,8 +76,8 @@
       "tcg_gross": 554.26,
       "tcg_fees": 85.79,
       "tcg_refunds": 0.0,
-      "ebay_gross": 404.83,
-      "ebay_fees": 85.12
+      "ebay_gross": 403.73,
+      "ebay_fees": 84.6
     },
     {
       "month_num": 8,
