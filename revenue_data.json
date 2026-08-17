@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "updated": "August 16, 2026 at 09:33 PM",
+  "updated": "August 16, 2026 at 09:36 PM",
   "months": [
     {
       "month_num": 1,
@@ -84,8 +84,8 @@
       "month_name": "August",
       "shopify_gross": 0,
       "shopify_fees": 0,
-      "tcg_gross": 4873.55,
-      "tcg_fees": 663.67,
+      "tcg_gross": 4884.55,
+      "tcg_fees": 665.17,
       "tcg_refunds": 0.0,
       "ebay_gross": 177.01,
       "ebay_fees": 41.57
