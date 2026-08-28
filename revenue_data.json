@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "updated": "August 28, 2026 at 02:33 PM",
+  "updated": "August 28, 2026 at 02:36 PM",
   "months": [
     {
       "month_num": 1,
@@ -10,8 +10,8 @@
       "tcg_gross": 18527.27,
       "tcg_fees": 2423.27,
       "tcg_refunds": 0.0,
-      "ebay_gross": 4442.48,
-      "ebay_fees": 644.61
+      "ebay_gross": 0,
+      "ebay_fees": 0
     },
     {
       "month_num": 2,
@@ -21,8 +21,8 @@
       "tcg_gross": 6224.53,
       "tcg_fees": 843.94,
       "tcg_refunds": 646.06,
-      "ebay_gross": 574.94,
-      "ebay_fees": 92.32
+      "ebay_gross": 0,
+      "ebay_fees": 0
     },
     {
       "month_num": 3,
@@ -32,8 +32,8 @@
       "tcg_gross": 59575.95,
       "tcg_fees": 8101.03,
       "tcg_refunds": 888.39,
-      "ebay_gross": 1455.89,
-      "ebay_fees": 222.01
+      "ebay_gross": 0,
+      "ebay_fees": 0
     },
     {
       "month_num": 4,
@@ -43,8 +43,8 @@
       "tcg_gross": 38880.89,
       "tcg_fees": 5255.65,
       "tcg_refunds": 2028.52,
-      "ebay_gross": 361.51,
-      "ebay_fees": 61.59
+      "ebay_gross": 0,
+      "ebay_fees": 0
     },
     {
       "month_num": 5,
@@ -54,8 +54,8 @@
       "tcg_gross": 24105.17,
       "tcg_fees": 3312.34,
       "tcg_refunds": 681.31,
-      "ebay_gross": 594.32,
-      "ebay_fees": 128.35
+      "ebay_gross": 0,
+      "ebay_fees": 0
     },
     {
       "month_num": 6,
@@ -65,8 +65,8 @@
       "tcg_gross": 16775.01,
       "tcg_fees": 2398.67,
       "tcg_refunds": 513.63,
-      "ebay_gross": 183.08,
-      "ebay_fees": 29.83
+      "ebay_gross": 0,
+      "ebay_fees": 0
     },
     {
       "month_num": 7,
@@ -76,8 +76,8 @@
       "tcg_gross": 554.26,
       "tcg_fees": 85.79,
       "tcg_refunds": 0.0,
-      "ebay_gross": 404.83,
-      "ebay_fees": 85.12
+      "ebay_gross": 0,
+      "ebay_fees": 0
     },
     {
       "month_num": 8,
@@ -87,8 +87,8 @@
       "tcg_gross": 7120.24,
       "tcg_fees": 969.62,
       "tcg_refunds": 0.0,
-      "ebay_gross": 340.99,
-      "ebay_fees": 78.06
+      "ebay_gross": 0,
+      "ebay_fees": 0
     },
     {
       "month_num": 9,
