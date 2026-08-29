@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge hidden" id="awaiting-badge">0</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">1</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: August 29, 2026 at 10:54 AM PST</div>
+    <div class="updated">Last updated: August 29, 2026 at 10:57 AM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -433,7 +433,7 @@ function pollStatus() {
     </div>
   </div>
 
-  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 8/29/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">3,190</div><div class="sub">Jan 1 – 8/29/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$205,627.18</div><div class="sub">Jan 1 – 8/29/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$64.46</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$173,630.21</div><div class="sub">Fees: $28,101.12</div></div></div></div>
+  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 8/29/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">3,191</div><div class="sub">Jan 1 – 8/29/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$205,639.64</div><div class="sub">Jan 1 – 8/29/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$64.44</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$173,640.69</div><div class="sub">Fees: $28,103.10</div></div></div></div>
 
   <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – Aug 29, 2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">444</div><div class="sub">Jan 1 – Aug 29, 2026</div></div><div class="stat-card"><div class="label">Total Revenue</div><div class="value">$8,359.97</div><div class="sub">Jan 1 – Aug 29, 2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$18.83</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$7,017.39</div><div class="sub">Fees: $1,342.58</div></div></div></div>
 
@@ -1833,9 +1833,23 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
       </div>
-      <p style="color:#aaa;font-size:13px">No outstanding orders found. Run 3_tcgplayer_scraper.py to refresh.</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
+          <tbody>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-B2893C-E6BD5</a></td>
+          <td data-label="Buyer">Cory Keierleber</td>
+          <td data-label="Date">2026-08-29</td>
+          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Palafin ex<br>1× Giacomo<br>1× Iris's Fighting Spirit<br>1× Team Rocket's Ariana<br>1× Team Rocket's Persian ex<br>1× Arboliva ex</td>
+          <td data-label="Shipping">Standard</td>
+          <td data-label="Total"><strong>$12.46</strong></td>
+          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr></tbody>
+        </table>
+      </div>
     </div>
 </div>
 </div>
@@ -5472,7 +5486,7 @@ new Chart(document.getElementById('revenueChart'), {
       },
       {
         label: 'TCGPlayer',
-        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 34157.33, 7253.9],
+        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 34157.33, 7266.36],
         backgroundColor: 'rgba(229, 57, 53, 0.82)',
         borderRadius: 4,
         order: 1,
