@@ -2000,7 +2000,7 @@
           "price": 8250.0,
           "listings": 1,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -2025,7 +2025,7 @@
           "price": 625.0,
           "listings": 1,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -2047,7 +2047,7 @@
           }
         },
         "psa10": {
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -2064,15 +2064,15 @@
           "url": "https://www.tcgplayer.com/product/183907/pokemon-sm---team-up-eevee-and-snorlax-gx",
           "prices": {
             "normal": {
-              "market": 91.22
+              "market": 91.29
             }
           }
         },
         "psa10": {
-          "price": 139.42,
+          "price": 139.12,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -2094,10 +2094,10 @@
           }
         },
         "psa10": {
-          "price": 120.76,
+          "price": 121.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -2114,7 +2114,7 @@
           "url": "https://www.tcgplayer.com/product/188404/pokemon-sm---unbroken-bonds-gardevoir-and-sylveon-gx",
           "prices": {
             "normal": {
-              "market": 79.81
+              "market": 80.59
             }
           }
         },
@@ -2122,7 +2122,7 @@
           "price": 126.1,
           "listings": 19,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -2842,7 +2842,7 @@
           "url": "https://www.tcgplayer.com/product/659232/pokemon-me-mega-evolution-promo-haunter-027",
           "prices": {
             "normal": {
-              "market": 49.66
+              "market": 49.33
             }
           }
         },
