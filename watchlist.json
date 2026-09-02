@@ -1624,7 +1624,7 @@
           "url": "https://www.tcgplayer.com/product/497625/pokemon-sv02-paldea-evolved-tyranitar---222-193",
           "prices": {
             "normal": {
-              "market": 73.19
+              "market": 72.95
             }
           }
         },
@@ -1632,7 +1632,7 @@
           "price": 850.0,
           "listings": 8,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -1649,7 +1649,7 @@
           "url": "https://www.tcgplayer.com/product/497629/pokemon-sv02-paldea-evolved-maushold---226-193",
           "prices": {
             "normal": {
-              "market": 97.19
+              "market": 97.04
             }
           }
         },
@@ -1657,7 +1657,7 @@
           "price": 1500.0,
           "listings": 3,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -1703,7 +1703,7 @@
           "price": 385.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -1747,10 +1747,10 @@
           }
         },
         "psa10": {
-          "price": 365.0,
+          "price": 355.0,
           "listings": 18,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -1767,15 +1767,15 @@
           "url": "https://www.tcgplayer.com/product/113748/pokemon-generations-radiant-collection-flareon-ex-full-art",
           "prices": {
             "normal": {
-              "market": 243.64
+              "market": 234.32
             }
           }
         },
         "psa10": {
-          "price": 130.0,
+          "price": 124.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
