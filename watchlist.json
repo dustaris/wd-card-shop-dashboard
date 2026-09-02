@@ -1800,7 +1800,7 @@
           "price": 60.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -1817,7 +1817,7 @@
           "url": "https://www.tcgplayer.com/product/111531/pokemon-xy-breakpoint-gyarados-ex-secret",
           "prices": {
             "normal": {
-              "market": 196.67
+              "market": 197.03
             }
           }
         },
@@ -1825,7 +1825,7 @@
           "price": 4600.0,
           "listings": 8,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -1842,15 +1842,15 @@
           "url": "https://www.tcgplayer.com/product/486623/pokemon-sv01-scarlet-and-violet-base-set-gardevoir-ex---245-198",
           "prices": {
             "normal": {
-              "market": 71.94
+              "market": 71.92
             }
           }
         },
         "psa10": {
-          "price": 257.43,
+          "price": 256.8,
           "listings": 5,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -1867,7 +1867,7 @@
           "url": "https://www.tcgplayer.com/product/490072/pokemon-sv01-scarlet-and-violet-base-set-kirlia---212-198",
           "prices": {
             "normal": {
-              "market": 42.2
+              "market": 42.64
             }
           }
         },
@@ -1875,7 +1875,7 @@
           "price": 989.95,
           "listings": 1,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -1892,7 +1892,7 @@
           "url": "https://www.tcgplayer.com/product/490071/pokemon-sv01-scarlet-and-violet-base-set-ralts---211-198",
           "prices": {
             "normal": {
-              "market": 42.87
+              "market": 42.39
             }
           }
         },
@@ -1900,7 +1900,7 @@
           "price": 75.5,
           "listings": 1,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -1922,10 +1922,10 @@
           }
         },
         "psa10": {
-          "price": 140.74,
+          "price": 142.01,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -1942,7 +1942,7 @@
           "url": "https://www.tcgplayer.com/product/205163/pokemon-sm-promos-charizard-and-braixen-gx---sm230",
           "prices": {
             "normal": {
-              "market": 104.03
+              "market": 103.19
             }
           }
         },
@@ -1950,7 +1950,7 @@
           "price": 675.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
@@ -1967,15 +1967,15 @@
           "url": "https://www.tcgplayer.com/product/181694/pokemon-sm-promos-magikarp-and-wailord-gx",
           "prices": {
             "normal": {
-              "market": 167.82
+              "market": 169.84
             }
           }
         },
         "psa10": {
-          "price": 120.0,
+          "price": 122.95,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-01"
+          "date": "2026-09-02"
         }
       },
       {
