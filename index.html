@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">16</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">17</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: September 04, 2026 at 11:27 PM PST</div>
+    <div class="updated">Last updated: September 04, 2026 at 11:30 PM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -1833,12 +1833,21 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">16</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">17</span>
       </div>
       <div class="table-scroll">
         <table>
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-C3F27D-32CA8</a></td>
+          <td data-label="Buyer">Jose romero</td>
+          <td data-label="Date">2026-09-05</td>
+          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dark Magician, the Pharaoh's Servant</td>
+          <td data-label="Shipping">Standard</td>
+          <td data-label="Total"><strong>$8.97</strong></td>
+          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
         <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-A9E22E-90FF0</a></td>
           <td data-label="Buyer">Caleb Hellinger-rock</td>
@@ -2215,7 +2224,7 @@ function pollStatus() {
           </td>
           <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$166.61</td>
           <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-23.62<span style="color:#c62828;font-size:9px;font-weight:400"> -14.2%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($166.61)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Gold &#9733;</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-24.99<span style="color:#c62828;font-size:9px;font-weight:400"> -14.9%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($167.98)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Avg 10 (qty)</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-26.53<span style="color:#c62828;font-size:9px;font-weight:400"> -15.7%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($169.52)</span></span></div></div></td>
+          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-23.62<span style="color:#c62828;font-size:9px;font-weight:400"> -14.2%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($166.61)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Gold &#9733;</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-31.98<span style="color:#c62828;font-size:9px;font-weight:400"> -18.3%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($174.97)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Avg 10 (qty)</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-35.08<span style="color:#c62828;font-size:9px;font-weight:400"> -19.7%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($178.07)</span></span></div></div></td>
           <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#16a34a;font-weight:700">+3.6% 7d</span></td>
           <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8595; -3.7% / 30d <span style="color:#bbb;font-size:10px">(trend)</span></span></td>
           <td data-label="Link">
@@ -5621,7 +5630,7 @@ new Chart(document.getElementById('revenueChart'), {
       },
       {
         label: 'TCGPlayer',
-        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 34157.33, 8146.54, 1446.54],
+        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 34157.33, 8146.54, 1455.51],
         backgroundColor: 'rgba(229, 57, 53, 0.82)',
         borderRadius: 4,
         order: 1,
