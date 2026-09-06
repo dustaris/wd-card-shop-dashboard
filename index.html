@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">16</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">14</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: September 05, 2026 at 05:09 PM PST</div>
+    <div class="updated">Last updated: September 05, 2026 at 05:12 PM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -1833,21 +1833,12 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">16</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">14</span>
       </div>
       <div class="table-scroll">
         <table>
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-95D7A4-86F3E</a></td>
-          <td data-label="Buyer">James Lozen</td>
-          <td data-label="Date">2026-09-05</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$9.79</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
         <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-45CCF1-820B8</a></td>
           <td data-label="Buyer">Carter Cherry</td>
@@ -1855,6 +1846,15 @@ function pollStatus() {
           <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
           <td data-label="Shipping">Standard</td>
           <td data-label="Total"><strong>$9.84</strong></td>
+          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-95D7A4-86F3E</a></td>
+          <td data-label="Buyer">James Lozen</td>
+          <td data-label="Date">2026-09-05</td>
+          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
+          <td data-label="Shipping">Standard</td>
+          <td data-label="Total"><strong>$9.79</strong></td>
           <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
         </tr>
         <tr>
@@ -1876,30 +1876,12 @@ function pollStatus() {
           <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
         </tr>
         <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-E3AF31-58369</a></td>
-          <td data-label="Buyer">RICARTE JIN ATIENZA</td>
-          <td data-label="Date">2026-09-05</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Japanese Size Matte Clear Outer Sleeves (60-Pack)</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$11.37</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-9B9646-2607B</a></td>
           <td data-label="Buyer">Jason Bush</td>
           <td data-label="Date">2026-09-05</td>
           <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves</td>
           <td data-label="Shipping">Standard</td>
           <td data-label="Total"><strong>$9.86</strong></td>
-          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
-        </tr>
-        <tr>
-          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-EF894E-F7DBA</a></td>
-          <td data-label="Buyer">Jason Bruner</td>
-          <td data-label="Date">2026-09-05</td>
-          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× Dragon Shield Matte Sleeves<br>1× Dragon Shield Matte Sleeves<br>1× Dragon Shield Matte Sleeves<br>1× Dragon Shield Matte Sleeves<br>1× Dragon Shield Matte Standard Sleeves<br>1× Dragon Shield Matte Sleeves<br>1× Dragon Shield Dual Matte Standard Sleeves</td>
-          <td data-label="Shipping">Standard</td>
-          <td data-label="Total"><strong>$69.89</strong></td>
           <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
         </tr>
         <tr>
