@@ -966,7 +966,7 @@
           "price": 600.0,
           "listings": 18,
           "source": "active",
-          "date": "2026-09-23"
+          "date": "2026-09-24"
         }
       },
       {
@@ -1010,10 +1010,10 @@
           }
         },
         "psa10": {
-          "price": 340.0,
+          "price": 335.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-23"
+          "date": "2026-09-24"
         }
       },
       {
@@ -1057,10 +1057,10 @@
           }
         },
         "psa10": {
-          "price": 2350.0,
+          "price": 2300.0,
           "listings": 19,
           "source": "active",
-          "date": "2026-09-23"
+          "date": "2026-09-24"
         }
       },
       {
@@ -1085,7 +1085,7 @@
           "price": 89.95,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-23"
+          "date": "2026-09-24"
         }
       },
       {
@@ -1102,7 +1102,7 @@
           "url": "https://www.tcgplayer.com/product/490070/pokemon-sv01-scarlet-and-violet-base-set-drowzee---210-198",
           "prices": {
             "normal": {
-              "market": 59.18
+              "market": 57.77
             }
           }
         },
@@ -1110,7 +1110,7 @@
           "price": 1170.0,
           "listings": 2,
           "source": "active",
-          "date": "2026-09-23"
+          "date": "2026-09-24"
         }
       },
       {
@@ -1157,7 +1157,7 @@
           "price": 57.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-23"
+          "date": "2026-09-24"
         }
       },
       {
@@ -1174,15 +1174,15 @@
           "url": "https://www.tcgplayer.com/product/659612/pokemon-me-mega-evolution-promo-mega-charizard-x-ex-023",
           "prices": {
             "normal": {
-              "market": 27.86
+              "market": 27.76
             }
           }
         },
         "psa10": {
-          "price": 150.0,
+          "price": 149.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-23"
+          "date": "2026-09-24"
         }
       },
       {
@@ -1199,7 +1199,7 @@
           "url": "https://www.tcgplayer.com/product/665894/pokemon-japan-m2a-high-class-pack-mega-dream-ex-mega-charizard-x-ex",
           "prices": {
             "normal": {
-              "market": 30.58
+              "market": 30.3
             }
           }
         },
@@ -1207,7 +1207,7 @@
           "price": 45.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-23"
+          "date": "2026-09-24"
         }
       },
       {
