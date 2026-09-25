@@ -966,7 +966,7 @@
           "price": 600.0,
           "listings": 18,
           "source": "active",
-          "date": "2026-09-24"
+          "date": "2026-09-25"
         }
       },
       {
@@ -1013,7 +1013,7 @@
           "price": 335.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-24"
+          "date": "2026-09-25"
         }
       },
       {
@@ -1057,10 +1057,10 @@
           }
         },
         "psa10": {
-          "price": 2300.0,
+          "price": 2350.0,
           "listings": 19,
           "source": "active",
-          "date": "2026-09-24"
+          "date": "2026-09-25"
         }
       },
       {
@@ -1085,7 +1085,7 @@
           "price": 89.95,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-24"
+          "date": "2026-09-25"
         }
       },
       {
@@ -1102,7 +1102,7 @@
           "url": "https://www.tcgplayer.com/product/490070/pokemon-sv01-scarlet-and-violet-base-set-drowzee---210-198",
           "prices": {
             "normal": {
-              "market": 57.77
+              "market": 56.16
             }
           }
         },
@@ -1110,7 +1110,7 @@
           "price": 1170.0,
           "listings": 2,
           "source": "active",
-          "date": "2026-09-24"
+          "date": "2026-09-25"
         }
       },
       {
@@ -1157,7 +1157,7 @@
           "price": 57.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-24"
+          "date": "2026-09-25"
         }
       },
       {
@@ -1174,15 +1174,15 @@
           "url": "https://www.tcgplayer.com/product/659612/pokemon-me-mega-evolution-promo-mega-charizard-x-ex-023",
           "prices": {
             "normal": {
-              "market": 27.76
+              "market": 27.31
             }
           }
         },
         "psa10": {
-          "price": 149.0,
+          "price": 149.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-24"
+          "date": "2026-09-25"
         }
       },
       {
@@ -1207,7 +1207,7 @@
           "price": 45.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-09-24"
+          "date": "2026-09-25"
         }
       },
       {
