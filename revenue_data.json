@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "updated": "October 10, 2026 at 03:39 AM",
+  "updated": "October 10, 2026 at 03:42 AM",
   "months": [
     {
       "month_num": 1,
@@ -74,8 +74,8 @@
       "shopify_gross": 37.71,
       "shopify_fees": 1.32,
       "tcg_gross": 34157.33,
-      "tcg_fees": 4877.41,
-      "tcg_refunds": 973.35,
+      "tcg_fees": 4876.95,
+      "tcg_refunds": 973.26,
       "ebay_gross": 404.83,
       "ebay_fees": 85.12
     },
@@ -85,8 +85,8 @@
       "shopify_gross": 0,
       "shopify_fees": 0,
       "tcg_gross": 8146.54,
-      "tcg_fees": 1163.26,
-      "tcg_refunds": 232.14,
+      "tcg_fees": 1163.16,
+      "tcg_refunds": 232.12,
       "ebay_gross": 344.85,
       "ebay_fees": 79.44
     },
@@ -96,8 +96,8 @@
       "shopify_gross": 0,
       "shopify_fees": 0,
       "tcg_gross": 19513.34,
-      "tcg_fees": 2786.36,
-      "tcg_refunds": 556.05,
+      "tcg_fees": 2786.1,
+      "tcg_refunds": 556.0,
       "ebay_gross": 170.03,
       "ebay_fees": 37.95
     },
@@ -106,9 +106,9 @@
       "month_name": "October",
       "shopify_gross": 0,
       "shopify_fees": 0,
-      "tcg_gross": 3553.65,
-      "tcg_fees": 507.43,
-      "tcg_refunds": 101.26,
+      "tcg_gross": 3558.31,
+      "tcg_fees": 508.05,
+      "tcg_refunds": 101.39,
       "ebay_gross": 2.54,
       "ebay_fees": 0.83
     },
