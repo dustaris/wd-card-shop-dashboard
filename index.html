@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">14</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">15</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: October 24, 2026 at 08:12 PM PST</div>
+    <div class="updated">Last updated: October 24, 2026 at 08:15 PM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -433,7 +433,7 @@ function pollStatus() {
     </div>
   </div>
 
-  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 10/24/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">4,769</div><div class="sub">Jan 1 – 10/24/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$235,935.84</div><div class="sub">Jan 1 – 10/24/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$49.47</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$198,906.66</div><div class="sub">Fees: $32,641.54</div></div></div></div>
+  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 10/24/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">4,770</div><div class="sub">Jan 1 – 10/24/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$235,937.63</div><div class="sub">Jan 1 – 10/24/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$49.46</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$198,907.91</div><div class="sub">Fees: $32,642.08</div></div></div></div>
 
   <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – Oct 24, 2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">461</div><div class="sub">Jan 1 – Oct 24, 2026</div></div><div class="stat-card"><div class="label">Total Revenue</div><div class="value">$8,598.61</div><div class="sub">Jan 1 – Oct 24, 2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$18.65</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$7,201.94</div><div class="sub">Fees: $1,396.67</div></div></div></div>
 
@@ -1842,12 +1842,21 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">14</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">15</span>
       </div>
       <div class="table-scroll">
         <table>
           <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
           <tbody>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-A4E535-C7C0A</a></td>
+          <td data-label="Buyer">Adrian Manzano</td>
+          <td data-label="Date">2026-10-25</td>
+          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">1× B.F. Sword</td>
+          <td data-label="Shipping">Standard</td>
+          <td data-label="Total"><strong>$1.79</strong></td>
+          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr>
         <tr>
           <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-EFBE6D-92EC2</a></td>
           <td data-label="Buyer">Alejandro Posas</td>
@@ -2102,9 +2111,9 @@ function pollStatus() {
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$24.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×11)</span></div>
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
           </td>
-          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$11.56</td>
+          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$11.70</td>
           <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$13.43<span style="color:#2e7d32;font-size:9px;font-weight:400"> +116.2%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($11.56)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
+          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$13.29<span style="color:#2e7d32;font-size:9px;font-weight:400"> +113.6%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($11.70)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
           <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#ccc">— 7d</span></td>
           <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8594; Stable (&#177;3%)</span></td>
           <td data-label="Link">
@@ -2221,9 +2230,9 @@ function pollStatus() {
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$35.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×2)</span></div>
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
           </td>
-          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$11.56</td>
+          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$11.70</td>
           <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$24.43<span style="color:#2e7d32;font-size:9px;font-weight:400"> +211.3%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($11.56)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
+          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$24.29<span style="color:#2e7d32;font-size:9px;font-weight:400"> +207.6%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($11.70)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
           <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#ccc">— 7d</span></td>
           <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8594; Stable (&#177;3%)</span></td>
           <td data-label="Link">
@@ -5697,7 +5706,7 @@ new Chart(document.getElementById('revenueChart'), {
       },
       {
         label: 'TCGPlayer',
-        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 34157.33, 8146.54, 19513.34, 9578.29],
+        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 34157.33, 8146.54, 19513.34, 9578.59],
         backgroundColor: 'rgba(229, 57, 53, 0.82)',
         borderRadius: 4,
         order: 1,
