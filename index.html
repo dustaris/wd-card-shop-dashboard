@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge hidden" id="awaiting-badge">0</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">1</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: October 30, 2026 at 12:45 AM PST</div>
+    <div class="updated">Last updated: October 30, 2026 at 12:48 AM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -433,7 +433,7 @@ function pollStatus() {
     </div>
   </div>
 
-  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 10/30/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">4,860</div><div class="sub">Jan 1 – 10/30/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$237,350.72</div><div class="sub">Jan 1 – 10/30/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$48.84</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$200,077.80</div><div class="sub">Fees: $32,858.96</div></div></div></div>
+  <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – 10/30/2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">4,861</div><div class="sub">Jan 1 – 10/30/2026</div></div><div class="stat-card"><div class="label">Gross Sales</div><div class="value">$237,355.79</div><div class="sub">Jan 1 – 10/30/2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$48.83</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$200,081.88</div><div class="sub">Fees: $32,859.95</div></div></div></div>
 
   <div style="margin-bottom:28px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="background:#0064D2;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">eBay</span><span style="font-size:13px;color:#888;font-weight:500">YTD Sales — Jan 1 – Oct 30, 2026</span></div><div class="stats-grid"><div class="stat-card"><div class="label">Total Orders</div><div class="value">461</div><div class="sub">Jan 1 – Oct 30, 2026</div></div><div class="stat-card"><div class="label">Total Revenue</div><div class="value">$8,598.61</div><div class="sub">Jan 1 – Oct 30, 2026</div></div><div class="stat-card"><div class="label">Avg Order Value</div><div class="value">$18.65</div><div class="sub">Per order</div></div><div class="stat-card"><div class="label">Net Sales (after fees)</div><div class="value">$7,201.94</div><div class="sub">Fees: $1,396.67</div></div></div></div>
 
@@ -1851,9 +1851,23 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#e53935;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">TCGPlayer</span>
         <h2 style="margin:0">TCGPlayer — Ready to Ship</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
       </div>
-      <p style="color:#aaa;font-size:13px">No outstanding orders found. Run 3_tcgplayer_scraper.py to refresh.</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Order #</th><th>Buyer</th><th>Order Date</th><th>Items</th><th>Shipping</th><th>Total</th><th>Status</th></tr></thead>
+          <tbody>
+        <tr>
+          <td><a href="https://sellerportal.tcgplayer.com/orders" target="_blank" style="color:#0835DB;font-weight:600">BE1B02F8-C5F338-32841</a></td>
+          <td data-label="Buyer">Zachary Randazzo</td>
+          <td data-label="Date">2026-10-30</td>
+          <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">2× Ezreal, Prodigal Explorer<br>1× Fiora, Grand Duelist<br>1× Renata Glasc, Chem-Baroness<br>1× Rek'sai, Void Burrower<br>1× Fiora, Worthy<br>1× Spinning Axe<br>1× Hostile Takeover<br>1× Guardian Angel<br>1× Here to Help<br>1× Undertitan<br>1× Sivir, Mercenary<br>1× Fiora, Peerless<br>1× Party Favors<br>1× Assembly Rig<br>1× Trove Golem<br>1× King's Edict<br>1× Experimental Hexplate<br>1× Marching Orders</td>
+          <td data-label="Shipping">Standard</td>
+          <td data-label="Total"><strong>$5.07</strong></td>
+          <td data-label="Status"><span class="badge badge-yellow">Ready to Ship</span></td>
+        </tr></tbody>
+        </table>
+      </div>
     </div>
 </div>
 </div>
@@ -5626,7 +5640,7 @@ new Chart(document.getElementById('revenueChart'), {
       },
       {
         label: 'TCGPlayer',
-        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 34157.33, 8146.54, 19513.34, 10970.82],
+        data: [0, 0, 0, 34692.62, 23065.25, 16852.09, 34157.33, 8146.54, 19513.34, 10975.89],
         backgroundColor: 'rgba(229, 57, 53, 0.82)',
         borderRadius: 4,
         order: 1,
