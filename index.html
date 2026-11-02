@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">1</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">2</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: November 02, 2026 at 02:36 PM PST</div>
+    <div class="updated">Last updated: November 02, 2026 at 02:39 PM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -412,23 +412,23 @@ function pollStatus() {
     <div class="stats-grid">
       <div class="stat-card">
         <div class="label">Total Orders</div>
-        <div class="value">147</div>
+        <div class="value">148</div>
         <div class="sub">Jan 1 – Nov 2, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Total Revenue</div>
-        <div class="value">$65,893.48</div>
+        <div class="value">$66,135.44</div>
         <div class="sub">Jan 1 – Nov 2, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Avg Order Value</div>
-        <div class="value">$448.25</div>
+        <div class="value">$446.86</div>
         <div class="sub">Per order</div>
       </div>
       <div class="stat-card">
         <div class="label">Net Sales (after fees)</div>
-        <div class="value">$63,587.21</div>
-        <div class="sub">Est. fees: $2,306.27 (~3.5%)</div>
+        <div class="value">$63,820.70</div>
+        <div class="sub">Est. fees: $2,314.74 (~3.5%)</div>
       </div>
     </div>
   </div>
@@ -451,12 +451,21 @@ function pollStatus() {
         <button class="filter-btn active" onclick="filterOrders('all', this)">All</button>
         <button class="filter-btn" onclick="filterOrders('fulfilled', this)">Fulfilled</button>
         <button class="filter-btn" onclick="filterOrders('unfulfilled', this)">Unfulfilled</button>
-        <span class="order-count" id="orderCount">147 orders</span>
+        <span class="order-count" id="orderCount">148 orders</span>
       </div>
       <div class="table-scroll" id="orders-scroll">
         <table id="ordersTable">
           <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Fulfillment</th></tr></thead>
           <tbody>
+        <tr data-fulfillment="unfulfilled">
+            <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7802217431278" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1260</a></td>
+            <td data-label="Customer">Ismael Lira</td>
+            <td data-label="Date">2026-11-02</td>
+            <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">Pokémon First Partner Illustration Collection (Series 2) – English, Sealed<br>Pokémon TCG: 30th Celebration Battle Deck<br>Pokémon TCG: 30th Celebration Elite Trainer Box<br>Pokémon Storm Emeralda Booster Box – Japanese, Sealed</td>
+            <td data-label="Total"><strong>$241.96</strong></td>
+            <td data-label="Payment"><span class="badge badge-green">Paid</span></td>
+            <td data-label="Status"><span class="badge badge-red">Unfulfilled</span></td>
+        </tr>
         <tr data-fulfillment="fulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7788984598766" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1259</a></td>
             <td data-label="Customer">Erhan None</td>
@@ -1833,9 +1842,23 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#95bf47;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">Shopify</span>
         <h2 style="margin:0">Shopify — Awaiting Fulfillment</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
       </div>
-      <p style="color:#aaa;font-size:13px">No unfulfilled Shopify orders. All caught up!</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead>
+          <tbody>
+        <tr>
+          <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7802217431278" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc">#1260</a></td>
+          <td data-label="Customer">Ismael Lira</td>
+          <td data-label="Date">2026-11-02</td>
+          <td data-label="Items" style="font-size:12px;max-width:240px;line-height:1.5">Pokémon First Partner Illustration Collection (Series 2) – English, Sealed<br>Pokémon TCG: 30th Celebration Battle Deck<br>Pokémon TCG: 30th Celebration Elite Trainer Box<br>Pokémon Storm Emeralda Booster Box – Japanese, Sealed</td>
+          <td data-label="Total"><strong>$241.96</strong></td>
+          <td data-label="Payment"><span class="badge badge-green">Paid</span></td>
+          <td data-label="Status"><span class="badge badge-red">Unfulfilled</span></td>
+        </tr></tbody>
+        </table>
+      </div>
     </div>
   
     <div class="card" style="margin-bottom:28px">
@@ -1923,7 +1946,7 @@ function pollStatus() {
             <a href="https://1marss-2m.myshopify.com/products/pokemon-tcg-30th-celebration-elite-trainer-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon TCG: 30th Celebration Elite Trainer Box</a>
           </td>
           <td data-label="My Prices" style="white-space:nowrap;line-height:1.8">
-            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$109.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×20)</span></div>
+            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$109.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×19)</span></div>
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
           </td>
           <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$121.94</td>
@@ -2025,7 +2048,7 @@ function pollStatus() {
             <a href="https://1marss-2m.myshopify.com/products/pokemon-storm-emeralda-booster-box-japanese-sealed" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon Storm Emeralda Booster Box – Japanese, Sealed</a>
           </td>
           <td data-label="My Prices" style="white-space:nowrap;line-height:1.8">
-            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$89.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×10)</span></div>
+            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$89.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×9)</span></div>
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
           </td>
           <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days"><span style="color:#bbb">—</span></td>
@@ -2059,7 +2082,7 @@ function pollStatus() {
             <a href="https://1marss-2m.myshopify.com/products/pokemon-tcg-30th-celebration-battle-deck-coming-soon" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon TCG: 30th Celebration Battle Deck</a>
           </td>
           <td data-label="My Prices" style="white-space:nowrap;line-height:1.8">
-            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$24.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×8)</span></div>
+            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$24.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×7)</span></div>
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
           </td>
           <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$11.86</td>
@@ -2107,23 +2130,6 @@ function pollStatus() {
         </tr>
         <tr>
           <td style="font-weight:600;max-width:260px">
-            <a href="https://1marss-2m.myshopify.com/products/pokemon-first-partner-illustration-collection-series-2-english-sealed" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon First Partner Illustration Collection (Series 2) – English, Sealed</a>
-          </td>
-          <td data-label="My Prices" style="white-space:nowrap;line-height:1.8">
-            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$23.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×5)</span></div>
-            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
-          </td>
-          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days"><span style="color:#bbb">—</span></td>
-          <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Market</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
-          <td data-label="Signal"><span style="color:#bbb">—</span></td>
-          <td data-label="30d Forecast"><span style="color:#bbb">—</span></td>
-          <td data-label="Link">
-            
-          </td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/pokemon-first-partner-illustration-collection-series-3-english-sealed" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon First Partner Illustration Collection (Series 3) – English, Sealed</a>
           </td>
           <td data-label="My Prices" style="white-space:nowrap;line-height:1.8">
@@ -2145,6 +2151,23 @@ function pollStatus() {
           </td>
           <td data-label="My Prices" style="white-space:nowrap;line-height:1.8">
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$369.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×5)</span></div>
+            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
+          </td>
+          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days"><span style="color:#bbb">—</span></td>
+          <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
+          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Market</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
+          <td data-label="Signal"><span style="color:#bbb">—</span></td>
+          <td data-label="30d Forecast"><span style="color:#bbb">—</span></td>
+          <td data-label="Link">
+            
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;max-width:260px">
+            <a href="https://1marss-2m.myshopify.com/products/pokemon-first-partner-illustration-collection-series-2-english-sealed" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon First Partner Illustration Collection (Series 2) – English, Sealed</a>
+          </td>
+          <td data-label="My Prices" style="white-space:nowrap;line-height:1.8">
+            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$23.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×4)</span></div>
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
           </td>
           <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days"><span style="color:#bbb">—</span></td>
@@ -5684,7 +5707,7 @@ new Chart(document.getElementById('revenueChart'), {
     datasets: [
       {
         label: 'Shopify',
-        data: [7916.92, 10005.64, 20873.91, 18961.24, 7486.71, 269.74, 37.71, 0, 0, 341.61, 0],
+        data: [7916.92, 10005.64, 20873.91, 18961.24, 7486.71, 269.74, 37.71, 0, 0, 341.61, 241.96],
         backgroundColor: '#95bf47',
         borderRadius: 4,
         order: 2,
