@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">1</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge hidden" id="awaiting-badge">0</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: November 03, 2026 at 12:36 PM PST</div>
+    <div class="updated">Last updated: November 03, 2026 at 12:39 PM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -457,14 +457,14 @@ function pollStatus() {
         <table id="ordersTable">
           <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Fulfillment</th></tr></thead>
           <tbody>
-        <tr data-fulfillment="unfulfilled">
+        <tr data-fulfillment="fulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7804856172782" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1261</a></td>
             <td data-label="Customer">Nehemiah Logan</td>
             <td data-label="Date">2026-11-03</td>
             <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">Pokémon TCG: 30th Celebration Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
             <td data-label="Total"><strong>$219.98</strong></td>
             <td data-label="Payment"><span class="badge badge-green">Paid</span></td>
-            <td data-label="Status"><span class="badge badge-red">Unfulfilled</span></td>
+            <td data-label="Status"><span class="badge badge-green">Fulfilled</span></td>
         </tr>
         <tr data-fulfillment="fulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7802217431278" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1260</a></td>
@@ -1851,23 +1851,9 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#95bf47;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">Shopify</span>
         <h2 style="margin:0">Shopify — Awaiting Fulfillment</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
+        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead>
-          <tbody>
-        <tr>
-          <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7804856172782" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc">#1261</a></td>
-          <td data-label="Customer">Nehemiah Logan</td>
-          <td data-label="Date">2026-11-03</td>
-          <td data-label="Items" style="font-size:12px;max-width:240px;line-height:1.5">Pokémon TCG: 30th Celebration Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
-          <td data-label="Total"><strong>$219.98</strong></td>
-          <td data-label="Payment"><span class="badge badge-green">Paid</span></td>
-          <td data-label="Status"><span class="badge badge-red">Unfulfilled</span></td>
-        </tr></tbody>
-        </table>
-      </div>
+      <p style="color:#aaa;font-size:13px">No unfulfilled Shopify orders. All caught up!</p>
     </div>
   
     <div class="card" style="margin-bottom:28px">
@@ -2303,7 +2289,7 @@ function pollStatus() {
           </td>
           <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$122.34</td>
           <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$20.65<span style="color:#2e7d32;font-size:9px;font-weight:400"> +16.9%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($122.34)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Gold &#9733;</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$18.01<span style="color:#2e7d32;font-size:9px;font-weight:400"> +14.4%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($124.98)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Avg 10 (qty)</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$15.85<span style="color:#2e7d32;font-size:9px;font-weight:400"> +12.5%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($127.14)</span></span></div></div></td>
+          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$20.65<span style="color:#2e7d32;font-size:9px;font-weight:400"> +16.9%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($122.34)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Gold &#9733;</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$18.01<span style="color:#2e7d32;font-size:9px;font-weight:400"> +14.4%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($124.98)</span></span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Avg 10 (qty)</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$14.85<span style="color:#2e7d32;font-size:9px;font-weight:400"> +11.6%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($128.14)</span></span></div></div></td>
           <td data-label="Signal"><span style="display:inline-block;background:#16a34a22;color:#16a34a;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">BUY</span>&nbsp;<span style="font-size:10px;color:#888;font-weight:700">-0.4% 7d</span></td>
           <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8595; -22.6% / 30d <span style="color:#bbb;font-size:10px">(trend)</span></span></td>
           <td data-label="Link">
