@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">1</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">2</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: November 03, 2026 at 09:45 AM PST</div>
+    <div class="updated">Last updated: November 03, 2026 at 09:48 AM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -412,23 +412,23 @@ function pollStatus() {
     <div class="stats-grid">
       <div class="stat-card">
         <div class="label">Total Orders</div>
-        <div class="value">148</div>
+        <div class="value">149</div>
         <div class="sub">Jan 1 – Nov 3, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Total Revenue</div>
-        <div class="value">$66,135.44</div>
+        <div class="value">$66,355.42</div>
         <div class="sub">Jan 1 – Nov 3, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Avg Order Value</div>
-        <div class="value">$446.86</div>
+        <div class="value">$445.34</div>
         <div class="sub">Per order</div>
       </div>
       <div class="stat-card">
         <div class="label">Net Sales (after fees)</div>
-        <div class="value">$63,820.70</div>
-        <div class="sub">Est. fees: $2,314.74 (~3.5%)</div>
+        <div class="value">$64,032.98</div>
+        <div class="sub">Est. fees: $2,322.44 (~3.5%)</div>
       </div>
     </div>
   </div>
@@ -451,12 +451,21 @@ function pollStatus() {
         <button class="filter-btn active" onclick="filterOrders('all', this)">All</button>
         <button class="filter-btn" onclick="filterOrders('fulfilled', this)">Fulfilled</button>
         <button class="filter-btn" onclick="filterOrders('unfulfilled', this)">Unfulfilled</button>
-        <span class="order-count" id="orderCount">148 orders</span>
+        <span class="order-count" id="orderCount">149 orders</span>
       </div>
       <div class="table-scroll" id="orders-scroll">
         <table id="ordersTable">
           <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Fulfillment</th></tr></thead>
           <tbody>
+        <tr data-fulfillment="unfulfilled">
+            <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7804856172782" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1261</a></td>
+            <td data-label="Customer">Nehemiah Logan</td>
+            <td data-label="Date">2026-11-03</td>
+            <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">Pokémon TCG: 30th Celebration Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
+            <td data-label="Total"><strong>$219.98</strong></td>
+            <td data-label="Payment"><span class="badge badge-green">Paid</span></td>
+            <td data-label="Status"><span class="badge badge-red">Unfulfilled</span></td>
+        </tr>
         <tr data-fulfillment="fulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7802217431278" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1260</a></td>
             <td data-label="Customer">Ismael Lira</td>
@@ -1842,9 +1851,23 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#95bf47;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">Shopify</span>
         <h2 style="margin:0">Shopify — Awaiting Fulfillment</h2>
-        <span style="background:#1a1a2e;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">0</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">1</span>
       </div>
-      <p style="color:#aaa;font-size:13px">No unfulfilled Shopify orders. All caught up!</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead>
+          <tbody>
+        <tr>
+          <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7804856172782" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc">#1261</a></td>
+          <td data-label="Customer">Nehemiah Logan</td>
+          <td data-label="Date">2026-11-03</td>
+          <td data-label="Items" style="font-size:12px;max-width:240px;line-height:1.5">Pokémon TCG: 30th Celebration Elite Trainer Box <span style='color:#aaa;font-size:11px'>x2</span></td>
+          <td data-label="Total"><strong>$219.98</strong></td>
+          <td data-label="Payment"><span class="badge badge-green">Paid</span></td>
+          <td data-label="Status"><span class="badge badge-red">Unfulfilled</span></td>
+        </tr></tbody>
+        </table>
+      </div>
     </div>
   
     <div class="card" style="margin-bottom:28px">
@@ -5710,7 +5733,7 @@ new Chart(document.getElementById('revenueChart'), {
     datasets: [
       {
         label: 'Shopify',
-        data: [7916.92, 10005.64, 20873.91, 18961.24, 7486.71, 269.74, 37.71, 0, 0, 341.61, 241.96],
+        data: [7916.92, 10005.64, 20873.91, 18961.24, 7486.71, 269.74, 37.71, 0, 0, 341.61, 461.94],
         backgroundColor: '#95bf47',
         borderRadius: 4,
         order: 2,
