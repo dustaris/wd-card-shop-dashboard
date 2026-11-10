@@ -3994,7 +3994,7 @@
           "price": 180.0,
           "listings": 16,
           "source": "active",
-          "date": "2026-11-09"
+          "date": "2026-11-10"
         }
       },
       {
@@ -4037,10 +4037,10 @@
           }
         },
         "psa10": {
-          "price": 200.46,
+          "price": 201.9,
           "listings": 15,
           "source": "active",
-          "date": "2026-11-09"
+          "date": "2026-11-10"
         }
       },
       {
@@ -4085,7 +4085,7 @@
           "price": 40000.0,
           "listings": 2,
           "source": "active",
-          "date": "2026-11-09"
+          "date": "2026-11-10"
         }
       },
       {
@@ -4128,10 +4128,10 @@
           }
         },
         "psa10": {
-          "price": 1499.95,
-          "listings": 4,
+          "price": 1800.0,
+          "listings": 1,
           "source": "active",
-          "date": "2026-11-09"
+          "date": "2026-11-10"
         }
       },
       {
@@ -4178,7 +4178,7 @@
           "price": 51.99,
           "listings": 19,
           "source": "active",
-          "date": "2026-11-09"
+          "date": "2026-11-10"
         }
       }
     ],
@@ -4223,10 +4223,10 @@
           }
         },
         "psa10": {
-          "price": 949.99,
+          "price": 899.0,
           "listings": 18,
           "source": "active",
-          "date": "2026-11-09"
+          "date": "2026-11-10"
         }
       },
       {
@@ -4270,10 +4270,10 @@
           }
         },
         "psa10": {
-          "price": 2527.01,
+          "price": 2600.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-09"
+          "date": "2026-11-10"
         }
       },
       {
@@ -4307,10 +4307,10 @@
           "url": "https://prices.pokemontcg.io/tcgplayer/me2pt5-276"
         },
         "psa10": {
-          "price": 1297.99,
+          "price": 1400.0,
           "listings": 19,
           "source": "active",
-          "date": "2026-11-09"
+          "date": "2026-11-10"
         }
       }
     ]
