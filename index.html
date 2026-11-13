@@ -325,7 +325,7 @@
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('shopify', this)">Sales &amp; Revenue</button>
-    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">3</span></button>
+    <button class="tab-btn" onclick="switchTab('awaiting', this)" id="tab-btn-awaiting">Awaiting Orders<span class="notif-badge" id="awaiting-badge">4</span></button>
     <button class="tab-btn" onclick="switchTab('orders', this)">Orders Tracker</button>
     <button class="tab-btn" onclick="switchTab('prices', this)">Price Tracker</button>
     <button class="tab-btn" onclick="switchTab('drops', this)">Release Calendar</button>
@@ -333,7 +333,7 @@
     <button class="tab-btn" onclick="switchTab('wl-summary', this)">&#128202; Watchlist Summary</button>
   </nav>
   <div class="header-right">
-    <div class="updated">Last updated: November 12, 2026 at 05:42 PM PST</div>
+    <div class="updated">Last updated: November 12, 2026 at 05:45 PM PST</div>
     <button id="refresh-btn"
           onclick="triggerRefresh()"
           style="background:#3b82f6;color:white;border:none;border-radius:8px;padding:7px 16px;
@@ -412,23 +412,23 @@ function pollStatus() {
     <div class="stats-grid">
       <div class="stat-card">
         <div class="label">Total Orders</div>
-        <div class="value">154</div>
+        <div class="value">155</div>
         <div class="sub">Jan 1 – Nov 12, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Total Revenue</div>
-        <div class="value">$67,168.62</div>
+        <div class="value">$67,345.24</div>
         <div class="sub">Jan 1 – Nov 12, 2026</div>
       </div>
       <div class="stat-card">
         <div class="label">Avg Order Value</div>
-        <div class="value">$436.16</div>
+        <div class="value">$434.49</div>
         <div class="sub">Per order</div>
       </div>
       <div class="stat-card">
         <div class="label">Net Sales (after fees)</div>
-        <div class="value">$64,817.72</div>
-        <div class="sub">Est. fees: $2,350.90 (~3.5%)</div>
+        <div class="value">$64,988.16</div>
+        <div class="sub">Est. fees: $2,357.08 (~3.5%)</div>
       </div>
     </div>
   </div>
@@ -451,12 +451,21 @@ function pollStatus() {
         <button class="filter-btn active" onclick="filterOrders('all', this)">All</button>
         <button class="filter-btn" onclick="filterOrders('fulfilled', this)">Fulfilled</button>
         <button class="filter-btn" onclick="filterOrders('unfulfilled', this)">Unfulfilled</button>
-        <span class="order-count" id="orderCount">154 orders</span>
+        <span class="order-count" id="orderCount">155 orders</span>
       </div>
       <div class="table-scroll" id="orders-scroll">
         <table id="ordersTable">
           <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Fulfillment</th></tr></thead>
           <tbody>
+        <tr data-fulfillment="unfulfilled">
+            <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7825707303150" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1267</a></td>
+            <td data-label="Customer">Trent Clark</td>
+            <td data-label="Date">2026-11-12</td>
+            <td data-label="Items" style="font-size:12px;max-width:220px;line-height:1.5">Pokémon TCG: 30th Celebration Booster Bundle (6 Packs) – English, Sealed<br>Pokémon TCG: 30th Celebration Elite Trainer Box (ETB) – English, Sealed</td>
+            <td data-label="Total"><strong>$176.62</strong></td>
+            <td data-label="Payment"><span class="badge badge-green">Paid</span></td>
+            <td data-label="Status"><span class="badge badge-red">Unfulfilled</span></td>
+        </tr>
         <tr data-fulfillment="unfulfilled">
             <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7825697538286" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc;">#1266</a></td>
             <td data-label="Customer">Dylan Brickner</td>
@@ -1896,12 +1905,21 @@ function pollStatus() {
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <span style="background:#95bf47;color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:700">Shopify</span>
         <h2 style="margin:0">Shopify — Awaiting Fulfillment</h2>
-        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">2</span>
+        <span style="background:#e53935;color:white;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700">3</span>
       </div>
       <div class="table-scroll">
         <table>
           <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead>
           <tbody>
+        <tr>
+          <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7825707303150" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc">#1267</a></td>
+          <td data-label="Customer">Trent Clark</td>
+          <td data-label="Date">2026-11-12</td>
+          <td data-label="Items" style="font-size:12px;max-width:240px;line-height:1.5">Pokémon TCG: 30th Celebration Booster Bundle (6 Packs) – English, Sealed<br>Pokémon TCG: 30th Celebration Elite Trainer Box (ETB) – English, Sealed</td>
+          <td data-label="Total"><strong>$176.62</strong></td>
+          <td data-label="Payment"><span class="badge badge-green">Paid</span></td>
+          <td data-label="Status"><span class="badge badge-red">Unfulfilled</span></td>
+        </tr>
         <tr>
           <td><a href="https://admin.shopify.com/store/1marss-2m/orders/7825697538286" target="_blank" style="color:#1a1a2e;font-weight:600;text-decoration:none;border-bottom:1px solid #ccc">#1266</a></td>
           <td data-label="Customer">Dylan Brickner</td>
@@ -1991,7 +2009,7 @@ function pollStatus() {
             <a href="https://1marss-2m.myshopify.com/products/pokemon-tcg-30th-celebration-booster-bundle" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon TCG: 30th Celebration Booster Bundle (6 Packs) – English, Sealed</a>
           </td>
           <td data-label="My Prices" style="white-space:nowrap;line-height:1.8">
-            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$59.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×37)</span></div>
+            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$59.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×36)</span></div>
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
           </td>
           <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$60.53</td>
@@ -2147,11 +2165,11 @@ function pollStatus() {
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$169.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×6)</span></div>
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
           </td>
-          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$9.96</td>
+          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$10.04</td>
           <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$160.03<span style="color:#2e7d32;font-size:9px;font-weight:400"> +1606.9%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($9.96)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
-          <td data-label="Signal"><span style="display:inline-block;background:#16a34a22;color:#16a34a;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">BUY</span>&nbsp;<span style="font-size:10px;color:#dc2626;font-weight:700">-16.2% 7d</span></td>
-          <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8595; -19.1% / 30d <span style="color:#bbb;font-size:10px">(trend)</span></span></td>
+          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$159.95<span style="color:#2e7d32;font-size:9px;font-weight:400"> +1593.1%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($10.04)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
+          <td data-label="Signal"><span style="display:inline-block;background:#16a34a22;color:#16a34a;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">BUY</span>&nbsp;<span style="font-size:10px;color:#dc2626;font-weight:700">-15.5% 7d</span></td>
+          <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8595; -17.9% / 30d <span style="color:#bbb;font-size:10px">(trend)</span></span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/696613.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -2249,11 +2267,11 @@ function pollStatus() {
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$27.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×4)</span></div>
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
           </td>
-          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$0.84</td>
+          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$0.83</td>
           <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$27.15<span style="color:#2e7d32;font-size:9px;font-weight:400"> +3232.1%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($0.84)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
-          <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#16a34a;font-weight:700">+2.4% 7d</span></td>
-          <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8593; +10.5% / 30d <span style="color:#bbb;font-size:10px">(7d extrap.)</span></span></td>
+          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$27.16<span style="color:#2e7d32;font-size:9px;font-weight:400"> +3272.3%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($0.83)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
+          <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#16a34a;font-weight:700">+1.2% 7d</span></td>
+          <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8593; +5.2% / 30d <span style="color:#bbb;font-size:10px">(7d extrap.)</span></span></td>
           <td data-label="Link">
             <a href="https://www.tcgplayer.com/product/696835.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
@@ -2328,23 +2346,6 @@ function pollStatus() {
         </tr>
         <tr>
           <td style="font-weight:600;max-width:260px">
-            <a href="https://1marss-2m.myshopify.com/products/pokemon-tcg-30th-celebration-elite-trainer-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon TCG: 30th Celebration Elite Trainer Box (ETB) – English, Sealed</a>
-          </td>
-          <td data-label="My Prices" style="white-space:nowrap;line-height:1.8">
-            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$99.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×2)</span></div>
-            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
-          </td>
-          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$106.72</td>
-          <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-6.73<span style="color:#c62828;font-size:9px;font-weight:400"> -6.3%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($106.72)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
-          <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#dc2626;font-weight:700">-2.0% 7d</span></td>
-          <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8595; -13.4% / 30d <span style="color:#bbb;font-size:10px">(trend)</span></span></td>
-          <td data-label="Link">
-            <a href="https://www.tcgplayer.com/product/704143.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
-          </td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;max-width:260px">
             <a href="https://1marss-2m.myshopify.com/products/pokemon-tcg-30th-celebration-poster-collection" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon TCG: 30th Celebration Poster Collection – English, Sealed</a>
           </td>
           <td data-label="My Prices" style="white-space:nowrap;line-height:1.8">
@@ -2375,6 +2376,23 @@ function pollStatus() {
           <td data-label="30d Forecast"><span style="color:#bbb">—</span></td>
           <td data-label="Link">
             
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;max-width:260px">
+            <a href="https://1marss-2m.myshopify.com/products/pokemon-tcg-30th-celebration-elite-trainer-box" target="_blank" style="color:#1a1a2e;text-decoration:none;border-bottom:1px solid #ccc">Pokémon TCG: 30th Celebration Elite Trainer Box (ETB) – English, Sealed</a>
+          </td>
+          <td data-label="My Prices" style="white-space:nowrap;line-height:1.8">
+            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$99.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×1)</span></div>
+            <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
+          </td>
+          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$106.49</td>
+          <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
+          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#c62828;font-weight:700;font-size:11px;white-space:nowrap">$-6.50<span style="color:#c62828;font-size:9px;font-weight:400"> -6.1%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($106.49)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
+          <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#dc2626;font-weight:700">-2.2% 7d</span></td>
+          <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8595; -13.7% / 30d <span style="color:#bbb;font-size:10px">(trend)</span></span></td>
+          <td data-label="Link">
+            <a href="https://www.tcgplayer.com/product/704143.0" target="_blank" style="color:#0835DB;font-size:11px">TCGPlayer ↗</a>
           </td>
         </tr>
         <tr>
@@ -2555,9 +2573,9 @@ function pollStatus() {
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#95bf47;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">SHO</span><span style="font-weight:700;color:#1a1a2e">$81.99</span> <span style="font-weight:400;color:#888;font-size:11px">(×0)</span></div>
             <div style="font-size:12px"><span style="font-size:9px;font-weight:700;color:#0835DB;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px">TCG</span><span style="font-weight:700;color:#0835DB"><span style="color:#bbb">—</span></span> <span style="font-weight:400;color:#888;font-size:11px">(×—)</span></div>
           </td>
-          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$81.56</td>
+          <td data-label="TCG Market" title="Weighted avg of last 100 sales in 30 days">$81.32</td>
           <td data-label="Lowest 5 Listings" style="font-size:11px;line-height:1.6;white-space:nowrap"><span style="color:#bbb">—</span></td>
-          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$0.43<span style="color:#2e7d32;font-size:9px;font-weight:400"> +0.5%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($81.56)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
+          <td data-label="vs. Market"><div style="min-width:150px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.7"><span style="color:#999;font-size:10px">vs Market</span><span style="color:#2e7d32;font-weight:700;font-size:11px;white-space:nowrap">+$0.67<span style="color:#2e7d32;font-size:9px;font-weight:400"> +0.8%</span><span style="color:#ccc;font-size:9px;font-weight:400"> ($81.32)</span></span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Gold &#9733;</span><span style="color:#bbb;font-size:10px">—</span></div><div style="display:flex;justify-content:space-between;gap:8px;line-height:1.7"><span style="color:#bbb;font-size:10px">vs Avg 10 (qty)</span><span style="color:#bbb;font-size:10px">—</span></div></div></td>
           <td data-label="Signal"><span style="display:inline-block;background:#d9770622;color:#d97706;font-weight:800;font-size:11px;padding:3px 10px;border-radius:20px;white-space:nowrap">HOLD</span>&nbsp;<span style="font-size:10px;color:#ccc">— 7d</span></td>
           <td data-label="30d Forecast"><span style="font-size:11px;color:#555">&#8594; Stable (&#177;3%)</span></td>
           <td data-label="Link">
@@ -5864,7 +5882,7 @@ new Chart(document.getElementById('revenueChart'), {
     datasets: [
       {
         label: 'Shopify',
-        data: [7916.92, 10005.64, 20873.91, 18961.24, 7486.71, 269.74, 37.71, 0, 0, 341.61, 1275.14],
+        data: [7916.92, 10005.64, 20873.91, 18961.24, 7486.71, 269.74, 37.71, 0, 0, 341.61, 1451.76],
         backgroundColor: '#95bf47',
         borderRadius: 4,
         order: 2,
