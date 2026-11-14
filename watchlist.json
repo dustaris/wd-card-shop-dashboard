@@ -1394,7 +1394,7 @@
           "price": 19.99,
           "listings": 5,
           "source": "active",
-          "date": "2026-11-12"
+          "date": "2026-11-14"
         }
       },
       {
@@ -1438,10 +1438,10 @@
           }
         },
         "psa10": {
-          "price": 164.69,
+          "price": 160.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-12"
+          "date": "2026-11-14"
         }
       },
       {
@@ -1485,10 +1485,10 @@
           }
         },
         "psa10": {
-          "price": 736.73,
+          "price": 735.8,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-12"
+          "date": "2026-11-14"
         }
       },
       {
@@ -1532,10 +1532,10 @@
           }
         },
         "psa10": {
-          "price": 309.99,
+          "price": 300.7,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-12"
+          "date": "2026-11-14"
         }
       },
       {
@@ -1582,7 +1582,7 @@
           "price": 325.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-12"
+          "date": "2026-11-14"
         }
       },
       {
@@ -1604,10 +1604,10 @@
           }
         },
         "psa10": {
-          "price": 120.0,
+          "price": 119.99,
           "listings": 18,
           "source": "active",
-          "date": "2026-11-12"
+          "date": "2026-11-14"
         }
       },
       {
@@ -1624,15 +1624,15 @@
           "url": "https://www.tcgplayer.com/product/497625/pokemon-sv02-paldea-evolved-tyranitar---222-193",
           "prices": {
             "normal": {
-              "market": 64.95
+              "market": 64.5
             }
           }
         },
         "psa10": {
           "price": 839.99,
-          "listings": 10,
+          "listings": 9,
           "source": "active",
-          "date": "2026-11-12"
+          "date": "2026-11-14"
         }
       },
       {
@@ -1649,15 +1649,15 @@
           "url": "https://www.tcgplayer.com/product/497629/pokemon-sv02-paldea-evolved-maushold---226-193",
           "prices": {
             "normal": {
-              "market": 81.96
+              "market": 81.78
             }
           }
         },
         "psa10": {
-          "price": 1899.0,
-          "listings": 5,
+          "price": 1699.95,
+          "listings": 7,
           "source": "active",
-          "date": "2026-11-12"
+          "date": "2026-11-14"
         }
       },
       {
@@ -1700,10 +1700,10 @@
           }
         },
         "psa10": {
-          "price": 388.04,
+          "price": 375.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-12"
+          "date": "2026-11-14"
         }
       },
       {
