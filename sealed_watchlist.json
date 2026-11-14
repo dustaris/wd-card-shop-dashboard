@@ -7,7 +7,7 @@
       "name": "151 Elite Trainer Box",
       "setName": "SV: Scarlet & Violet 151",
       "image": "https://product-images.tcgplayer.com/fit-in/200x200/503313.jpg",
-      "marketPrice": 492.69,
+      "marketPrice": 492.13,
       "purchasePrice": null,
       "qty": null,
       "priceHistory": [
@@ -158,11 +158,11 @@
         },
         {
           "date": "2026-11-12",
-          "price": 492.69,
-          "qty": 0
+          "price": 492.13,
+          "qty": 13
         }
       ],
-      "updatedAt": "2026-11-12",
+      "updatedAt": "2026-11-14",
       "addedAt": "2026-05-08"
     },
     {
@@ -330,5 +330,5 @@
       "addedAt": "2026-05-08"
     }
   ],
-  "ts": 1794623171343
+  "ts": 1794666263903
 }
