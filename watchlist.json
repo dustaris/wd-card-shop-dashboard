@@ -402,7 +402,7 @@
           "price": 449.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-14"
+          "date": "2026-11-15"
         }
       },
       {
@@ -449,7 +449,7 @@
           "price": 52.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-14"
+          "date": "2026-11-15"
         }
       },
       {
@@ -496,7 +496,7 @@
           "price": 39.99,
           "listings": 18,
           "source": "active",
-          "date": "2026-11-14"
+          "date": "2026-11-15"
         }
       },
       {
@@ -543,7 +543,7 @@
           "price": 73.76,
           "listings": 19,
           "source": "active",
-          "date": "2026-11-14"
+          "date": "2026-11-15"
         }
       },
       {
@@ -590,7 +590,7 @@
           "price": 40.0,
           "listings": 13,
           "source": "active",
-          "date": "2026-11-14"
+          "date": "2026-11-15"
         }
       },
       {
@@ -634,10 +634,10 @@
           }
         },
         "psa10": {
-          "price": 42.99,
+          "price": 43.95,
           "listings": 15,
           "source": "active",
-          "date": "2026-11-14"
+          "date": "2026-11-15"
         }
       },
       {
@@ -681,10 +681,10 @@
           }
         },
         "psa10": {
-          "price": 59.0,
+          "price": 57.49,
           "listings": 19,
           "source": "active",
-          "date": "2026-11-14"
+          "date": "2026-11-15"
         }
       },
       {
@@ -728,10 +728,10 @@
           }
         },
         "psa10": {
-          "price": 66.59,
+          "price": 66.5,
           "listings": 18,
           "source": "active",
-          "date": "2026-11-14"
+          "date": "2026-11-15"
         }
       },
       {
@@ -778,7 +778,7 @@
           "price": 35.0,
           "listings": 11,
           "source": "active",
-          "date": "2026-11-14"
+          "date": "2026-11-15"
         }
       },
       {
@@ -825,7 +825,7 @@
           "price": 52.0,
           "listings": 18,
           "source": "active",
-          "date": "2026-11-14"
+          "date": "2026-11-15"
         }
       },
       {
@@ -872,7 +872,7 @@
           "price": 229.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-14"
+          "date": "2026-11-15"
         }
       },
       {
@@ -918,7 +918,7 @@
           "price": 125.0,
           "listings": 7,
           "source": "active",
-          "date": "2026-11-14"
+          "date": "2026-11-15"
         }
       }
     ],
