@@ -1394,7 +1394,7 @@
           "price": 19.99,
           "listings": 5,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1438,10 +1438,10 @@
           }
         },
         "psa10": {
-          "price": 164.25,
+          "price": 159.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1485,10 +1485,10 @@
           }
         },
         "psa10": {
-          "price": 715.0,
+          "price": 740.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1532,10 +1532,10 @@
           }
         },
         "psa10": {
-          "price": 299.99,
+          "price": 300.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1582,7 +1582,7 @@
           "price": 325.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1599,15 +1599,15 @@
           "url": "https://www.tcgplayer.com/product/185985/pokemon-sm-promos-pikachu-and-zekrom-gx",
           "prices": {
             "normal": {
-              "market": 217.51
+              "market": 217.16
             }
           }
         },
         "psa10": {
-          "price": 119.99,
-          "listings": 18,
+          "price": 99.0,
+          "listings": 20,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1624,7 +1624,7 @@
           "url": "https://www.tcgplayer.com/product/497625/pokemon-sv02-paldea-evolved-tyranitar---222-193",
           "prices": {
             "normal": {
-              "market": 64.11
+              "market": 63.86
             }
           }
         },
@@ -1632,7 +1632,7 @@
           "price": 840.92,
           "listings": 9,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1649,7 +1649,7 @@
           "url": "https://www.tcgplayer.com/product/497629/pokemon-sv02-paldea-evolved-maushold---226-193",
           "prices": {
             "normal": {
-              "market": 81.87
+              "market": 82.95
             }
           }
         },
@@ -1657,7 +1657,7 @@
           "price": 1699.95,
           "listings": 7,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1703,7 +1703,7 @@
           "price": 375.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
