@@ -1747,10 +1747,10 @@
           }
         },
         "psa10": {
-          "price": 289.0,
+          "price": 285.99,
           "listings": 18,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1772,10 +1772,10 @@
           }
         },
         "psa10": {
-          "price": 102.99,
+          "price": 100.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1800,7 +1800,7 @@
           "price": 47.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1823,9 +1823,9 @@
         },
         "psa10": {
           "price": 4739.72,
-          "listings": 17,
+          "listings": 18,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1842,7 +1842,7 @@
           "url": "https://www.tcgplayer.com/product/486623/pokemon-sv01-scarlet-and-violet-base-set-gardevoir-ex---245-198",
           "prices": {
             "normal": {
-              "market": 52.84
+              "market": 52.66
             }
           }
         },
@@ -1850,7 +1850,7 @@
           "price": 249.95,
           "listings": 4,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1867,7 +1867,7 @@
           "url": "https://www.tcgplayer.com/product/490072/pokemon-sv01-scarlet-and-violet-base-set-kirlia---212-198",
           "prices": {
             "normal": {
-              "market": 32.73
+              "market": 32.8
             }
           }
         },
@@ -1875,7 +1875,7 @@
           "price": 660.7,
           "listings": 2,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
@@ -1892,7 +1892,7 @@
           "url": "https://www.tcgplayer.com/product/490071/pokemon-sv01-scarlet-and-violet-base-set-ralts---211-198",
           "prices": {
             "normal": {
-              "market": 32.56
+              "market": 32.19
             }
           }
         },
@@ -1900,7 +1900,7 @@
           "price": 75.5,
           "listings": 1,
           "source": "active",
-          "date": "2026-11-15"
+          "date": "2026-11-16"
         }
       },
       {
