@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "updated": "November 16, 2026 at 01:39 AM",
+  "updated": "November 16, 2026 at 01:45 AM",
   "months": [
     {
       "month_num": 1,
@@ -10,8 +10,8 @@
       "tcg_gross": 18527.27,
       "tcg_fees": 2423.27,
       "tcg_refunds": 0.0,
-      "ebay_gross": 4442.48,
-      "ebay_fees": 644.61
+      "ebay_gross": 4295.17,
+      "ebay_fees": 622.62
     },
     {
       "month_num": 2,
