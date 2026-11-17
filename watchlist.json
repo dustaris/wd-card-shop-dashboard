@@ -1297,10 +1297,10 @@
           }
         },
         "psa10": {
-          "price": 50.0,
+          "price": 39.99,
           "listings": 18,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1347,7 +1347,7 @@
           "price": 50.0,
           "listings": 19,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1394,7 +1394,7 @@
           "price": 19.99,
           "listings": 5,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1441,7 +1441,7 @@
           "price": 159.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1485,10 +1485,10 @@
           }
         },
         "psa10": {
-          "price": 740.0,
+          "price": 745.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1532,10 +1532,10 @@
           }
         },
         "psa10": {
-          "price": 300.0,
+          "price": 299.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1579,10 +1579,10 @@
           }
         },
         "psa10": {
-          "price": 325.0,
+          "price": 320.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1604,10 +1604,10 @@
           }
         },
         "psa10": {
-          "price": 99.0,
+          "price": 101.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1624,15 +1624,15 @@
           "url": "https://www.tcgplayer.com/product/497625/pokemon-sv02-paldea-evolved-tyranitar---222-193",
           "prices": {
             "normal": {
-              "market": 63.86
+              "market": 63.78
             }
           }
         },
         "psa10": {
-          "price": 840.92,
-          "listings": 9,
+          "price": 839.95,
+          "listings": 10,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1649,7 +1649,7 @@
           "url": "https://www.tcgplayer.com/product/497629/pokemon-sv02-paldea-evolved-maushold---226-193",
           "prices": {
             "normal": {
-              "market": 82.95
+              "market": 83.02
             }
           }
         },
@@ -1657,7 +1657,7 @@
           "price": 1699.95,
           "listings": 7,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
