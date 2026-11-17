@@ -1703,7 +1703,7 @@
           "price": 375.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1750,7 +1750,7 @@
           "price": 285.99,
           "listings": 18,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1767,7 +1767,7 @@
           "url": "https://www.tcgplayer.com/product/113748/pokemon-generations-radiant-collection-flareon-ex-full-art",
           "prices": {
             "normal": {
-              "market": 188.04
+              "market": 188.4
             }
           }
         },
@@ -1775,7 +1775,7 @@
           "price": 100.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1800,7 +1800,7 @@
           "price": 47.0,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1822,10 +1822,10 @@
           }
         },
         "psa10": {
-          "price": 4739.72,
-          "listings": 18,
+          "price": 4715.23,
+          "listings": 19,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1842,7 +1842,7 @@
           "url": "https://www.tcgplayer.com/product/486623/pokemon-sv01-scarlet-and-violet-base-set-gardevoir-ex---245-198",
           "prices": {
             "normal": {
-              "market": 52.66
+              "market": 52.89
             }
           }
         },
@@ -1850,7 +1850,7 @@
           "price": 249.95,
           "listings": 4,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -1867,15 +1867,15 @@
           "url": "https://www.tcgplayer.com/product/490072/pokemon-sv01-scarlet-and-violet-base-set-kirlia---212-198",
           "prices": {
             "normal": {
-              "market": 32.8
+              "market": 32.77
             }
           }
         },
         "psa10": {
-          "price": 660.7,
+          "price": 659.3,
           "listings": 2,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
