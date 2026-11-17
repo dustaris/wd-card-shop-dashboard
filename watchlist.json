@@ -2047,7 +2047,7 @@
           }
         },
         "psa10": {
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -2069,10 +2069,10 @@
           }
         },
         "psa10": {
-          "price": 123.94,
+          "price": 124.94,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -2094,10 +2094,10 @@
           }
         },
         "psa10": {
-          "price": 105.11,
+          "price": 104.99,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
@@ -2114,15 +2114,15 @@
           "url": "https://www.tcgplayer.com/product/188404/pokemon-sm---unbroken-bonds-gardevoir-and-sylveon-gx",
           "prices": {
             "normal": {
-              "market": 82.21
+              "market": 82.24
             }
           }
         },
         "psa10": {
-          "price": 132.05,
+          "price": 131.36,
           "listings": 20,
           "source": "active",
-          "date": "2026-11-16"
+          "date": "2026-11-17"
         }
       },
       {
