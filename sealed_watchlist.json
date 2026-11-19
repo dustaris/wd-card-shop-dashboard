@@ -7,15 +7,10 @@
       "name": "151 Elite Trainer Box",
       "setName": "SV: Scarlet & Violet 151",
       "image": "https://product-images.tcgplayer.com/fit-in/200x200/503313.jpg",
-      "marketPrice": 488.23,
+      "marketPrice": 487.78,
       "purchasePrice": null,
       "qty": null,
       "priceHistory": [
-        {
-          "date": "2026-08-21",
-          "price": 572.73,
-          "qty": 5
-        },
         {
           "date": "2026-08-24",
           "price": 569.06,
@@ -158,11 +153,16 @@
         },
         {
           "date": "2026-11-16",
-          "price": 488.23,
-          "qty": 6
+          "price": 487.78,
+          "qty": 8
+        },
+        {
+          "date": "2026-11-19",
+          "price": 487.78,
+          "qty": 0
         }
       ],
-      "updatedAt": "2026-11-18",
+      "updatedAt": "2026-11-19",
       "addedAt": "2026-05-08"
     },
     {
@@ -175,11 +175,6 @@
       "purchasePrice": null,
       "qty": 1,
       "priceHistory": [
-        {
-          "date": "2026-08-21",
-          "price": 180.18,
-          "qty": 46
-        },
         {
           "date": "2026-08-24",
           "price": 179.66,
@@ -313,7 +308,7 @@
         {
           "date": "2026-11-10",
           "price": 165.36,
-          "qty": 39
+          "qty": 38
         },
         {
           "date": "2026-11-13",
@@ -324,11 +319,16 @@
           "date": "2026-11-16",
           "price": 165.93,
           "qty": 28
+        },
+        {
+          "date": "2026-11-19",
+          "price": 165.93,
+          "qty": 0
         }
       ],
-      "updatedAt": "2026-11-18",
+      "updatedAt": "2026-11-19",
       "addedAt": "2026-05-08"
     }
   ],
-  "ts": 1795028134099
+  "ts": 1795064944337
 }
