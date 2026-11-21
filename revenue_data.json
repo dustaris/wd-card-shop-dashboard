@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "updated": "November 21, 2026 at 04:57 AM",
+  "updated": "November 21, 2026 at 05:00 AM",
   "months": [
     {
       "month_num": 1,
@@ -115,8 +115,8 @@
     {
       "month_num": 11,
       "month_name": "November",
-      "shopify_gross": 2658.44,
-      "shopify_fees": 93.05,
+      "shopify_gross": 3285.02,
+      "shopify_fees": 114.98,
       "tcg_gross": 6222.6,
       "tcg_fees": 892.7,
       "tcg_refunds": 193.47,
